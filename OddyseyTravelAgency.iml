@@ -14,40 +14,40 @@
                 <option name="types">
                   <set>
                     <MetadataType>
-                      <option name="name" value="ApexClass" />
-                    </MetadataType>
-                    <MetadataType>
-                      <option name="name" value="ApexComponent" />
-                    </MetadataType>
-                    <MetadataType>
-                      <option name="name" value="ApexPage" />
-                    </MetadataType>
-                    <MetadataType>
-                      <option name="name" value="ApexTrigger" />
-                    </MetadataType>
-                    <MetadataType>
-                      <option name="name" value="AssignmentRule" />
-                    </MetadataType>
-                    <MetadataType>
-                      <option name="name" value="AuraDefinitionBundle" />
-                    </MetadataType>
-                    <MetadataType>
-                      <option name="name" value="Bot" />
-                    </MetadataType>
-                    <MetadataType>
-                      <option name="name" value="EscalationRule" />
-                    </MetadataType>
-                    <MetadataType>
-                      <option name="name" value="Flow" />
-                    </MetadataType>
-                    <MetadataType>
-                      <option name="name" value="LightningComponentBundle" />
-                    </MetadataType>
-                    <MetadataType>
-                      <option name="name" value="Queue" />
-                    </MetadataType>
-                    <MetadataType>
-                      <option name="name" value="StaticResource" />
+                      <option name="entries">
+                        <list>
+                          <MetadataEntry>
+                            <option name="name" value="Account" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Case" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Contact" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Lead" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Opportunity" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Order" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                          <MetadataEntry>
+                            <option name="name" value="Quote" />
+                            <option name="selected" value="true" />
+                          </MetadataEntry>
+                        </list>
+                      </option>
+                      <option name="name" value="CustomObject" />
+                      <option name="wildcard" value="false" />
                     </MetadataType>
                   </set>
                 </option>
