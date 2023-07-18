@@ -1,0 +1,42 @@
+{
+  "0Af0600001XcZeDCAV": {
+    "target-org": "dawid.odyssey@britenet.com",
+    "dry-run": false,
+    "ignore-conflicts": false,
+    "ignore-errors": false,
+    "ignore-warnings": false,
+    "test-level": "NoTestRun",
+    "api": "SOAP",
+    "manifest": "C:\\Users\\dawid.zamojda\\.sf\\manifestCache\\0Af0600001XcZeDCAV.xml",
+    "wait": 33,
+    "isMdapi": false,
+    "timestamp": "2023-07-18T06:21:26.944Z"
+  },
+  "0Af0600001XcZerCAF": {
+    "target-org": "dawid.odyssey@britenet.com",
+    "ignore-conflicts": true,
+    "dry-run": false,
+    "ignore-errors": false,
+    "ignore-warnings": false,
+    "test-level": "NoTestRun",
+    "api": "SOAP",
+    "manifest": "C:\\Users\\dawid.zamojda\\.sf\\manifestCache\\0Af0600001XcZerCAF.xml",
+    "wait": 33,
+    "isMdapi": false,
+    "timestamp": "2023-07-18T06:21:55.871Z"
+  },
+  "0Af0600001XcaRKCAZ": {
+    "target-org": "dawid.odyssey@britenet.com",
+    "ignore-conflicts": true,
+    "dry-run": false,
+    "ignore-errors": false,
+    "ignore-warnings": false,
+    "test-level": "NoTestRun",
+    "api": "SOAP",
+    "manifest": "C:\\Users\\dawid.zamojda\\.sf\\manifestCache\\0Af0600001XcaRKCAZ.xml",
+    "wait": 33,
+    "isMdapi": false,
+    "timestamp": "2023-07-18T06:45:54.992Z",
+    "status": "Failed"
+  }
+}
