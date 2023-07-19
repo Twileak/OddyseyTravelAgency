@@ -27,7 +27,7 @@ jobs:
         run: |
           echo ${{ secrets.CONSUMER_KEY }} > server.key
           echo ${{secrets.JWT_KEY_FILE}} > jwt.file
-          sfdx force:auth:jwt:grant --username ${{ secrets.USERNAME }} --jwtkeyfile jwt.file -clientid server.key -r https://login.salesforce.com --setdefaultdevhubusername
+          sfdx force:auth:jwt:grant --username ${{ secrets.USERNAME }} --jwtkeyfile jwt.file --clientid server.key -r https://login.salesforce.com --setdefaultdevhubusername
           rm server.key
           rm jwt.file
 
