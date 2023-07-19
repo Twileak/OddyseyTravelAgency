@@ -28,7 +28,6 @@ jobs:
 
       - name: Set up Salesforce CLI
         run: |
-          echo "sfdx --version"
           echo ${{ secrets.CONSUMER_KEY }} | base64 --decode > /tmp/server.key
           echo ${{ secrets.DECRYPTION_KEY }} | base64 --decode > /tmp/dec.key
           echo ${{ secrets.DECRYPTION_IV }} | base64 --decode > /tmp/dec.iv
