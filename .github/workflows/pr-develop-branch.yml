@@ -25,10 +25,11 @@ jobs:
 
       - name: Set up Salesforce CLI
         run: |
-          echo ${{ secrets.CONSUMER_KEY }} > /tmp/server.key
-          echo ${{ secrets.DECRYPTION_KEY }} > /tmp/dec.key
-          echo ${{ secrets.DECRYPTION_IV }} > /tmp/dec.iv
-          sfdx force:auth:jwt:grant -u ${{ secrets.USERNAME }} -f /tmp/server.key -i ${{ secrets.CONSUMER_KEY }} -s -d -r https://login.salesforce.com -k /tmp/dec.key -v devhub
+          echo ${{ secrets.CONSUMER_KEY }} > server.key
+          echo ${{secrets.JWT_KEY_FILE}} > jwt.file
+          sfdx force:auth:jwt:grant --username ${{ secrets.USERNAME }} --jwtkeyfile jwt.file -clientid server.key -r https://login.salesforce.com --setdefaultdevhubusername
+          rm server.key
+          rm jwt.file
 
       - name: Deploy on Salesforce
         run: |
