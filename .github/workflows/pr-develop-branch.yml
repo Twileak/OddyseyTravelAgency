@@ -25,7 +25,7 @@ jobs:
 
       - name: Set up Salesforce CLI
         run: |
-          sfdx force:auth:jwt:grant --username ${{ secrets.USERNAME }} --jwtkeyfile ${{secrets.JWT_KEY_FILE}} --clientid ${{secrets.CONSUMER_KEY}} -r https://login.salesforce.com --setdefaultdevhubusername
+          sfdx force:auth:jwt:grant --username ${{ secrets.USERNAME }} --jwtkeyfile ${{secrets.JWT_KEY_FILE}} --client-id ${{secrets.CONSUMER_KEY}} -r https://login.salesforce.com --setdefaultdevhubusername
 
       - name: Deploy on Salesforce
         run: |
