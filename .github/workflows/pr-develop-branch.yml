@@ -32,7 +32,7 @@ jobs:
           echo ${{ secrets.CONSUMER_KEY }} | base64 --decode > /tmp/server.key
           echo ${{ secrets.DECRYPTION_KEY }} | base64 --decode > /tmp/dec.key
           echo ${{ secrets.DECRYPTION_IV }} | base64 --decode > /tmp/dec.iv
-          sfdx force:auth:jwt:grant -u ${{ secrets.USERNAME }} -f /tmp/server.key -i $CONSUMER_KEY -s -d -r https://test.salesforce.com -k /tmp/dec.key -v devhub
+          sfdx force:auth:jwt:grant -u ${{ secrets.USERNAME }} -f /tmp/server.key -i $CONSUMER_KEY -s -d -r https://login.salesforce.com -k /tmp/dec.key -v devhub
 
       - name: Deploy on Salesforce
         run: |
