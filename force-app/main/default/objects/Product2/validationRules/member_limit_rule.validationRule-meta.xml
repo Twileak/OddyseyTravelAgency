@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>member_limit_rule</fullName>
+    <active>true</active>
+    <errorConditionFormula>Current_Members__c  &gt;  Member_Limit__c</errorConditionFormula>
+    <errorDisplayField>Current_Members__c</errorDisplayField>
+    <errorMessage>This trip is already fully booked</errorMessage>
+</ValidationRule>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Network xmlns="http://soap.sforce.com/2006/04/metadata">
+    <allowInternalUserLogin>false</allowInternalUserLogin>
+    <allowMembersToFlag>false</allowMembersToFlag>
+    <changePasswordTemplate>unfiled$public/CommunityChangePasswordEmailTemplate</changePasswordTemplate>
+    <communityRoles/>
+    <disableReputationRecordConversations>false</disableReputationRecordConversations>
+    <emailSenderAddress>dawid.zamojda@britenet.com.pl</emailSenderAddress>
+    <emailSenderName>Oddysey</emailSenderName>
+    <enableApexCDNCaching>true</enableApexCDNCaching>
+    <enableCustomVFErrorPageOverrides>false</enableCustomVFErrorPageOverrides>
+    <enableDirectMessages>false</enableDirectMessages>
+    <enableExperienceBundleBasedSnaOverrideEnabled>true</enableExperienceBundleBasedSnaOverrideEnabled>
+    <enableGuestChatter>true</enableGuestChatter>
+    <enableGuestFileAccess>true</enableGuestFileAccess>
+    <enableGuestMemberVisibility>false</enableGuestMemberVisibility>
+    <enableImageOptimizationCDN>false</enableImageOptimizationCDN>
+    <enableInvitation>false</enableInvitation>
+    <enableKnowledgeable>false</enableKnowledgeable>
+    <enableMemberVisibility>false</enableMemberVisibility>
+    <enableNicknameDisplay>true</enableNicknameDisplay>
+    <enablePrivateMessages>false</enablePrivateMessages>
+    <enableReputation>false</enableReputation>
+    <enableShowAllNetworkSettings>false</enableShowAllNetworkSettings>
+    <enableSiteAsContainer>true</enableSiteAsContainer>
+    <enableTalkingAboutStats>false</enableTalkingAboutStats>
+    <enableTopicAssignmentRules>true</enableTopicAssignmentRules>
+    <enableTopicSuggestions>false</enableTopicSuggestions>
+    <enableUpDownVote>false</enableUpDownVote>
+    <forgotPasswordTemplate>unfiled$public/CommunityForgotPasswordEmailTemplate</forgotPasswordTemplate>
+    <gatherCustomerSentimentData>false</gatherCustomerSentimentData>
+    <headlessForgotPasswordTemplate>unfiled$public/CommunityHeadlessForgotPasswordTemplate</headlessForgotPasswordTemplate>
+    <networkMemberGroups>
+        <permissionSet>Odyssey</permissionSet>
+        <profile>admin</profile>
+        <profile>customer community plus login user</profile>
+        <profile>customer portal manager standard</profile>
+        <profile>customer community user</profile>
+        <profile>customer community login user</profile>
+        <profile>customer community plus user</profile>
+        <profile>customer portal manager custom</profile>
+        <profile>external apps login user</profile>
+        <profile>platformportal</profile>
+        <profile>highvolumeportal</profile>
+        <profile>high volume customer portal user</profile>
+        <profile>authenticated website</profile>
+        <profile>external identity user</profile>
+        <profile>partner community login user</profile>
+        <profile>force.com - free user</profile>
+        <profile>chatter moderator user</profile>
+        <profile>partner community user</profile>
+        <profile>partner app subscription user</profile>
+        <profile>force.com - app subscription user</profile>
+        <profile>gold partner user</profile>
+        <profile>silver partner user</profile>
+        <profile>identity user</profile>
+        <profile>work.com only user</profile>
+        <profile>cross org data proxy user</profile>
+        <profile>standardaul</profile>
+        <profile>salesforce api only system integrations</profile>
+        <profile>minimum access - salesforce</profile>
+        <profile>analytics cloud security user</profile>
+        <profile>analytics cloud integration user</profile>
+        <profile>chatter free user</profile>
+        <profile>standard</profile>
+        <profile>solutionmanager</profile>
+        <profile>read only</profile>
+        <profile>custom: sales profile</profile>
+        <profile>custom: marketing profile</profile>
+        <profile>custom: support profile</profile>
+        <profile>marketingprofile</profile>
+        <profile>contractmanager</profile>
+        <profile>commerce business user profile</profile>
+    </networkMemberGroups>
+    <networkPageOverrides>
+        <changePasswordPageOverrideSetting>Standard</changePasswordPageOverrideSetting>
+        <forgotPasswordPageOverrideSetting>Standard</forgotPasswordPageOverrideSetting>
+        <homePageOverrideSetting>Designer</homePageOverrideSetting>
+        <loginPageOverrideSetting>Standard</loginPageOverrideSetting>
+        <selfRegProfilePageOverrideSetting>Designer</selfRegProfilePageOverrideSetting>
+    </networkPageOverrides>
+    <picassoSite>Oddysey1</picassoSite>
+    <selfRegistration>false</selfRegistration>
+    <sendWelcomeEmail>true</sendWelcomeEmail>
+    <site>Oddysey</site>
+    <siteArchiveStatus>NotArchived</siteArchiveStatus>
+    <status>Live</status>
+    <tabs>
+        <defaultTab>home</defaultTab>
+        <standardTab>Chatter</standardTab>
+    </tabs>
+    <urlPathPrefix>odyseyvforcesite</urlPathPrefix>
+    <welcomeTemplate>unfiled$public/CommunityWelcomeEmailTemplate</welcomeTemplate>
+</Network>

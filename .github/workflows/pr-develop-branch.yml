@@ -1,0 +1,37 @@
+name: Salesforce Code Validation
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  validate_code:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Salesforce CLI
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install Salesforce CLI plugins
+        run: |
+          npm install -g sfdx-cli
+
+      - name: Authenticate with Salesforce Org
+        run: |
+          sfdx force:auth:password:generate -u ${{ secrets.USERNAME }} -p "${{ secrets.PASSWORD }}" -d -a salesforce-org
+
+      - name: Validate Salesforce Code
+        run: |
+          sfdx force:source:deploy -x -manifest ../../manifest/package.xml -o --dry-run --wait 10 -t NoTestRun
+
+      - name: Cleanup
+        run: |
+          rm ./sfdx_username.txt
+          rm ./sfdx_password.txt

@@ -1,0 +1,25 @@
+<!--
+ - Created by dawid.zamojda on 11.07.2023.
+ -->
+
+<!-- trip Card -->
+<template>
+    <div class="hoverTile">
+        <div class="poster">
+            <img src={temporaryPick} alt="Background Image">
+        </div>
+        <div class="details">
+            <h2 class="slds-truncate slds-text-heading_medium">{product.name}</h2>
+            <h2 class="detailInfo">{product.startDate}   -   {product.endDate}</h2>
+            <h2 class="detailInfo">{product.summary}</h2>
+            <h2 class="slds-truncate slds-text-heading_small">Cities: </h2>
+            <div class="cities">
+                <div class="city-container">
+                    <template for:each={product.cities} for:item="city">
+                        <div key={city} class="box">{city}</div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
