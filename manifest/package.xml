@@ -40,15 +40,6 @@
         <name>AuthProvider</name>
     </types>
     <types>
-        <members>Odyssey_Digital_Assistant</members>
-        <name>Bot</name>
-    </types>
-    <types>
-        <members>Chat_Setup_Flow_CORS</members>
-        <members>Chat_Setup_Flow_CORS2</members>
-        <name>CorsWhitelistOrigin</name>
-    </types>
-    <types>
         <members>Odyssey</members>
         <name>CspTrustedSite</name>
     </types>
@@ -131,14 +122,6 @@
         <name>DataCategoryGroup</name>
     </types>
     <types>
-        <members>chatbot_of_oddysey_group</members>
-        <name>EmbeddedServiceConfig</name>
-    </types>
-    <types>
-        <members>chatbot_of_oddysey_group</members>
-        <name>EmbeddedServiceLiveAgent</name>
-    </types>
-    <types>
         <members>Assistance_channel</members>
         <name>EmbeddedServiceMenuSettings</name>
     </types>
@@ -153,14 +136,6 @@
     <types>
         <members>Lead_Flow</members>
         <name>FlowDefinition</name>
-    </types>
-    <types>
-        <members>chatbot_of_oddysey_group</members>
-        <name>LiveChatButton</name>
-    </types>
-    <types>
-        <members>live_agent_setup_flow</members>
-        <name>LiveChatDeployment</name>
     </types>
     <types>
         <members>Oddysey</members>
@@ -220,8 +195,8 @@
         <name>SharingRules</name>
     </types>
     <types>
-        <members>Oddysey1</members>
-        <name>Experiences</name>
+        <members>*</members>
+        <name>ExperienceBundle</name>
     </types>
     <version>57.0</version>
 </Package>
