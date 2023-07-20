@@ -111,6 +111,10 @@
         <members>ProductMedia</members>
         <members>Quote</members>
         <members>Site</members>
+        <members>CaseComment</members>
+        <members>Knowledge__kav</members>
+        <members>Place__c</members>
+        <members>User</members>
         <name>CustomObject</name>
     </types>
     <types>
@@ -197,6 +201,18 @@
     <types>
         <members>*</members>
         <name>ExperienceBundle</name>
+    </types>
+    <types>
+        <name>BusinessProcess</name>
+    </types>
+    <types>
+        <name>FieldSet</name>
+    </types>
+    <types>
+        <name>ListView</name>
+    </types>
+    <types>
+        <name>WebLink</name>
     </types>
     <version>57.0</version>
 </Package>
