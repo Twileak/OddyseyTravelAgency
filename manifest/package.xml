@@ -112,14 +112,8 @@
         <members>Quote</members>
         <members>Site</members>
         <members>CaseComment</members>
-        <members>Knowledge__kav</members>
-        <members>Place__c</members>
         <members>User</members>
         <name>CustomObject</name>
-    </types>
-    <types>
-        <members>Oddysey</members>
-        <name>CustomSite</name>
     </types>
     <types>
         <members>Reserving_trips</members>
@@ -164,19 +158,6 @@
     <types>
         <members>Lead.New_Lead_Chatter</members>
         <name>PostTemplate</name>
-    </types>
-    <types>
-        <members>Financial_Support_Queue</members>
-        <members>High_Priority_Cases</members>
-        <members>Premium_Support_Queue</members>
-        <members>Standard_Support_Queue</members>
-        <members>chatbot_of_oddysey</members>
-        <name>Queue</name>
-    </types>
-    <types>
-        <members>High_Priority_Cases</members>
-        <members>chatbot_of_oddysey</members>
-        <name>QueueRoutingConfig</name>
     </types>
     <types>
         <members>Account.Business_Account</members>
