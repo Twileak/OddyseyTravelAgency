@@ -216,17 +216,12 @@
         <name>ValidationRule</name>
     </types>
     <types>
-        <name>BusinessProcess</name>
-    </types>
-    <types>
-        <name>ListView</name>
-    </types>
-    <types>
         <members>Product2</members>
         <name>SharingRules</name>
     </types>
     <types>
-        <name>WebLink</name>
+        <members>Oddysey1</members>
+        <name>Experiences</name>
     </types>
     <version>57.0</version>
 </Package>
