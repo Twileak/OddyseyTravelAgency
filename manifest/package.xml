@@ -1,38 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
+        <members>Oddysey1</members>
+        <name>ExperienceBundle</name>
+    </types>
+    <types>
+        <members>AutocreatedRegHandler1688985121666</members>
+        <members>AutocreatedRegHandler1688986711262</members>
+        <members>ChangePasswordController</members>
+        <members>ChangePasswordControllerTest</members>
+        <members>CommunitiesLandingController</members>
+        <members>CommunitiesLandingControllerTest</members>
+        <members>CommunitiesLoginController</members>
+        <members>CommunitiesLoginControllerTest</members>
+        <members>CommunitiesSelfRegConfirmController</members>
+        <members>CommunitiesSelfRegConfirmControllerTest</members>
+        <members>CommunitiesSelfRegController</members>
+        <members>CommunitiesSelfRegControllerTest</members>
+        <members>ForgotPasswordController</members>
+        <members>ForgotPasswordControllerTest</members>
+        <members>LightningForgotPasswordController</members>
+        <members>LightningForgotPasswordControllerTest</members>
+        <members>LightningLoginFormController</members>
+        <members>LightningLoginFormControllerTest</members>
+        <members>LightningSelfRegisterController</members>
+        <members>LightningSelfRegisterControllerTest</members>
+        <members>MicrobatchSelfRegController</members>
+        <members>MicrobatchSelfRegControllerTest</members>
+        <members>MyProfilePageController</members>
+        <members>MyProfilePageControllerTest</members>
+        <members>OpportunityOrder</members>
         <members>ProductController</members>
         <members>ProductManagementController</members>
         <members>ProductWrapper</members>
+        <members>SiteLoginController</members>
+        <members>SiteLoginControllerTest</members>
+        <members>SiteRegisterController</members>
+        <members>SiteRegisterControllerTest</members>
         <name>ApexClass</name>
     </types>
     <types>
-        <members>*</members>
+        <members>SiteFooter</members>
+        <members>SiteHeader</members>
+        <members>SiteLogin</members>
+        <members>SitePoweredBy</members>
         <name>ApexComponent</name>
     </types>
     <types>
-        <members>*</members>
+        <members>AnswersHome</members>
+        <members>BandwidthExceeded</members>
+        <members>ChangePassword</members>
+        <members>Chat_Testing</members>
+        <members>CommunitiesLanding</members>
+        <members>CommunitiesLogin</members>
+        <members>CommunitiesSelfReg</members>
+        <members>CommunitiesSelfRegConfirm</members>
+        <members>CommunitiesTemplate</members>
+        <members>Exception</members>
+        <members>FileNotFound</members>
+        <members>ForgotPassword</members>
+        <members>ForgotPasswordConfirm</members>
+        <members>IdeasHome</members>
+        <members>InMaintenance</members>
+        <members>MicrobatchSelfReg</members>
+        <members>MyProfilePage</members>
+        <members>SiteLogin</members>
+        <members>SiteRegister</members>
+        <members>SiteRegisterConfirm</members>
+        <members>SiteTemplate</members>
+        <members>StdExceptionTemplate</members>
+        <members>Unauthorized</members>
+        <members>UnderConstruction</members>
+        <members>Web2Lead</members>
+        <members>tester</members>
+        <members>tester2</members>
         <name>ApexPage</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>ApexTestSuite</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>ApexTrigger</name>
-    </types>
-    <types>
-        <members>ProductManagement</members>
-        <name>AuraDefinitionBundle</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>LightningComponentBundle</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>StaticResource</name>
     </types>
     <types>
         <members>Facebook</members>
@@ -40,69 +82,15 @@
         <name>AuthProvider</name>
     </types>
     <types>
-        <members>Odyssey</members>
-        <name>CspTrustedSite</name>
-    </types>
-    <types>
-        <members>Account.Active__c</members>
-        <members>Account.CustomerPriority__c</members>
-        <members>Account.NumberofLocations__c</members>
-        <members>Account.SLAExpirationDate__c</members>
-        <members>Account.SLASerialNumber__c</members>
-        <members>Account.SLA__c</members>
-        <members>Account.UpsellOpportunity__c</members>
-        <members>Case.EngineeringReqNumber__c</members>
-        <members>Case.PotentialLiability__c</members>
-        <members>Case.Product__c</members>
-        <members>Case.SLAViolation__c</members>
-        <members>CaseComment.CommentBody</members>
-        <members>CaseComment.ParentOrigin</members>
-        <members>Contact.Languages__c</members>
-        <members>Contact.Level__c</members>
-        <members>Goal.OrigGoalId__c</members>
-        <members>Knowledge__kav.Answer__c</members>
-        <members>Knowledge__kav.Question__c</members>
-        <members>Lead.CurrentGenerators__c</members>
-        <members>Lead.Is_Premium__c</members>
-        <members>Lead.Lead_Type__c</members>
-        <members>Lead.NumberofLocations__c</members>
-        <members>Lead.Primary__c</members>
-        <members>Lead.ProductInterest__c</members>
-        <members>Lead.SICCode__c</members>
-        <members>Metric.OrigMetricId__c</members>
-        <members>Opportunity.CurrentGenerators__c</members>
-        <members>Opportunity.DeliveryInstallationStatus__c</members>
-        <members>Opportunity.MainCompetitors__c</members>
-        <members>Opportunity.OrderNumber__c</members>
-        <members>Opportunity.Order_Created__c</members>
-        <members>Opportunity.TrackingNumber__c</members>
-        <members>Place__c.City__c</members>
-        <members>Place__c.Country__c</members>
-        <members>Place__c.Location__c</members>
-        <members>Place__c.Postal_Code__c</members>
-        <members>Place__c.State__c</members>
-        <members>Place__c.Street__c</members>
-        <members>Product2.Accommodation__c</members>
-        <members>Product2.Cities__c</members>
-        <members>Product2.Continent__c</members>
-        <members>Product2.Current_Members__c</members>
-        <members>Product2.Duration__c</members>
-        <members>Product2.End_Date__c</members>
-        <members>Product2.Is_All_Inclusive__c</members>
-        <members>Product2.Member_Limit__c</members>
-        <members>Product2.Start_Date__c</members>
-        <members>Product2.Summary__c</members>
-        <members>Product2.Transportation__c</members>
-        <name>CustomField</name>
-    </types>
-    <types>
         <members>Account</members>
         <members>Case</members>
         <members>Contact</members>
+        <members>Knowledge__kav</members>
         <members>Lead</members>
         <members>Opportunity</members>
         <members>Order</members>
         <members>PersonAccount</members>
+        <members>Place__c</members>
         <members>Pricebook2</members>
         <members>PricebookEntry</members>
         <members>Product2</members>
@@ -111,29 +99,41 @@
         <members>ProductMedia</members>
         <members>Quote</members>
         <members>Site</members>
-        <members>CaseComment</members>
         <members>User</members>
         <name>CustomObject</name>
+    </types>
+    <types>
+        <name>BusinessProcess</name>
+    </types>
+    <types>
+        <members>Odyssey</members>
+        <name>CspTrustedSite</name>
+    </types>
+    <types>
+        <name>CustomField</name>
     </types>
     <types>
         <members>Reserving_trips</members>
         <name>DataCategoryGroup</name>
     </types>
     <types>
-        <members>Assistance_channel</members>
-        <name>EmbeddedServiceMenuSettings</name>
+        <name>FieldSet</name>
     </types>
     <types>
+        <members>Account_Record_Page</members>
+        <members>ContactCenter_UtilityBar</members>
+        <members>CrisisCenter_UtilityBar</members>
+        <members>LightningSalesConsole_UtilityBar</members>
+        <members>LightningSales_UtilityBar</members>
+        <members>LightningService_UtilityBar</members>
+        <members>OMConsole_UtilityBar</members>
+        <members>Opportunity_Record_Page</members>
+        <members>RevenueCloudConsole_UtilityBar</members>
         <members>SearchPage</members>
         <name>FlexiPage</name>
     </types>
     <types>
-        <members>Lead_Flow</members>
-        <name>Flow</name>
-    </types>
-    <types>
-        <members>Lead_Flow</members>
-        <name>FlowDefinition</name>
+        <name>ListView</name>
     </types>
     <types>
         <members>Oddysey</members>
@@ -148,49 +148,26 @@
         <name>NetworkBranding</name>
     </types>
     <types>
-        <members>Lead_to_Sales</members>
-        <name>PathAssistant</name>
-    </types>
-    <types>
-        <members>*</members>
+        <members>Experience_Profile_Manager</members>
+        <members>Knowledge_LSF_Permission_Set</members>
+        <members>Live_Agent_Setup_Flow</members>
+        <members>Odyssey</members>
+        <members>Odyssey_Buyer</members>
+        <members>Omni_Setup_Flow</members>
+        <members>sfdcInternalInt__sfdc_scrt2</members>
+        <members>sfdcInternalInt__sfdc_unified_commerce_ai</members>
+        <members>sfdc_chatbot_service_permset</members>
         <name>PermissionSet</name>
     </types>
     <types>
-        <members>Lead.New_Lead_Chatter</members>
-        <name>PostTemplate</name>
-    </types>
-    <types>
-        <members>Account.Business_Account</members>
-        <members>Account.Individual_Account</members>
-        <members>Lead.Company_Lead</members>
-        <members>Lead.Individual_Lead</members>
-        <members>PersonAccount.PersonAccount</members>
         <name>RecordType</name>
-    </types>
-    <types>
-        <members>Product2.buyer_access</members>
-        <name>SharingGuestRule</name>
-    </types>
-    <types>
-        <members>Product2.member_limit_rule</members>
-        <name>ValidationRule</name>
     </types>
     <types>
         <members>Product2</members>
         <name>SharingRules</name>
     </types>
     <types>
-        <members>*</members>
-        <name>ExperienceBundle</name>
-    </types>
-    <types>
-        <name>BusinessProcess</name>
-    </types>
-    <types>
-        <name>FieldSet</name>
-    </types>
-    <types>
-        <name>ListView</name>
+        <name>ValidationRule</name>
     </types>
     <types>
         <name>WebLink</name>
