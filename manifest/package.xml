@@ -83,7 +83,6 @@
         <members>Account</members>
         <members>Case</members>
         <members>Contact</members>
-        <members>Knowledge__kav</members>
         <members>Lead</members>
         <members>Opportunity</members>
         <members>Order</members>
