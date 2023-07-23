@@ -122,11 +122,9 @@
         <members>CrisisCenter_UtilityBar</members>
         <members>LightningSalesConsole_UtilityBar</members>
         <members>LightningSales_UtilityBar</members>
-        <members>LightningService_UtilityBar</members>
         <members>OMConsole_UtilityBar</members>
         <members>Opportunity_Record_Page</members>
         <members>RevenueCloudConsole_UtilityBar</members>
-        <members>SearchPage</members>
         <name>FlexiPage</name>
     </types>
     <types>
@@ -160,7 +158,6 @@
         <name>RecordType</name>
     </types>
     <types>
-        <members>Product2</members>
         <name>SharingRules</name>
     </types>
     <types>
@@ -170,9 +167,6 @@
         <name>WebLink</name>
     </types>
     <types>
-        <members>Commerce Business User Profile</members>
-        <members>Oddysey Profile</members>
-        <members>Odyssey Profile</members>
         <name>Profile</name>
     </types>
     <version>57.0</version>
