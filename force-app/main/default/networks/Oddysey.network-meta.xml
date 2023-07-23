@@ -70,7 +70,7 @@
         <profile>custom: support profile</profile>
         <profile>marketingprofile</profile>
         <profile>contractmanager</profile>
-        <profile>commerce business user profile</profile>
+        <profile>Commerce Business User Profile</profile>
     </networkMemberGroups>
     <networkPageOverrides>
         <changePasswordPageOverrideSetting>Standard</changePasswordPageOverrideSetting>

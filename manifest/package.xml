@@ -77,8 +77,6 @@
         <name>ApexPage</name>
     </types>
     <types>
-        <members>Facebook</members>
-        <members>Google</members>
         <name>AuthProvider</name>
     </types>
     <types>
@@ -95,7 +93,6 @@
         <members>PricebookEntry</members>
         <members>Product2</members>
         <members>ProductCatalog</members>
-        <members>ProductItem</members>
         <members>ProductMedia</members>
         <members>Quote</members>
         <members>Site</members>
@@ -171,6 +168,12 @@
     </types>
     <types>
         <name>WebLink</name>
+    </types>
+    <types>
+        <members>Commerce Business User Profile</members>
+        <members>Oddysey Profile</members>
+        <members>Odyssey Profile</members>
+        <name>Profile</name>
     </types>
     <version>57.0</version>
 </Package>
