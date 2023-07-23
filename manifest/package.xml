@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>Oddysey1</members>
-        <name>ExperienceBundle</name>
-    </types>
-    <types>
         <members>AutocreatedRegHandler1688985121666</members>
         <members>AutocreatedRegHandler1688986711262</members>
         <members>ChangePasswordController</members>
@@ -109,10 +105,6 @@
         <name>CustomField</name>
     </types>
     <types>
-        <members>Reserving_trips</members>
-        <name>DataCategoryGroup</name>
-    </types>
-    <types>
         <name>FieldSet</name>
     </types>
     <types>
@@ -143,14 +135,8 @@
     </types>
     <types>
         <members>Experience_Profile_Manager</members>
-        <members>Knowledge_LSF_Permission_Set</members>
-        <members>Live_Agent_Setup_Flow</members>
         <members>Odyssey</members>
         <members>Odyssey_Buyer</members>
-        <members>Omni_Setup_Flow</members>
-        <members>sfdcInternalInt__sfdc_scrt2</members>
-        <members>sfdcInternalInt__sfdc_unified_commerce_ai</members>
-        <members>sfdc_chatbot_service_permset</members>
         <name>PermissionSet</name>
     </types>
     <types>
