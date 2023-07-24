@@ -125,10 +125,6 @@
         <name>PermissionSet</name>
     </types>
     <types>
-        <members>Oddysey1</members>
-        <name>ExperienceBundle</name>
-    </types>
-    <types>
         <members>Oddysey</members>
         <name>CustomSite</name>
     </types>
@@ -149,10 +145,6 @@
     <types>
         <members>Product2-Product Layout</members>
         <name>Layout</name>
-    </types>
-    <types>
-        <members>Oddysey1</members>
-        <name>SiteDotCom</name>
     </types>
     <version>57.0</version>
 </Package>
