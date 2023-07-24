@@ -146,5 +146,13 @@
         <members>Product2-Product Layout</members>
         <name>Layout</name>
     </types>
+    <types>
+        <members>*</members>
+        <name>CommunityTemplateDefinition</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CommunityThemeDefinition</name>
+    </types>
     <version>57.0</version>
 </Package>
