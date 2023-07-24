@@ -33,4 +33,4 @@ jobs:
           SOURCE_DIR="force-app"
 
           # Run the deployment command
-          sfdx force:source:deploy --targetusername ${{ secrets.USERNAME }} --manifest "manifest/package.xml" --checkonly --wait 10 --testlevel NoTestRun
+          sfdx force:source:deploy --targetusername ${{ secrets.USERNAME }} --manifest "manifest/package.xml" --wait 10 --testlevel NoTestRun
