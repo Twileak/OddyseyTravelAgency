@@ -23,8 +23,6 @@
     <redirectToCustomDomain>true</redirectToCustomDomain>
     <referrerPolicyOriginWhenCrossOrigin>true</referrerPolicyOriginWhenCrossOrigin>
     <selfRegPage>CommunitiesSelfReg</selfRegPage>
-    <siteAdmin>dawid.zamojda3@britenet.com</siteAdmin>
-    <siteGuestRecordDefaultOwner>dawid.zamojda3@britenet.com</siteGuestRecordDefaultOwner>
     <siteType>ChatterNetwork</siteType>
     <urlPathPrefix>odyseyvforcesite</urlPathPrefix>
 </CustomSite>
