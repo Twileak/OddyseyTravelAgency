@@ -33,16 +33,16 @@
     <networkMemberGroups>
         <permissionSet>Odyssey</permissionSet>
         <profile>admin</profile>
-        <profile>customer community plus login user</profile>
         <profile>customer portal manager standard</profile>
         <profile>customer community user</profile>
-        <profile>customer community login user</profile>
+        <profile>customer community plus login user</profile>
         <profile>customer community plus user</profile>
         <profile>customer portal manager custom</profile>
-        <profile>external apps login user</profile>
-        <profile>platformportal</profile>
+        <profile>customer community login user</profile>
         <profile>highvolumeportal</profile>
+        <profile>platformportal</profile>
         <profile>high volume customer portal user</profile>
+        <profile>external apps login user</profile>
         <profile>authenticated website</profile>
         <profile>external identity user</profile>
         <profile>partner community login user</profile>
