@@ -102,6 +102,8 @@
         <members>LightningSales_UtilityBar</members>
         <members>OMConsole_UtilityBar</members>
         <members>RevenueCloudConsole_UtilityBar</members>
+        <members>Account_Record_Page</members>
+        <members>Opportunity_Record_Page</members>
         <name>FlexiPage</name>
     </types>
     <types>
