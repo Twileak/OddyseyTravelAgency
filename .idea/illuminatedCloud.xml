@@ -4,10 +4,10 @@
     <option name="connections">
       <list>
         <IlluminatedCloudConnection>
-          <option name="connectionName" value="TravelAgencyOdyssey" />
+          <option name="connectionName" value="odyssey-develop" />
           <option name="connectionType" value="OAUTH" />
           <option name="defaultModuleName" value="OdysseyBiuroPodrozy" />
-          <option name="offlineSymbolTablePath" value="$PROJECT_DIR$/IlluminatedCloud/TravelAgencyOdyssey/OfflineSymbolTable.zip" />
+          <option name="offlineSymbolTablePath" value="$PROJECT_DIR$/IlluminatedCloud/odyssey_develop/OfflineSymbolTable.zip" />
         </IlluminatedCloudConnection>
       </list>
     </option>
