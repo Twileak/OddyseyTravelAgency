@@ -1,4 +1,4 @@
-<aura:component controller="ProductManagementController" implements="force:appHostable">
+<aura:component controller="ProductManagementController" implements="flexipage:availableForAllPageTypes">
     <aura:attribute name="products" type="Product2[]" />
     <aura:attribute name="newProduct" type="Product2" default="{'sobjectType': 'Product2'}" />
     <aura:handler name="init" value="{!this}" action="{!c.loadProducts}" />

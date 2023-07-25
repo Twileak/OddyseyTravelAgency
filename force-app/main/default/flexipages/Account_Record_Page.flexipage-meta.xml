@@ -66,6 +66,12 @@
                 <identifier>force_relatedListContainer</identifier>
             </componentInstance>
         </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>force:buyerAccountDetailPanelWrapper</componentName>
+                <identifier>force_buyerAccountDetailPanelWrapper2</identifier>
+            </componentInstance>
+        </itemInstances>
         <mode>Replace</mode>
         <name>relatedTabContent</name>
         <type>Facet</type>
