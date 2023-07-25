@@ -9,6 +9,7 @@
         padding: 20px;
         border-radius: 8px;
         }
+
         .displayed-item {
         background-color: #ffffff; /* Set the background color for displayed items */
         border: 2px solid #dddddd; /* Set a thicker border for displayed items */
@@ -16,39 +17,33 @@
         margin-bottom: 10px;
         border-radius: 8px;
         }
+
+        .bigger-input {
+        width: 100%; /* Set the desired width */
+        padding: 10px; /* Set the desired padding */
+        }
+
+        .buttons-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        margin-top: auto;
     </aura:html>
     <div class="slds-grid slds-wrap custom-background">
         <form class="slds-form_horizontal slds-col slds-size_1-of-3 displayed-item">
+            <h1 style="text-align: center; padding: 10px; font-size: 1.3rem"><b>Create new product:</b></h1>
             <div class="slds-form-element">
-                <label class="slds-form-element__label" for="cities">Cities:</label>
+                <label class="slds-form-element__label" for="name">Name:</label>
                 <div class="slds-form-element__control">
-                    <input type="text" aura:id="cities" value="{!v.newProduct.Cities__c}" class="slds-input" />
+                    <input type="text" aura:id="name" value="{!v.newProduct.Name}" class="slds-input" />
                 </div>
             </div>
-
             <div class="slds-form-element">
-                <label class="slds-form-element__label" for="accommodation">Accommodation:</label>
+                <label class="slds-form-element__label" for="duration">Duration (Days):</label>
                 <div class="slds-form-element__control">
-                    <select aura:id="accommodation" value="{!v.newProduct.Accommodation__c}" class="slds-select">
-                        <option value="Unknown">Hotel</option>
-                        <option value="Hotel">Hotel</option>
-                        <option value="Hostel">Hostel</option>
-                        <option value="Resort">Resort</option>
-                        <option value="Cottage">Cottage</option>
-                        <option value="Airbnb">Airbnb</option>
-                        <option value="Campsite">Campsite</option>
-                        <option value="Lodge">Lodge</option>
-                    </select>
+                    <input type="number" aura:id="duration" value="{!v.newProduct.Duration__c}" class="slds-input" />
                 </div>
             </div>
-
-            <div class="slds-form-element">
-                <label class="slds-form-element__label" for="duration">Duration:</label>
-                <div class="slds-form-element__control">
-                    <input type="text" aura:id="duration" value="{!v.newProduct.Duration__c}" class="slds-input" />
-                </div>
-            </div>
-
             <div class="slds-form-element">
                 <label class="slds-form-element__label" for="startDate">Start Date:</label>
                 <div class="slds-form-element__control">
@@ -62,7 +57,69 @@
                     <input type="date" aura:id="endDate" value="{!v.newProduct.End_Date__c}" class="slds-input" />
                 </div>
             </div>
-
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="continent">Continent:</label>
+                <div class="slds-form-element__control">
+                    <input type="text" aura:id="continent" value="{!v.newProduct.Continent__c}" class="slds-input" />
+                </div>
+            </div>
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="accommodation">Accommodation:</label>
+                <div class="slds-form-element__control">
+                    <select aura:id="accommodation" value="{!v.newProduct.Accommodation__c}" class="slds-select">
+                        <option value="Unknown">Unknown</option>
+                        <option value="Hotel">Hotel</option>
+                        <option value="Hostel">Hostel</option>
+                        <option value="Resort">Resort</option>
+                        <option value="Cottage">Cottage</option>
+                        <option value="Airbnb">Airbnb</option>
+                        <option value="Campsite">Campsite</option>
+                        <option value="Lodge">Lodge</option>
+                    </select>
+                </div>
+            </div>
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="isAllInclusive">Is All Inclusive:</label>
+                <div class="slds-form-element__control">
+                    <input type="checkbox" aura:id="isAllInclusive" checked="{!v.newProduct.Is_All_Inclusive__c}" class="slds-checkbox" />
+                </div>
+            </div>
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="transportation">Transportation:</label>
+                <div class="slds-form-element__control">
+                    <select aura:id="transportation" value="{!v.newProduct.Transportation__c}" class="slds-select">
+                        <option value="Not provided">Not provided</option>
+                        <option value="Bus">Bus</option>
+                        <option value="Train">Train</option>
+                        <option value="Airplane">Airplane</option>
+                        <option value="Bike">Bike</option>
+                    </select>
+                </div>
+            </div>
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="memberLimit">Member limit:</label>
+                <div class="slds-form-element__control">
+                    <input type="number" aura:id="memberLimit" value="{!v.newProduct.Member_Limit__c}" class="slds-input" />
+                </div>
+            </div>
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="cities">Cities:</label>
+                <div class="slds-form-element__control">
+                    <input type="text" aura:id="cities" value="{!v.newProduct.Cities__c}" class="slds-input" />
+                </div>
+            </div>
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="description">Description:</label>
+                <div class="slds-form-element__control">
+                    <input type="text" aura:id="description" value="{!v.newProduct.Description}" class="slds-input bigger-input" />
+                </div>
+            </div>
+            <div class="slds-form-element">
+                <label class="slds-form-element__label" for="summary">Summary:</label>
+                <div class="slds-form-element__control">
+                    <input type="text" aura:id="summary" value="{!v.newProduct.Summary__c}" class="slds-input bigger-input" />
+                </div>
+            </div>
             <div class="slds-form-element">
                 <div class="slds-form-element__control">
                     <button onclick="{!c.saveProduct}" class="slds-button slds-button_brand">Save</button>
@@ -77,13 +134,21 @@
                     <!-- Apply the custom CSS class to each displayed item -->
                     <div class="slds-size_1-of-2">
                         <div class="slds-box slds-m-around_medium displayed-item">
-                            <p><b>Name:</b> {!product.Name}</p>
-                            <p><b>Cities:</b> {!product.Cities__c}</p>
-                            <p><b>Accommodation:</b> {!product.Accommodation__c}</p>
-                            <p><b>Duration:</b> {!product.Duration__c}</p>
-                            <p><b>Start Date:</b> {!product.Start_Date__c}</p>
-                            <p><b>End Date:</b> {!product.End_Date__c}</p>
-                            <div class="slds-grid">
+                            <p><b>Name:&emsp;</b> {!product.Name}</p>
+                            <p><b>Cities:&emsp;</b> {!product.Cities__c}</p>
+                            <p><b>Accommodation:&emsp;</b> {!product.Accommodation__c}</p>
+                            <p><b>Duration:&emsp;</b> {!product.Duration__c}</p>
+                            <p><b>Start Date:&emsp;</b> {!product.Start_Date__c}</p>
+                            <p><b>End Date:&emsp;</b> {!product.End_Date__c}</p>
+                            <p><b>All Inclusive:&emsp;</b> {!product.Is_All_Inclusive__c}</p>
+                            <p><b>Transportation:&emsp;</b> {!product.Transportation__c}</p>
+                            <p><b>Member limit:&emsp;</b> {!product.Member_Limit__c}</p>
+                            <p><b>Current members:&emsp;</b> {!product.Current_Members__c}</p>
+                            <p><b>Summary:&emsp;</b></p>
+                            <div class="summary-text">
+                                &emsp;{!product.Summary__c}
+                            </div>
+                            <div class="slds-grid buttons-container">
                                 <button onclick="{!c.editProduct}" data-recordId="{!product.Id}" class="slds-button slds-button_neutral">Edit</button>
                                 <button onclick="{!c.deleteProduct}" data-recordId="{!product.Id}" class="slds-button slds-button_destructive">Delete</button>
                             </div>
