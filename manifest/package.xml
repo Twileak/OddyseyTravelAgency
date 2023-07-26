@@ -33,6 +33,7 @@
         <members>SiteLoginControllerTest</members>
         <members>SiteRegisterController</members>
         <members>SiteRegisterControllerTest</members>
+        <members>ProductManagementTests</members>
         <name>ApexClass</name>
     </types>
     <types>
