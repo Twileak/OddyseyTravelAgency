@@ -76,7 +76,6 @@
         <members>Account</members>
         <members>Case</members>
         <members>Contact</members>
-        <members>Lead</members>
         <members>Opportunity</members>
         <members>Order</members>
         <members>PersonAccount</members>
@@ -87,7 +86,6 @@
         <members>ProductCatalog</members>
         <members>ProductMedia</members>
         <members>Quote</members>
-        <members>Site</members>
         <members>User</members>
         <name>CustomObject</name>
     </types>
@@ -144,6 +142,8 @@
     </types>
     <types>
         <members>Product2-Product Layout</members>
+        <members>Account-Account Layout</members>
+        <members>PersonAccount-Person Account Layout</members>
         <name>Layout</name>
     </types>
     <types>
