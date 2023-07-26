@@ -102,6 +102,7 @@
         <members>RevenueCloudConsole_UtilityBar</members>
         <members>Account_Record_Page</members>
         <members>Opportunity_Record_Page</members>
+        <members>Product_Managment</members>
         <name>FlexiPage</name>
     </types>
     <types>
@@ -161,6 +162,10 @@
     <types>
         <members>ProductManagement</members>
         <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>Product_Managment</members>
+        <name>CustomTab</name>
     </types>
     <!--    <types>-->
     <!--        <members>Oddysey1</members>-->
