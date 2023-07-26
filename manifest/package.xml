@@ -163,6 +163,29 @@
         <members>Product_Managment</members>
         <name>CustomTab</name>
     </types>
+    <types>
+        <members>Accommodation</members>
+        <members>All_Inclusive</members>
+        <members>Cancel</members>
+        <members>Cities</members>
+        <members>Create_New</members>
+        <members>Current_members</members>
+        <members>Duration</members>
+        <members>Edit_Product</members>
+        <members>End_Date</members>
+        <members>Error_On_Delete</members>
+        <members>Existing</members>
+        <members>Full_description</members>
+        <members>Member_limit</members>
+        <members>Name</members>
+        <members>Record_deleted</members>
+        <members>Something_Wrong</members>
+        <members>Start_Date</members>
+        <members>Success</members>
+        <members>Summary</members>
+        <members>Transportation</members>
+        <name>CustomLabel</name>
+    </types>
     <!--    <types>-->
     <!--        <members>Oddysey1</members>-->
     <!--        <name>ExperienceBundle</name>-->

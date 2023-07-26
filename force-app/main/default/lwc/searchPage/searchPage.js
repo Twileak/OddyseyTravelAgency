@@ -12,7 +12,6 @@ export default class SearchPage extends LightningElement {
         const{data, error} = value;
         if(data){
             this.products = JSON.parse(data);
-            console.log('2');
         }else if(error){
             const event = new ShowToastEvent({
                 title: 'No Results',

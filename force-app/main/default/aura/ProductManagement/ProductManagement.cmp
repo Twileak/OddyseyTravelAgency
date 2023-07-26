@@ -2,6 +2,7 @@
     <aura:attribute name="products" type="Product2[]" />
     <aura:attribute name="newProduct" type="Product2" default="{'sobjectType': 'Product2'}" />
     <aura:attribute name="selectedRecordId" type="String"/>
+    <aura:attribute name="selectedRecordName" type="String"/>
     <aura:attribute name="showModal" type="Boolean" default="false"/>
     <aura:attribute name="fields" type="String[]" default="['Name','IsActive','Duration__c','Start_Date__c','End_Date__c','Continent__c','Accommodation__c','Is_All_Inclusive__c','Transportation__c','Member_Limit__c','Cities__c','Summary__c','Description']" />
     <aura:handler name="init" value="{!this}" action="{!c.loadProducts}" />
@@ -45,7 +46,7 @@
                  class="slds-modal slds-fade-in-open slds-modal_medium">
             <div class="slds-modal__container">
                 <header class="slds-modal__header">
-                    <h2 id="modal-heading-01" class="slds-text-heading_medium">Edit Product</h2>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium">{!$Label.c.Edit_Product}: {!v.selectedRecordName}</h2>
                 </header>
                 <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
                     <lightning:recordForm
@@ -56,51 +57,50 @@
                         columns="2"
                         onerror="{!c.handleError}"
                         onsuccess="{!c.handleSuccess}"
+                        oncancel = "{!c.handleEditCancel}"
                     />
                 </div>
-                <footer class="slds-modal__footer">
-                    <button class="slds-button slds-button_neutral" onclick="{!c.handleEditCancel}">Cancel</button>
-                </footer>
             </div>
         </section>
     </aura:if>
     <div class="slds-grid slds-wrap custom-background">
         <div class="slds-col slds-size_1-of-3 displayed-item">
-            <h1 style="text-align: center; padding: 10px; font-size: 1.3rem"><b>Create new product:</b></h1>
+            <h1 style="text-align: center; padding: 10px; font-size: 1.3rem"><b>{!$Label.c.Create_New}:</b></h1>
             <lightning:recordForm
                     objectApiName="Product2"
                     fields="{!v.fields}"
                     onerror="{!c.handleError}"
                     onsuccess="{!c.handleSuccess}"
+                    oncancel = "{!c.handleEditCancel}"
             />
         </div>
 
         <div class="slds-col slds-size_2-of-3">
-            <h1 style="text-align: center; padding: 10px; font-size: 1.3rem"><b>Existing products:</b></h1>
+            <h1 style="text-align: center; padding: 10px; font-size: 1.3rem"><b>{!$Label.c.Existing}:</b></h1>
             <div class="slds-grid slds-wrap">
                 <aura:iteration items="{!v.products}" var="product">
                     <div class="slds-size_1-of-2">
                         <div class="slds-box slds-m-around_medium displayed-item">
-                            <p><b>Name:&emsp;</b> {!product.Name}</p>
-                            <p><b>Cities:&emsp;</b> {!product.Cities__c}</p>
-                            <p><b>Accommodation:&emsp;</b> {!product.Accommodation__c}</p>
-                            <p><b>Duration:&emsp;</b> {!product.Duration__c} days</p>
-                            <p><b>Start Date:&emsp;</b> {!product.Start_Date__c}</p>
-                            <p><b>End Date:&emsp;</b> {!product.End_Date__c}</p>
-                            <p><b>All Inclusive:&emsp;</b> {!product.Is_All_Inclusive__c}</p>
-                            <p><b>Transportation:&emsp;</b> {!product.Transportation__c}</p>
-                            <p><b>Member limit:&emsp;</b> {!product.Member_Limit__c}</p>
-                            <p><b>Current members:&emsp;</b> {!product.Current_Members__c}</p>
-                            <p><b>Summary:&emsp;</b></p>
+                            <p><b>{!$Label.c.Name}:&emsp;</b> {!product.Name}</p>
+                            <p><b>{!$Label.c.Cities}:&emsp;</b> {!product.Cities__c}</p>
+                            <p><b>{!$Label.c.Accommodation}:&emsp;</b> {!product.Accommodation__c}</p>
+                            <p><b>{!$Label.c.Duration}:&emsp;</b> {!product.Duration__c} days</p>
+                            <p><b>{!$Label.c.Start_Date}:&emsp;</b> {!product.Start_Date__c}</p>
+                            <p><b>{!$Label.c.End_Date}:&emsp;</b> {!product.End_Date__c}</p>
+                            <p><b>{!$Label.c.All_Inclusive}:&emsp;</b> {!product.Is_All_Inclusive__c}</p>
+                            <p><b>{!$Label.c.Transportation}:&emsp;</b> {!product.Transportation__c}</p>
+                            <p><b>{!$Label.c.Member_limit}:&emsp;</b> {!product.Member_Limit__c}</p>
+                            <p><b>{!$Label.c.Current_members}:&emsp;</b> {!product.Current_Members__c}</p>
+                            <p><b>{!$Label.c.Summary}:&emsp;</b></p>
                             <div class="summary-text">
                                 &emsp;{!product.Summary__c}
                             </div>
-                            <p><b>Full description:&emsp;</b></p>
+                            <p><b>{!$Label.c.Full_description}:&emsp;</b></p>
                             <div class="summary-text">
                                 &emsp;{!product.Description}
                             </div>
                             <div class="slds-grid buttons-container">
-                                <div onclick="{!c.showEditModal}" data-recordid="{!product.Id}" style="padding: 5px;">
+                                <div onclick="{!c.showEditModal}" data-recordid="{!product.Id}" data-recordname="{!product.Name}" style="padding: 5px;">
                                     <lightning:button label="Edit" variant="neutral" value="Edit"/>
                                 </div>
                                 <div onclick="{!c.deleteProduct}" data-recordid="{!product.Id}" style="padding: 5px;">
