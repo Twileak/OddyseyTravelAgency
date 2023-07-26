@@ -1,7 +1,8 @@
 public with sharing class ProductManagementController {
     @AuraEnabled(cacheable=true)
     public static List<Product2> getProducts() {
-        return [SELECT Id,
+        return [SELECT
+                Id,
                 Name,
                 Cities__c,
                 Accommodation__c,
@@ -29,8 +30,11 @@ public with sharing class ProductManagementController {
     }
 
     @AuraEnabled
-    public static List<Product2> deleteProduct(Id productId) {
-        delete new Product2(Id = productId);
-        return getProducts();
+    public static void deleteProductRecord(Id productId) {
+        try {
+            delete new Product2(Id = productId);
+        } catch (DmlException e) {
+            throw new AuraHandledException('Error occured while deleting the reord');
+        }
     }
 }
