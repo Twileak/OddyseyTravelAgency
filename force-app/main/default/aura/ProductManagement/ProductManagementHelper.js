@@ -9,6 +9,15 @@
         component.set("v.showModal", false);
     },
 
+    showDeleteModalHelper: function(component, recordId) {
+            component.set("v.recordToDelete", recordId);
+            component.set("v.deleteRecord", true);
+        },
+
+    handleDeleteCancelHelper: function(component) {
+        component.set("v.deleteRecord", false);
+    },
+
     loadProductsHelper: function(component) {
         var action = component.get("c.getProducts");
         action.setCallback(this, function(response) {
@@ -41,10 +50,12 @@
                 var message = $A.get("$Label.c.Record_deleted");
                 var variant = "success"
                 this.handleToastMessage(component, message, variant);
+                component.set("v.deleteRecord", false);
             } else {
                 var message = $A.get("$Label.c.Error_On_Delete");
                 var variant = "error"
                 this.handleToastMessage(component, message, variant);
+                component.set("v.deleteRecord", false);
             }
         });
         $A.enqueueAction(action);

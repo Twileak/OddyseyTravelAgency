@@ -9,6 +9,15 @@
         helper.handleEditCancelHelper(component);
     },
 
+    showDeleteModal: function(component, event, helper) {
+        var idOfRecord = event.currentTarget.dataset.recordid;
+        helper.showDeleteModalHelper(component, idOfRecord);
+    },
+
+    handleDeleteCancel: function(component, event, helper) {
+            helper.handleDeleteCancelHelper(component);
+        },
+
     loadProducts: function(component, event, helper) {
         helper.loadProductsHelper(component);
     },
