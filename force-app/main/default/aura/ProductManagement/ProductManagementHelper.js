@@ -16,17 +16,15 @@
             if (state === "SUCCESS") {
                 component.set("v.products", response.getReturnValue());
             } else {
-                cmp.find('notifLib').showToast({
-                            "title": $A.get("$Label.c.Something_Wrong"),
-                            "message": event.getParam("message"),
-                            "variant": "error"
-                        });
+                var message = $A.get("$Label.c.Something_Wrong");
+                var variant = "error";
+                this.handleToastMessage(component, message, variant);
             }
         });
         $A.enqueueAction(action);
     },
 
-    deleteProductHelper: function(component, recordId) {
+    deleteProductHelper: function(component, event, recordId) {
         var action = component.get("c.deleteProductRecord");
         action.setParams({
             productId: recordId
@@ -40,37 +38,22 @@
                     return product.Id !== recordId;
                 });
                 component.set("v.products", updatedProducts);
-                var resultsToast = $A.get("e.force:showToast");
-                resultsToast.setParams({
-                    "title": $A.get("$Label.c.Record_deleted"),
-                    "variant": "success"
-                });
-                resultsToast.fire();
+                var message = $A.get("$Label.c.Record_deleted");
+                var variant = "success"
+                this.handleToastMessage(component, message, variant);
             } else {
-                var resultsToast = $A.get("e.force:showToast");
-                resultsToast.setParams({
-                    "title": $A.get("$Label.c.Error_On_Delete"),
-                    "variant": "error"
-                });
-                resultsToast.fire();
+                var message = $A.get("$Label.c.Error_On_Delete");
+                var variant = "error"
+                this.handleToastMessage(component, message, variant);
             }
         });
         $A.enqueueAction(action);
     },
 
-    handleErrorHelper: function(cmp, event) {
-        cmp.find('notifLib').showToast({
-            "title": $A.get("$Label.c.Something_Wrong"),
-            "message": event.getParam("message"),
-            "variant": "error"
-        });
-    },
-
-    handleSuccessHelper: function(cmp, event) {
-        cmp.find('notifLib').showToast({
-            "title": $A.get("$Label.c.Success"),
-            "message": event.getParam("message"),
-            "variant": "success"
-        });
+    handleToastMessage: function(component, message, variant) {
+        component.find('notifLib').showToast({
+                    "message": message,
+                    "variant": variant
+                });
     }
 })

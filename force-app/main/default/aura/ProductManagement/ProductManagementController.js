@@ -15,14 +15,18 @@
 
     deleteProduct: function(component, event, helper) {
         var recordId = event.currentTarget.dataset.recordid;
-        helper.deleteProductHelper(component, recordId);
+        helper.deleteProductHelper(component, event, recordId);
     },
 
-    handleError: function(cmp, event, helper) {
-        helper.handleErrorHelper(cmp, event);
+    handleError: function(component, event, helper) {
+        var message = $A.get("$Label.c.Something_Wrong");
+        var variant = "error";
+        helper.handleToastMessage(component, message, variant);
     },
 
-    handleSuccess: function(cmp, event, helper) {
-        helper.handleSuccessHelper(cmp, event);
+    handleSuccess: function(component, event, helper) {
+        var message = $A.get("$Label.c.Success");
+        var variant = "success";
+        helper.handleToastMessage(component, message, variant);
     }
 })
