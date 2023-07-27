@@ -52,4 +52,17 @@ private class ProductManagementTests {
 
         System.assertEquals(testProduct.Id, productId, 'Product should have been deleted');
     }
+
+    @isTest
+    static void testDeleteProductRecordException() {
+        Boolean exceptionOccurred = false;
+
+        Test.startTest();
+        try {
+            ProductManagementController.deleteProductRecord('01t0600000DMye9AAD');
+        } catch (AuraHandledException e) {
+            exceptionOccurred = true;
+        }
+        System.assertEquals(exceptionOccurred, true);
+    }
 }
