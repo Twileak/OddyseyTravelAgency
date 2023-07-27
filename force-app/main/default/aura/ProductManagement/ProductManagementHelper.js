@@ -16,7 +16,11 @@
             if (state === "SUCCESS") {
                 component.set("v.products", response.getReturnValue());
             } else {
-                console.error("Failed to load products.");
+                cmp.find('notifLib').showToast({
+                            "title": $A.get("$Label.c.Something_Wrong"),
+                            "message": event.getParam("message"),
+                            "variant": "error"
+                        });
             }
         });
         $A.enqueueAction(action);

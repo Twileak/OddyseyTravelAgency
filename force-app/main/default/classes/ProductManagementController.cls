@@ -1,9 +1,12 @@
 public with sharing class ProductManagementController {
     @AuraEnabled(cacheable=true)
     public static List<Product2> getProducts() {
-        return [SELECT Id, Name, Cities__c, Accommodation__c, Duration__c, Start_Date__c, End_Date__c, Continent__c,
-                Is_All_Inclusive__c, Transportation__c, Member_Limit__c, Current_Members__c, Summary__c, Description
-        FROM Product2];
+        return [
+                SELECT
+                        Id, Name, Cities__c, Accommodation__c, Duration__c, Start_Date__c, End_Date__c, Continent__c,
+                        Is_All_Inclusive__c, Transportation__c, Member_Limit__c, Current_Members__c, Summary__c, Description
+                FROM Product2
+        ];
     }
 
     @AuraEnabled
