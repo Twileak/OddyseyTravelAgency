@@ -31,15 +31,11 @@ public with sharing class ProductManagementController {
 
     @AuraEnabled
     public static Id deleteProductRecord(Id productId) {
-        Id result = null;
         try {
             delete new Product2(Id = productId);
-            result = productId;
+            return productId;
         } catch (DmlException e) {
-            result = null;
-            throw new AuraHandledException('Error occured while deleting the record');
-
+            throw new AuraHandledException('Error occurred while deleting the record');
         }
-        return result;
     }
 }

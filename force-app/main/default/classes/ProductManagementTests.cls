@@ -16,7 +16,7 @@ private class ProductManagementTests {
     }
 
     @isTest
-    static void testSaveProduct() {
+    static void testSaveProductInsert() {
         Product2 testProduct = new Product2(Name = 'Test Product', Member_Limit__c=5);
 
         Test.startTest();
@@ -25,6 +25,20 @@ private class ProductManagementTests {
 
         System.assertEquals(1, products.size(), 'Expected 1 Product record');
         System.assertNotEquals(null, testProduct.Id, 'Product should have been inserted');
+    }
+
+    @isTest
+    static void testSaveProductUpdate() {
+        Product2 existingProduct = new Product2(Name = 'Existing Product', Member_Limit__c = 10);
+        insert existingProduct;
+        existingProduct.Name = 'Updated Product';
+
+        Test.startTest();
+        List<Product2> resultProducts = ProductManagementController.saveProduct(existingProduct);
+        Test.stopTest();
+
+        System.assertEquals(1, resultProducts.size());
+        System.assertEquals('Updated Product', resultProducts[0].Name);
     }
 
     @isTest
