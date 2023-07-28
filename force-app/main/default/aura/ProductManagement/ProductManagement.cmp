@@ -1,6 +1,12 @@
 <aura:component controller="ProductManagementController" implements="flexipage:availableForAllPageTypes">
     <aura:attribute name="products" type="Product2[]" />
     <aura:attribute name="newProduct" type="Product2" default="{'sobjectType': 'Product2'}" />
+    <aura:attribute name="selectedRecordId" type="String"/>
+    <aura:attribute name="recordToDelete" type="String"/>
+    <aura:attribute name="selectedRecordName" type="String"/>
+    <aura:attribute name="showModal" type="Boolean" default="false"/>
+    <aura:attribute name="deleteRecord" type="Boolean" default="false"/>
+    <aura:attribute name="fields" type="String[]" default="['Name','IsActive','Duration__c','Start_Date__c','End_Date__c','Continent__c','Accommodation__c','Is_All_Inclusive__c','Transportation__c','Member_Limit__c','Cities__c','Summary__c','Description']" />
     <aura:handler name="init" value="{!this}" action="{!c.loadProducts}" />
 
     <aura:html tag="style">
@@ -9,6 +15,7 @@
         padding: 20px;
         border-radius: 8px;
         }
+
         .displayed-item {
         background-color: #ffffff; /* Set the background color for displayed items */
         border: 2px solid #dddddd; /* Set a thicker border for displayed items */
@@ -16,76 +23,112 @@
         margin-bottom: 10px;
         border-radius: 8px;
         }
+
+        .bigger-input {
+        width: 100%; /* Set the desired width */
+        padding: 10px; /* Set the desired padding */
+        }
+
+        .buttons-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        margin-top: auto;
+        padding: 10px;
+
+
+        .slds-input {
+        max-width: 50px; !important
+        }
     </aura:html>
+    <lightning:notificationsLibrary aura:id="notifLib" />
+    <aura:if isTrue="{!v.deleteRecord}">
+        <div class="modal-backdrop slds-modal_backdrop slds-fade-in-open"></div>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                 class="slds-modal slds-fade-in-open slds-modal_medium">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium">{!$Label.c.Delete_Assurance}</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <div style="display: flex; justify-content: center; align-items: center;">
+                        <div onclick="{!c.deleteProduct}" data-recordid="{!v.recordToDelete}" style="display: inline-block; padding: 5px;">
+                            <lightning:button  label="{!$Label.c.Delete_Button}" variant="destructive" value="Delete"/>
+                        </div>
+                        <div onclick="{!c.handleDeleteCancel}" style="display: inline-block; padding: 5px;">
+                            <lightning:button  label="{!$Label.c.Cancel_Button}" variant="neutral" value="Delete"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </aura:if>
+    <aura:if isTrue="{!v.showModal}">
+        <div class="modal-backdrop slds-modal_backdrop slds-fade-in-open"></div>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                 class="slds-modal slds-fade-in-open slds-modal_medium">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium">{!$Label.c.Edit_Product}: {!v.selectedRecordName}</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <lightning:recordForm
+                        recordId="{!v.selectedRecordId}"
+                        objectApiName="Product2"
+                        fields="{!v.fields}"
+                        mode="edit"
+                        columns="2"
+                        onerror="{!c.handleError}"
+                        onsuccess="{!c.handleSuccess}"
+                        oncancel = "{!c.handleEditCancel}"
+                    />
+                </div>
+            </div>
+        </section>
+    </aura:if>
     <div class="slds-grid slds-wrap custom-background">
-        <form class="slds-form_horizontal slds-col slds-size_1-of-3 displayed-item">
-            <div class="slds-form-element">
-                <label class="slds-form-element__label" for="cities">Cities:</label>
-                <div class="slds-form-element__control">
-                    <input type="text" aura:id="cities" value="{!v.newProduct.Cities__c}" class="slds-input" />
-                </div>
-            </div>
-
-            <div class="slds-form-element">
-                <label class="slds-form-element__label" for="accommodation">Accommodation:</label>
-                <div class="slds-form-element__control">
-                    <select aura:id="accommodation" value="{!v.newProduct.Accommodation__c}" class="slds-select">
-                        <option value="Unknown">Hotel</option>
-                        <option value="Hotel">Hotel</option>
-                        <option value="Hostel">Hostel</option>
-                        <option value="Resort">Resort</option>
-                        <option value="Cottage">Cottage</option>
-                        <option value="Airbnb">Airbnb</option>
-                        <option value="Campsite">Campsite</option>
-                        <option value="Lodge">Lodge</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="slds-form-element">
-                <label class="slds-form-element__label" for="duration">Duration:</label>
-                <div class="slds-form-element__control">
-                    <input type="text" aura:id="duration" value="{!v.newProduct.Duration__c}" class="slds-input" />
-                </div>
-            </div>
-
-            <div class="slds-form-element">
-                <label class="slds-form-element__label" for="startDate">Start Date:</label>
-                <div class="slds-form-element__control">
-                    <input type="date" aura:id="startDate" value="{!v.newProduct.Start_Date__c}" class="slds-input" />
-                </div>
-            </div>
-
-            <div class="slds-form-element">
-                <label class="slds-form-element__label" for="endDate">End Date:</label>
-                <div class="slds-form-element__control">
-                    <input type="date" aura:id="endDate" value="{!v.newProduct.End_Date__c}" class="slds-input" />
-                </div>
-            </div>
-
-            <div class="slds-form-element">
-                <div class="slds-form-element__control">
-                    <button onclick="{!c.saveProduct}" class="slds-button slds-button_brand">Save</button>
-                </div>
-            </div>
-        </form>
+        <div class="slds-col slds-size_1-of-3 displayed-item">
+            <h1 style="text-align: center; padding: 10px; font-size: 1.3rem"><b>{!$Label.c.Create_New}:</b></h1>
+            <lightning:recordForm
+                    objectApiName="Product2"
+                    fields="{!v.fields}"
+                    onerror="{!c.handleError}"
+                    onsuccess="{!c.handleSuccess}"
+                    oncancel = "{!c.handleEditCancel}"
+            />
+        </div>
 
         <div class="slds-col slds-size_2-of-3">
-            <!-- Display existing products in two columns -->
+            <h1 style="text-align: center; padding: 10px; font-size: 1.3rem"><b>{!$Label.c.Existing}:</b></h1>
             <div class="slds-grid slds-wrap">
                 <aura:iteration items="{!v.products}" var="product">
-                    <!-- Apply the custom CSS class to each displayed item -->
                     <div class="slds-size_1-of-2">
                         <div class="slds-box slds-m-around_medium displayed-item">
-                            <p><b>Name:</b> {!product.Name}</p>
-                            <p><b>Cities:</b> {!product.Cities__c}</p>
-                            <p><b>Accommodation:</b> {!product.Accommodation__c}</p>
-                            <p><b>Duration:</b> {!product.Duration__c}</p>
-                            <p><b>Start Date:</b> {!product.Start_Date__c}</p>
-                            <p><b>End Date:</b> {!product.End_Date__c}</p>
-                            <div class="slds-grid">
-                                <button onclick="{!c.editProduct}" data-recordId="{!product.Id}" class="slds-button slds-button_neutral">Edit</button>
-                                <button onclick="{!c.deleteProduct}" data-recordId="{!product.Id}" class="slds-button slds-button_destructive">Delete</button>
+                            <p><b>{!$Label.c.Name}:&emsp;</b> {!product.Name}</p>
+                            <p><b>{!$Label.c.Cities}:&emsp;</b> {!product.Cities__c}</p>
+                            <p><b>{!$Label.c.Accommodation}:&emsp;</b> {!product.Accommodation__c}</p>
+                            <p><b>{!$Label.c.Duration}:&emsp;</b> {!product.Duration__c} days</p>
+                            <p><b>{!$Label.c.Start_Date}:&emsp;</b> {!product.Start_Date__c}</p>
+                            <p><b>{!$Label.c.End_Date}:&emsp;</b> {!product.End_Date__c}</p>
+                            <p><b>{!$Label.c.All_Inclusive}:&emsp;</b> {!product.Is_All_Inclusive__c}</p>
+                            <p><b>{!$Label.c.Transportation}:&emsp;</b> {!product.Transportation__c}</p>
+                            <p><b>{!$Label.c.Member_limit}:&emsp;</b> {!product.Member_Limit__c}</p>
+                            <p><b>{!$Label.c.Current_members}:&emsp;</b> {!product.Current_Members__c}</p>
+                            <p><b>{!$Label.c.Summary}:&emsp;</b></p>
+                            <div class="summary-text">
+                                &emsp;{!product.Summary__c}
+                            </div>
+                            <p><b>{!$Label.c.Full_description}:&emsp;</b></p>
+                            <div class="summary-text">
+                                &emsp;{!product.Description}
+                            </div>
+                            <div class="slds-grid buttons-container">
+                                <div onclick="{!c.showEditModal}" data-recordid="{!product.Id}" data-recordname="{!product.Name}" style="padding: 5px;">
+                                    <lightning:button label="{!$Label.c.Edit_Button}" variant="neutral" value="Edit"/>
+                                </div>
+                                <div onclick="{!c.showDeleteModal}" data-recordid="{!product.Id}" data-recordname="{!product.Name}" style="padding: 5px;">
+                                    <lightning:button  label="{!$Label.c.Delete_Button}" variant="destructive" value="Delete"/>
+                                </div>
                             </div>
                         </div>
                     </div>

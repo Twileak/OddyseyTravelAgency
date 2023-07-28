@@ -117,7 +117,6 @@ form select{
 </div>
 <script type='text/javascript'>
   function setPremium() {
-      console.log('setting premium here');
     document.getElementById('00N0600000KBPkl').value = true;
   }
 </script>
