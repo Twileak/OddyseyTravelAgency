@@ -1,10 +1,9 @@
 name: Salesforce deploy QA on Merge
 
 on:
-  push:
+  pull_request:
     types:
-      - opened
-      - synchronize
+      - closed
     branches:
       - develop
 
