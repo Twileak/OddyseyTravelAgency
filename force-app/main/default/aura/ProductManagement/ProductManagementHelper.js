@@ -25,9 +25,7 @@
             if (state === "SUCCESS") {
                 component.set("v.products", response.getReturnValue());
             } else {
-                var message = $A.get("$Label.c.Something_Wrong");
-                var variant = "error";
-                this.handleToastMessage(component, message, variant);
+                this.handleToastMessage(component, $A.get("$Label.c.Something_Wrong"), "error");
             }
         });
         $A.enqueueAction(action);
@@ -47,14 +45,10 @@
                     return product.Id !== recordId;
                 });
                 component.set("v.products", updatedProducts);
-                var message = $A.get("$Label.c.Record_deleted");
-                var variant = "success"
-                this.handleToastMessage(component, message, variant);
+                this.handleToastMessage(component, $A.get("$Label.c.Record_deleted"), "success");
                 component.set("v.deleteRecord", false);
             } else {
-                var message = $A.get("$Label.c.Error_On_Delete");
-                var variant = "error"
-                this.handleToastMessage(component, message, variant);
+                this.handleToastMessage(component, $A.get("$Label.c.Error_On_Delete"), "error");
                 component.set("v.deleteRecord", false);
             }
         });

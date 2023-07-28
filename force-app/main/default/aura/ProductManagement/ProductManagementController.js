@@ -28,14 +28,10 @@
     },
 
     handleError: function(component, event, helper) {
-        var message = $A.get("$Label.c.Something_Wrong");
-        var variant = "error";
-        helper.handleToastMessage(component, message, variant);
+        helper.handleToastMessage(component, $A.get("$Label.c.Something_Wrong"), "error");
     },
 
     handleSuccess: function(component, event, helper) {
-        var message = $A.get("$Label.c.Success");
-        var variant = "success";
-        helper.handleToastMessage(component, message, variant);
+        helper.handleToastMessage(component, $A.get("$Label.c.Something_Wrong"),"success");
     }
 })
