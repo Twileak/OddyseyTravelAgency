@@ -165,8 +165,11 @@
         <name>DigitalExperienceConfig</name>
     </types>
     <types>
-        <members>Oddysey</members>
         <name>WebStoreTemplate</name>
     </types>
-    <version>56.0</version>
+    <types>
+        <members>Communities</members>
+        <name>Settings</name>
+    </types>
+    <version>57.0</version>
 </Package>

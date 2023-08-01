@@ -59,6 +59,14 @@
                 <behavior>Edit</behavior>
                 <field>Cities__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Current_Members_To_All__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Trip_Start_End__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -122,10 +130,22 @@
         <relatedList>RelatedStandardPriceList</relatedList>
     </relatedLists>
     <relatedLists>
+        <fields>ProductCategory</fields>
+        <fields>IsPrimaryCategory</fields>
+        <relatedList>RelatedProductCategories</relatedList>
+    </relatedLists>
+    <relatedLists>
         <relatedList>RelatedPricebookEntryList</relatedList>
     </relatedLists>
     <relatedLists>
         <relatedList>RelatedFileList</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>ChildProductName</fields>
+        <fields>Quantity</fields>
+        <fields>ParentSellingModel</fields>
+        <fields>ChildSellingModel</fields>
+        <relatedList>RelatedChildProduct</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
@@ -133,7 +153,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h06000007eAVo</masterLabel>
+        <masterLabel>00h06000007wU3f</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

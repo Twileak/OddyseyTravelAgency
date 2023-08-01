@@ -7,6 +7,7 @@
           <option name="connectionName" value="OdysseyCodeTestProject" />
           <option name="connectionType" value="OAUTH" />
           <option name="defaultModuleName" value="OdysseyBiuroPodrozy" />
+          <option name="offlineSymbolTablePath" value="$PROJECT_DIR$/IlluminatedCloud/OdysseyCodeTestProject/OfflineSymbolTable.zip" />
         </IlluminatedCloudConnection>
       </list>
     </option>
