@@ -1,0 +1,99 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Order Summary List",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "sectionConfig" : "{\"UUID\":\"9ef1b78d-38e2-4774-8bc4-9cb3928c87b0\",\"columns\":[{\"UUID\":\"626de8bc-2ba4-4690-a6fb-82a89739f633\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "backgroundColor" : "",
+                "paddingHorizontal" : "none",
+                "paddingVertical" : "small",
+                "text" : "Order History",
+                "textAlign" : "left",
+                "textDecoration" : "{\"bold\": true}",
+                "textDisplayInfo" : "{\"textStyle\": \"heading-medium\", \"headingTag\": \"h2\"}"
+              },
+              "definition" : "dxp_base:textBlock",
+              "id" : "d6922d31-493c-448f-8086-5f3dfe50cba9",
+              "type" : "component"
+            } ],
+            "id" : "626de8bc-2ba4-4690-a6fb-82a89739f633",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "9ef1b78d-38e2-4774-8bc4-9cb3928c87b0",
+          "type" : "component"
+        }, {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "sectionConfig" : "{\"UUID\":\"263e333b-8502-4d8f-84ee-4e1e92383b40\",\"columns\":[{\"UUID\":\"10e6bf63-609c-42fb-b6b9-59d785922e19\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "accountId" : "",
+                "noOrderMessageText" : "After you place an order, it appears here.",
+                "noResultsText" : "To view orders, adjust your filters.",
+                "numberOfMonthsForFilter" : 12,
+                "orderSummaryFieldMapping" : "[{\"entity\": \"OrderSummary\",\"name\": \"Id\",\"label\": \"Order Number\",\"type\": \"Lookup()\"},{\"entity\": \"OrderSummary\",\"name\": \"OrderedDate\",\"label\": \"Ordered Date\",\"type\": \"Date/Time\"},{\"entity\": \"OrderSummary\",\"name\": \"Status\",\"label\": \"Status\",\"type\": \"Picklist\"},{\"entity\": \"OrderSummary\",\"name\": \"GrandTotalAmount\",\"label\": \"Total\",\"type\": \"Formula (Currency)\"}]",
+                "ordersListCount" : 25,
+                "reorderLabel" : "Start Reorder",
+                "showMoreLabel" : "Show More",
+                "showOrdersListFilter" : true,
+                "showOrdersListSortBy" : true,
+                "showReorder" : true,
+                "showViewDetailsLink" : true,
+                "viewDetailsLinkLabel" : "View Details",
+                "viewMoreOrderBehaviour" : "SHOW_MORE"
+              },
+              "definition" : "commerce_builder:orders",
+              "id" : "45855788-443d-44c3-b32a-b1a6d8da5fe1",
+              "type" : "component"
+            } ],
+            "id" : "10e6bf63-609c-42fb-b6b9-59d785922e19",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "263e333b-8502-4d8f-84ee-4e1e92383b40",
+          "type" : "component"
+        } ],
+        "id" : "b5bc3eb4-0f58-409f-90f2-3d495cb132b0",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "3dd6cdcd-7a2b-4c4b-82f8-a4c5b14956d3",
+          "type" : "component"
+        } ],
+        "id" : "525591ec-6079-44f0-b863-b9220eea68d5",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "d6dde5d6-fa3a-41c5-acb3-e6d63bf3fec3",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "MyAccount",
+    "viewType" : "list-1Os"
+  }
+}
