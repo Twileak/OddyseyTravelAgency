@@ -156,15 +156,6 @@
               "type" : "component"
             }, {
               "attributes" : {
-                "browseStep" : 1,
-                "headerText" : "Top Sellers",
-                "pageSize" : 6
-              },
-              "definition" : "b2c_lite_commerce:topSellers",
-              "id" : "0e94aef1-b582-4158-bc21-83cf1487a830",
-              "type" : "component"
-            }, {
-              "attributes" : {
                 "callToActionButtonLabel" : "Add to Cart",
                 "displayName" : true,
                 "displayPrice" : true,
