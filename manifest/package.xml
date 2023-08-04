@@ -171,5 +171,9 @@
         <members>Communities</members>
         <name>Settings</name>
     </types>
+    <types>
+        <members>productMap</members>
+        <name>LightningComponentBundle</name>
+    </types>
     <version>57.0</version>
 </Package>
