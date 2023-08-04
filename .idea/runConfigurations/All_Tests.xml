@@ -1,17 +1,26 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="All Tests" type="com.illuminatedcloud.intellij" factoryName="Apex Unit Tests" show_console_on_std_err="false" show_console_on_std_out="false">
-    <option name="allTests" value="true" />
+    <option name="allTests" value="false" />
     <option name="allowRunningInParallel" value="false" />
     <option name="apexLogLevel" value="DEBUG" />
     <option name="calloutsLogLevel" value="INFO" />
-    <option name="connectionName" value="odyssey-agency-develop" />
+    <option name="connectionName" value="NewTravelAgency" />
     <option name="connectionType" value="OAUTH" />
     <option name="contextConfiguration" value="false" />
     <option name="databaseLogLevel" value="INFO" />
     <option name="directoryPath" />
     <option name="logLevelsInitialized" value="true" />
     <option name="moduleToTestClassNames">
-      <map />
+      <map>
+        <entry key="OdysseyBiuroPodrozy">
+          <value>
+            <set>
+              <option value="AutocreatedRegHandlerTests" />
+              <option value="ProductManagementTests" />
+            </set>
+          </value>
+        </entry>
+      </map>
     </option>
     <option name="nbaLogLevel" value="INFO" />
     <option name="profilingLogLevel" value="INFO" />

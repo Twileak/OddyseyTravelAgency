@@ -3,6 +3,10 @@
     <types>
         <members>ProductManagementController</members>
         <members>ProductManagementTests</members>
+        <members>GoogleRegHandler</members>
+        <members>GmailRegistrationHandlerTests</members>
+        <members>FacebookRegHandler</members>
+        <members>FacebookRegistrationHandlerTests</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -150,6 +154,13 @@
         <members>Success</members>
         <members>Summary</members>
         <members>Transportation</members>
+        <members>Cancel_Button</members>
+        <members>Confirm_Button</members>
+        <members>Delete_Assurance</members>
+        <members>Delete_Button</members>
+        <members>Edit_Button</members>
+        <members>Map_Title</members>
+        <members>Product_Deletion</members>
         <name>CustomLabel</name>
     </types>
     <types>
@@ -165,11 +176,12 @@
         <name>DigitalExperienceConfig</name>
     </types>
     <types>
-        <name>WebStoreTemplate</name>
-    </types>
-    <types>
         <members>Communities</members>
         <name>Settings</name>
+    </types>
+    <types>
+        <members>productMap</members>
+        <name>LightningComponentBundle</name>
     </types>
     <version>57.0</version>
 </Package>

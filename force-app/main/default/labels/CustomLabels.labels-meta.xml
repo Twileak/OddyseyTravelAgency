@@ -120,6 +120,13 @@
         <value>Full description</value>
     </labels>
     <labels>
+        <fullName>Map_Title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Map Title</shortDescription>
+        <value>Places to visit:</value>
+    </labels>
+    <labels>
         <fullName>Member_limit</fullName>
         <language>en_US</language>
         <protected>true</protected>
