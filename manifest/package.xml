@@ -150,6 +150,13 @@
         <members>Success</members>
         <members>Summary</members>
         <members>Transportation</members>
+        <members>Cancel_Button</members>
+        <members>Confirm_Button</members>
+        <members>Delete_Assurance</members>
+        <members>Delete_Button</members>
+        <members>Edit_Button</members>
+        <members>Map_Title</members>
+        <members>Product_Deletion</members>
         <name>CustomLabel</name>
     </types>
     <types>
@@ -163,9 +170,6 @@
     <types>
         <members>Oddysey1</members>
         <name>DigitalExperienceConfig</name>
-    </types>
-    <types>
-        <name>WebStoreTemplate</name>
     </types>
     <types>
         <members>Communities</members>
