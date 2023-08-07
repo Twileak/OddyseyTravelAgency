@@ -4,7 +4,6 @@ public class FacebookRegistrationHandlerTests {
     public static void testCanCreateUser() {
         FacebookRegHandler handler = new FacebookRegHandler();
         Auth.UserData data = createUser('test@example.com','John','Adams');
-
         System.Assert(handler.canCreateUser(data),'Handler should be able to create this user');
     }
 
@@ -12,66 +11,44 @@ public class FacebookRegistrationHandlerTests {
     public static void testCanCreateUserNegative() {
         FacebookRegHandler handler = new FacebookRegHandler();
         Auth.UserData data = createUser(null,'Thomas','Jones-Drew');
-
         System.Assert(!handler.canCreateUser(data),'Handler should not be able to create user with missing email');
     }
 
     @IsTest
     public static void testCreateInternalUser() {
         FacebookRegHandler handler = new FacebookRegHandler();
-
         Auth.UserData data = createUser('tjones@example.com','Thomas','Jones-Drew');
-
-
         Test.startTest();
-
         User theUser = handler.createUser(null, data);
-
         Test.stopTest();
-
         validate(theUser,data);
-
     }
 
     @IsTest
     public static void testCreateInternalUserNegative() {
         FacebookRegHandler handler = new FacebookRegHandler();
-
         Auth.UserData data = createUser(null,'Thomas','Jones-Drew');
-
         Test.startTest();
-
         User theUser = handler.createUser(null, data);
-
         Test.stopTest();
-
         System.Assert(theUser==null,'User should be null for negative case');
-
     }
 
     @IsTest
     public static void testUpdateUser() {
         FacebookRegHandler handler = new FacebookRegHandler();
-
         Auth.UserData data = createUser('tjones@example.com','Thomas','Jones-Drew');
         User theUser = handler.createUser(null, data);
         insert theUser;
-
         Test.startTest();
-
         validate(theUser,data);
-
         data.firstName='Tom';
         handler.updateUser(theUser.id, null, data);
-
         User theUpdatedUser = [SELECT Id,firstName,Email,LastName
         from User
         Where Id = :theUser.id];
-
         validate(theUpdatedUser,data);
-
         Test.stopTest();
-
     }
 
     private static void validate(User theUser, Auth.UserData data) {
@@ -89,13 +66,13 @@ public class FacebookRegistrationHandlerTests {
         return new Auth.UserData( identifier,
                 firstName,
                 lastName,
-                '', // fullname
+                '',
                 email,
-                '', // link
-                '', // userName
+                '',
+                '',
                 locale,
-                '', // provider
-                '', // siteLoginUrl
+                '',
+                '',
                 attributeMap);
     }
 }
