@@ -181,7 +181,14 @@
     </types>
     <types>
         <members>productMap</members>
+        <members>starRating</members>
+        <members>commentField</members>
+        <members>wholeReview</members>
         <name>LightningComponentBundle</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>StaticResource</name>
     </types>
     <version>57.0</version>
 </Package>
