@@ -28,11 +28,7 @@ export default class StarRating extends LightningElement {
     }
 
     handleSuccess() {
-        const toast = new ShowToastEvent({
-            title: this.label.SUCCESS_TITLE,
-            variant: "success",
-        });
-        this.dispatchEvent(toast);
+        this.displayToast(this.label.SUCCESS_TITLE, "success");
         this.handleReset();
     }
 
@@ -45,10 +41,14 @@ export default class StarRating extends LightningElement {
     }
 
     handleError() {
-        const errorToast = new ShowToastEvent({
-                    title: this.label.ERROR_TITLE,
-                    variant: "error",
+        this.displayToast(this.label.ERROR_TITLE, "error");
+    }
+
+    displayToast(title, variant) {
+        const toast = new ShowToastEvent({
+                    title: title,
+                    variant: variant,
                 });
-        this.dispatchEvent(errorToast);
+                this.dispatchEvent(toast);
     }
 }
