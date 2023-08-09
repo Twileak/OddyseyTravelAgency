@@ -35,10 +35,10 @@
         <profile>admin</profile>
         <profile>gold partner user</profile>
         <profile>standard</profile>
+        <profile>external apps login user</profile>
         <profile>chatter free user</profile>
         <profile>analytics cloud integration user</profile>
         <profile>analytics cloud security user</profile>
-        <profile>external apps login user</profile>
         <profile>minimum access - salesforce</profile>
         <profile>salesforce api only system integrations</profile>
         <profile>standardaul</profile>
@@ -55,10 +55,10 @@
         <profile>force.com - app subscription user</profile>
         <profile>customer community plus login user</profile>
         <profile>partner app subscription user</profile>
+        <profile>customer community user</profile>
         <profile>external identity user</profile>
         <profile>partner community user</profile>
         <profile>partner community login user</profile>
-        <profile>customer community user</profile>
         <profile>force.com - free user</profile>
         <profile>authenticated website</profile>
         <profile>chatter moderator user</profile>

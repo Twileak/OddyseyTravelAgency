@@ -1,4 +1,3 @@
-
 global class GoogleRegHandler implements Auth.RegistrationHandler{
     private static final String ORG_SUFFIX = '.sso.badge.org';
     private static final String DEFAULT_ACCOUNTNAME = 'Customers';

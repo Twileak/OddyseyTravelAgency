@@ -1,0 +1,7 @@
+<template>
+    <div class="rate">
+        <template for:each={stars} for:item="star">
+            <span key={star.value} class={star.class}></span>
+        </template>
+    </div>
+</template>

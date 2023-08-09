@@ -1,0 +1,25 @@
+.review-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.comment {
+    margin-top: 4px;
+    font-size: 16px; /* Adjust the font size for the comment */
+}
+
+.rating-container {
+    display: flex;
+    align-items: center; /* Vertical centering */
+    gap: 4px; /* Adjust the gap between rating stars and author */
+}
+
+.rating-container c-rating-stars {
+    font-size: 12px; /* Adjust the size of the stars */
+}

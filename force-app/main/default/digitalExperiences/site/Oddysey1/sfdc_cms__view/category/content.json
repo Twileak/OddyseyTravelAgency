@@ -153,7 +153,7 @@
                     "cardBackgroundColor" : "rgb(255, 255, 255)",
                     "cardBorderColor" : "rgb(255, 255, 255)",
                     "cardBorderRadius" : "8",
-                    "cardContentMapping" : "[{\"name\":\"Name\",\"showLabel\":false,\"label\":\"Product Name\",\"fontSize\":\"large\",\"type\":\"STRING\",\"fontColor\":\"rgb(230, 156, 36)\"},{\"name\":\"Cities__c\",\"showLabel\":false,\"label\":\"\",\"type\":\"STRING\",\"fontSize\":\"medium\",\"fontColor\":\"#1a1b1e\"},{\"name\":\"Start_Date__c\",\"showLabel\":true,\"label\":\"Start: \",\"type\":\"DATE\",\"fontSize\":\"small\",\"fontColor\":\"rgb(26, 27, 30)\"},{\"name\":\"End_Date__c\",\"showLabel\":true,\"label\":\"End: \",\"type\":\"DATE\",\"fontSize\":\"small\",\"fontColor\":\"rgb(26, 27, 30)\"}]",
+                    "cardContentMapping" : "[{\"name\":\"Name\",\"showLabel\":false,\"label\":\"Product Name\",\"fontSize\":\"large\",\"type\":\"STRING\",\"fontColor\":\"rgb(230, 156, 36)\"},{\"name\":\"Cities__c\",\"showLabel\":true,\"label\":\"Where: \",\"type\":\"STRING\",\"fontSize\":\"medium\",\"fontColor\":\"#1a1b1e\"},{\"name\":\"Trip_Start_End__c\",\"showLabel\":true,\"label\":\"When: \",\"type\":\"STRING\",\"fontSize\":\"medium\",\"fontColor\":\"rgb(26, 27, 30)\"},{\"name\":\"Current_Members_To_All__c\",\"showLabel\":true,\"label\":\"Current members: \",\"type\":\"STRING\",\"fontSize\":\"small\",\"fontColor\":\"rgb(0, 0, 0)\"}]",
                     "dxpStyle" : {
                       "padding" : {
                         "bottom" : "20px",
@@ -171,7 +171,7 @@
                     "originalPriceTextSize" : "medium",
                     "resultsLayout" : "grid",
                     "searchResults" : "{!Search.Results}",
-                    "searchResultsFields" : "{!Search.Name},{!Search.Cities__c},{!Search.Start_Date__c},{!Search.End_Date__c}",
+                    "searchResultsFields" : "{!Search.Name},{!Search.Cities__c},{!Search.Trip_Start_End__c},{!Search.Current_Members_To_All__c}",
                     "showCallToActionButton" : false,
                     "showNegotiatedPrice" : true,
                     "showOriginalPrice" : true,

@@ -1,0 +1,36 @@
+<template>
+    <div class="slds-m-top_medium slds-m-bottom_x-large">
+        <div class="slds-p-around_small lgc-bg">
+            <lightning-tile type="media" >
+                <div class="rate">
+                    <input type="radio" id="star5" name="Satisfaction" value="5" onchange={rating} />
+                    <label for="star5" title="text">5 stars</label>
+                    <input type="radio" id="star4" name="Satisfaction" value="4" onchange={rating} />
+                    <label for="star4" title="text">4 stars</label>
+                    <input type="radio" id="star3" name="Satisfaction" value="3" onchange={rating} />
+                    <label for="star3" title="text">3 stars</label>
+                    <input type="radio" id="star2" name="Satisfaction" value="2" onchange={rating} />
+                    <label for="star2" title="text">2 stars</label>
+                    <input type="radio" id="star1" name="Satisfaction" value="1" onchange={rating} />
+                    <label for="star1" title="text">1 star</label>
+                </div>
+            </lightning-tile>
+        </div>
+    </div>
+    <div class="slds-m-top_medium slds-m-bottom_x-large">
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-record-edit-form object-api-name="Review__c" onsuccess={handleSuccess} onsubmit={handleSubmit}>
+                <lightning-input-field id="commentField" field-name="Comment__c" variant="label-hidden"></lightning-input-field>
+                <div class="slds-align_absolute-center">
+                    <lightning-button type="submit" label="Submit" variant="brand"></lightning-button>
+                </div>
+                <div class="slds-hidden" style="max-height: 0px;">
+                    <lightning-input-field field-name="Product__c" value={record}></lightning-input-field>
+                    <lightning-input-field field-name="Author__c" value={author}></lightning-input-field>
+                    <lightning-input-field field-name="Created_At__c" value={currentTimestamp}></lightning-input-field>
+                    <lightning-input-field field-name="Rating__c" value={satisfactionRating}></lightning-input-field>
+                </div>
+            </lightning-record-edit-form>
+        </div>
+    </div>
+</template>

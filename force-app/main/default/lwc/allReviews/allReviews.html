@@ -1,0 +1,20 @@
+<template>
+    <template if:false={hasReviews}>
+        <div class="slds-align_absolute-center slds-scrollable_y">{label.NO_REVIEWS}</div>
+    </template>
+    <template if:true={hasReviews}>
+        <lightning-card title={label.TITLE_LABEL}>
+            <div class="slds-m-around_medium">
+                <template for:each={reviews} for:item="review">
+                    <div key={review.Id} class="slds-m-bottom_medium review-container">
+                        <p class="author">{review.Author__c}, {review.Created_At__c}</p>
+                        <div class="slds-m-top_medium slds-m-bottom_medium rating-container">
+                            <c-rating-stars rating={review.Rating__c}></c-rating-stars>
+                        </div>
+                        <lightning-formatted-rich-text class="comment" value={review.Comment__c}></lightning-formatted-rich-text>
+                    </div>
+                </template>
+            </div>
+        </lightning-card>
+    </template>
+</template>
