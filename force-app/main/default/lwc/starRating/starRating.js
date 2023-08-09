@@ -1,74 +1,54 @@
-import { LightningElement, api } from 'lwc';
-import fivestar from '@salesforce/resourceUrl/Stars';
-import { loadStyle, loadScript } from 'lightning/platformResourceLoader';
+import { LightningElement, api } from "lwc";
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
-
-const TOAST_ERROR_TITLE = 'Error loading five-star';
-const ERROR_VARIANT = 'error';
-const EDITABLE_CLASS = 'c-rating';
-const READ_ONLY_CLASS = 'readonly c-rating';
+import SUCCESS_TITLE from '@salesforce/label/c.Review_Created';
+import ERROR_TITLE from '@salesforce/label/c.Review_Issue';
 
 export default class StarRating extends LightningElement {
-  @api readOnly;
-  @api value;
+    @api record;
+    @api author;
+    satisfactionRating = 0;
 
-  editedValue;
-  isRendered;
+    label = {
+                    SUCCESS_TITLE,
+                    ERROR_TITLE
+                };
 
-  get starClass() {
-    return this.readOnly?READ_ONLY_CLASS:EDITABLE_CLASS;
-  }
-
-  renderedCallback() {
-    if (this.isRendered) {
-      return;
+    rating(event) {
+        this.satisfactionRating = event.target.value;
     }
-    this.loadScript();
-    this.isRendered = true;
-  }
 
-  loadScript() {
-    Promise.all([
-      loadStyle(this, fivestar + '/rating.css'),
-      loadScript(this, fivestar + '/rating.js')
-    ]).then(() => {
-      this.initializeRating();
-    }).catch((error)=>{
-      this.dispatchEvent(new ShowToastEvent({
-          title: TOAST_ERROR_TITLE,
-          message: JSON.stringify(error),
-          variant: ERROR_VARIANT
-      }));
-    }).
-    finally(()=>{
+    get currentTimestamp(){
+        return new Date().toISOString();
+    }
 
-    })
-  }
+    handleSubmit(event) {
+        event.preventDefault();
+        const fields = event.detail.fields;
+        this.template.querySelector('lightning-record-edit-form').submit(fields);
+    }
 
-  initializeRating() {
-    let domEl = this.template.querySelector('ul');
-    let maxRating = 5;
-    let self = this;
-    let callback = function (rating) {
-      self.editedValue = rating;
-      self.ratingChanged(rating);
-    };
-    this.ratingObj = window.rating(
-      domEl,
-      this.value,
-      maxRating,
-      callback,
-      this.readOnly
-    );
-  }
+    handleSuccess() {
+        const toast = new ShowToastEvent({
+            title: this.label.SUCCESS_TITLE,
+            variant: "success",
+        });
+        this.dispatchEvent(toast);
+        this.handleReset();
+    }
 
-  ratingChanged(rating) {
-    const CURRENT_RATING = rating;
-    const ratingchangeEvent = new CustomEvent('ratingchange', {
-        detail: {
-            rating: CURRENT_RATING
+    handleReset() {
+        const inputFields = this.template.querySelectorAll('lightning-input-field');
+        if(inputFields) {
+            inputFields.forEach(field => {field.reset(); });
+            this.satisfactionRating = 0;
         }
-    });
-    this.dispatchEvent(ratingchangeEvent);
-  }
+    }
+
+    handleError() {
+        const errorToast = new ShowToastEvent({
+                    title: this.label.ERROR_TITLE,
+                    variant: "error",
+                });
+        this.dispatchEvent(errorToast);
+    }
 }

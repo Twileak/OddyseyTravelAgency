@@ -3,6 +3,12 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>wholeReview</componentName>
+                <identifier>c_wholeReview</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentName>ProductManagement</componentName>
                 <identifier>c_ProductManagement</identifier>
             </componentInstance>

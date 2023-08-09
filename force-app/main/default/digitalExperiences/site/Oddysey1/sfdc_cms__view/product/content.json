@@ -51,7 +51,15 @@
             }, {
               "attributes" : {
                 "carouselPageSize" : 1,
-                "carouselPosition" : "before",
+                "carouselPosition" : "above",
+                "dxpStyle" : {
+                  "margin" : {
+                    "bottom" : "0px",
+                    "left" : "0px",
+                    "right" : "0px",
+                    "top" : "0px"
+                  }
+                },
                 "imageBorderColor" : "rgb(255, 255, 255)",
                 "product" : "{!Product.Details}",
                 "showCarousel" : false
@@ -74,6 +82,26 @@
             "type" : "region"
           }, {
             "children" : [ {
+              "attributes" : {
+                "negotiatedPriceLabel" : "Price",
+                "negotiatedPriceTextSize" : "small",
+                "originalPriceLabel" : "Original Price",
+                "originalPriceTextSize" : "small",
+                "product" : "{!Product.Details}",
+                "productPricing" : "{!Product.Pricing}",
+                "productTax" : "{!Product.Tax}",
+                "productVariant" : "{!Product.SelectedVariant}",
+                "showNegotiatedPrice" : true,
+                "showOriginalPrice" : true,
+                "showTaxIndication" : true,
+                "taxIncludedLabel" : "Tax Included",
+                "taxLabelSize" : "medium",
+                "unavailablePriceLabel" : "Price Unavailable"
+              },
+              "definition" : "commerce_builder:productPricing",
+              "id" : "13bece2d-df47-4da0-aed3-ede89571b8bc",
+              "type" : "component"
+            }, {
               "attributes" : {
                 "product" : "{!Product.Details}"
               },
@@ -99,26 +127,6 @@
               } ],
               "definition" : "commerce_builder:variantSelector",
               "id" : "b77e4bff-6f07-4071-9823-c9cd772da1e1",
-              "type" : "component"
-            }, {
-              "attributes" : {
-                "negotiatedPriceLabel" : "Price",
-                "negotiatedPriceTextSize" : "small",
-                "originalPriceLabel" : "Original Price",
-                "originalPriceTextSize" : "small",
-                "product" : "{!Product.Details}",
-                "productPricing" : "{!Product.Pricing}",
-                "productTax" : "{!Product.Tax}",
-                "productVariant" : "{!Product.SelectedVariant}",
-                "showNegotiatedPrice" : true,
-                "showOriginalPrice" : true,
-                "showTaxIndication" : true,
-                "taxIncludedLabel" : "Tax Included",
-                "taxLabelSize" : "medium",
-                "unavailablePriceLabel" : "Price Unavailable"
-              },
-              "definition" : "commerce_builder:productPricing",
-              "id" : "13bece2d-df47-4da0-aed3-ede89571b8bc",
               "type" : "component"
             }, {
               "attributes" : {
@@ -160,6 +168,13 @@
               "definition" : "commerce_builder:purchaseOptions",
               "id" : "4bff139e-c46a-4a49-85b2-f22cb666080a",
               "type" : "component"
+            }, {
+              "attributes" : {
+                "recordId" : "{!recordId}"
+              },
+              "definition" : "c:productMap",
+              "id" : "414068c2-ea70-4db7-815b-4d7328a21d13",
+              "type" : "component"
             } ],
             "id" : "a9c4daec-5f29-444e-89fc-e4a4f082ba56",
             "name" : "col2",
@@ -168,6 +183,32 @@
           } ],
           "definition" : "community_layout:section",
           "id" : "e341fb68-3e1c-4823-9914-f46ec4f3edea",
+          "type" : "component"
+        }, {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "sectionConfig" : "{\"UUID\":\"4d608e71-1392-4ff2-9e8c-9ec2eb610c5e\",\"columns\":[{\"UUID\":\"839603d3-47f5-431a-ba6b-675f4d06370d\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"0a390397-3503-4bc3-b5dc-e2eb59f802ca\",\"columnName\":\"Column 2\",\"columnKey\":\"3d21e\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+          },
+          "children" : [ {
+            "id" : "839603d3-47f5-431a-ba6b-675f4d06370d",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          }, {
+            "children" : [ {
+              "attributes" : { },
+              "definition" : "c:wholeReview",
+              "id" : "2d55399b-71e9-4820-8d53-3c3d5b595f41",
+              "type" : "component"
+            } ],
+            "id" : "0a390397-3503-4bc3-b5dc-e2eb59f802ca",
+            "name" : "3d21e",
+            "title" : "Column 2",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "4d608e71-1392-4ff2-9e8c-9ec2eb610c5e",
           "type" : "component"
         }, {
           "attributes" : {

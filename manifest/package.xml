@@ -7,6 +7,8 @@
         <members>GmailRegistrationHandlerTests</members>
         <members>FacebookRegHandler</members>
         <members>FacebookRegistrationHandlerTests</members>
+        <members>AllReviewsController</members>
+        <members>AllReviewsControllerTests</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -61,6 +63,7 @@
         <members>ProductMedia</members>
         <members>Quote</members>
         <members>User</members>
+        <members>Review__c</members>
         <name>CustomObject</name>
     </types>
     <types>
@@ -184,6 +187,8 @@
         <members>starRating</members>
         <members>commentField</members>
         <members>wholeReview</members>
+        <members>allReviews</members>
+        <members>ratingStars</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>

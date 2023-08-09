@@ -148,11 +148,39 @@
         <value>Product will be permamently deleted!</value>
     </labels>
     <labels>
+        <fullName>Product_Reviews</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Product Reviews</shortDescription>
+        <value>Product Reviews</value>
+    </labels>
+    <labels>
         <fullName>Record_deleted</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Record deleted</shortDescription>
         <value>Record deleted</value>
+    </labels>
+    <labels>
+        <fullName>Review_Created</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Review Created</shortDescription>
+        <value>Review Created!</value>
+    </labels>
+    <labels>
+        <fullName>Review_Issue</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Review Issue</shortDescription>
+        <value>There was an issue!</value>
+    </labels>
+    <labels>
+        <fullName>Share</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Share</shortDescription>
+        <value>Share your thoughts</value>
     </labels>
     <labels>
         <fullName>Something_Wrong</fullName>

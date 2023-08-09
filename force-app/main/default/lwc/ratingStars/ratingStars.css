@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+
+.golden-star,
+.grey-star {
+    float: right;
+    width: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.golden-star:before {
+    content: '★ ';
+    color: #ffc700;
+}
+
+.grey-star:before {
+    content: '★ ';
+    color: #ccc;
+}
