@@ -6,7 +6,7 @@
 .sf/
 .sfdx/
 .localdevserver/
-.idea/
+.idea
 IlluminatedCloud/
 deploy-options.json
 
