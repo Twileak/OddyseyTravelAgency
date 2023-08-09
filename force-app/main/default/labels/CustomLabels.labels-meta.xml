@@ -141,6 +141,13 @@
         <value>Name</value>
     </labels>
     <labels>
+        <fullName>No_Reviews</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>No Reviews</shortDescription>
+        <value>No reviews available</value>
+    </labels>
+    <labels>
         <fullName>Product_Deletion</fullName>
         <language>en_US</language>
         <protected>true</protected>
