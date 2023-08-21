@@ -41,3 +41,7 @@
 .additional-info-two { grid-area: additional-info-two; }
 
 .search-bar { grid-area: search-bar; }
+
+.info-column {
+    width: 50%;
+}

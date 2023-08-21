@@ -27,7 +27,7 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <td>{label.Price}:</td>
+                                <td class="info-column">{label.Price}:</td>
                                 <td>${product1Price}</td>
                             </tr>
                             <tr>
@@ -48,7 +48,7 @@
                 </div>
                 <div class="additional-info-one">
                     <template if:true={product1}>
-                        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_bordered_medium" style="width: 700px;">
+                        <table class="slds-table slds-table_cell-buffer slds-table_bordered" style="width: 700px;">
                             <thead>
                             <tr>
                                 <th colspan="2">{label.Additional_Information}</th>
@@ -56,7 +56,7 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <td>{label.Date}:</td>
+                                <td class="info-column">{label.Date}:</td>
                                 <td>{product1.Trip_Start_End__c}</td>
                             </tr>
                             <tr>
@@ -90,10 +90,6 @@
                                 <td>{label.Accommodation}:</td>
                                 <td>{product1.Accommodation__c}</td>
                             </tr>
-                            <tr>
-                                <td>{label.Summary}:</td>
-                                <td style="max-width: 100px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{product1.Summary__c}</td>
-                            </tr>
                             </tbody>
                         </table>
                     </template>
@@ -110,7 +106,7 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <td>{label.Price}:</td>
+                                <td class="info-column">{label.Price}:</td>
                                 <td>${product2Price}</td>
                             </tr>
                             <tr>
@@ -139,7 +135,7 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <td>{label.Date}:</td>
+                                <td class="info-column">{label.Date}:</td>
                                 <td>{product2.Trip_Start_End__c}</td>
                             </tr>
                             <tr>
@@ -172,10 +168,6 @@
                             <tr>
                                 <td>{label.Accommodation}:</td>
                                 <td>{product2.Accommodation__c}</td>
-                            </tr>
-                            <tr>
-                                <td>{label.Summary}:</td>
-                                <td style="max-width: 100px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{product2.Summary__c}</td>
                             </tr>
                             </tbody>
                         </table>
