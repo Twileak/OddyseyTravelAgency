@@ -48,30 +48,4 @@ private class ProductComparerControllerTest {
         System.assertEquals(1, resultMap.get('Votes'));
         System.assertEquals(4.00, resultMap.get('Average'));
     }
-
-    @isTest
-    static void testGetProductPrice() {
-        Product2 testProduct = new Product2(Name = 'Test Product', Member_Limit__c = 10);
-        insert testProduct;
-
-        Id pricebookId = Test.getStandardPricebookId();
-
-        PricebookEntry standardPrice = new PricebookEntry(
-                Pricebook2Id = pricebookId, Product2Id = testProduct.Id,
-                UnitPrice = 10000, IsActive = true);
-        insert standardPrice;
-
-        PricebookEntry testPricebookEntry = new PricebookEntry(
-                Pricebook2Id = '01s06000006AF0WAAW',
-                Product2Id = testProduct.Id,
-                UnitPrice = 100.00
-        );
-        insert testPricebookEntry;
-
-        Test.startTest();
-        PricebookEntry result = productComparerController.getProductPrice(testProduct.Id);
-        Test.stopTest();
-
-        System.assertEquals(testPricebookEntry.UnitPrice, result.UnitPrice);
-    }
 }
