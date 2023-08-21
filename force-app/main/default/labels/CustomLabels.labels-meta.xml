@@ -8,11 +8,25 @@
         <value>Accommodation</value>
     </labels>
     <labels>
+        <fullName>Additional_Information</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Additional Information</shortDescription>
+        <value>Additional information</value>
+    </labels>
+    <labels>
         <fullName>All_Inclusive</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>All Inclusive</shortDescription>
         <value>All Inclusive</value>
+    </labels>
+    <labels>
+        <fullName>Average_Rating</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Average Rating</shortDescription>
+        <value>Average rating</value>
     </labels>
     <labels>
         <fullName>Cancel</fullName>
@@ -43,6 +57,13 @@
         <value>Confirm</value>
     </labels>
     <labels>
+        <fullName>Continent</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Continent</shortDescription>
+        <value>Continent</value>
+    </labels>
+    <labels>
         <fullName>Create_New</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -55,6 +76,13 @@
         <protected>true</protected>
         <shortDescription>Current members</shortDescription>
         <value>Current members</value>
+    </labels>
+    <labels>
+        <fullName>Date</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Date</shortDescription>
+        <value>Date</value>
     </labels>
     <labels>
         <fullName>Delete_Assurance</fullName>
@@ -113,11 +141,25 @@
         <value>Existing products</value>
     </labels>
     <labels>
+        <fullName>Free_Spots</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Free Spots</shortDescription>
+        <value>Free spots</value>
+    </labels>
+    <labels>
         <fullName>Full_description</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Full description</shortDescription>
         <value>Full description</value>
+    </labels>
+    <labels>
+        <fullName>Get_Product_Info</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Get Product Info</shortDescription>
+        <value>Get products&apos; information</value>
     </labels>
     <labels>
         <fullName>Map_Title</fullName>
@@ -146,6 +188,20 @@
         <protected>true</protected>
         <shortDescription>No Reviews</shortDescription>
         <value>No reviews available</value>
+    </labels>
+    <labels>
+        <fullName>Number_of_Votes</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Number of Votes</shortDescription>
+        <value>Number of Votes</value>
+    </labels>
+    <labels>
+        <fullName>Price</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Price</shortDescription>
+        <value>Price</value>
     </labels>
     <labels>
         <fullName>Product_Deletion</fullName>
@@ -181,6 +237,20 @@
         <protected>true</protected>
         <shortDescription>Review Issue</shortDescription>
         <value>There was an issue!</value>
+    </labels>
+    <labels>
+        <fullName>Select_Product_1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Select Product 1</shortDescription>
+        <value>Select Product 1</value>
+    </labels>
+    <labels>
+        <fullName>Select_Product_2</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Select Product 2</shortDescription>
+        <value>Select Product 1</value>
     </labels>
     <labels>
         <fullName>Share</fullName>

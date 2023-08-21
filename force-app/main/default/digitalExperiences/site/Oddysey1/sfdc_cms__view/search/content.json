@@ -116,6 +116,40 @@
               }, {
                 "children" : [ {
                   "attributes" : {
+                    "expandByDefault" : true,
+                    "icon" : "arrow",
+                    "iconAlignment" : "left"
+                  },
+                  "children" : [ {
+                    "children" : [ {
+                      "attributes" : {
+                        "backgroundColor" : "",
+                        "paddingHorizontal" : "none",
+                        "paddingVertical" : "none",
+                        "text" : "Title",
+                        "textAlign" : "left",
+                        "textDecoration" : "{\"bold\": true}",
+                        "textDisplayInfo" : "{\"headingTag\": \"h3\", \"textStyle\": \"heading-medium\"}"
+                      },
+                      "definition" : "dxp_base:textBlock",
+                      "id" : "ff95cf53-9380-4b4f-8d27-c0b7d0561d44",
+                      "type" : "component"
+                    } ],
+                    "id" : "b819f674-0216-4b67-9d5f-f93c4358ec6d",
+                    "name" : "title",
+                    "title" : "title",
+                    "type" : "region"
+                  }, {
+                    "id" : "19380f58-3162-479b-b9aa-1f2917b5a106",
+                    "name" : "content",
+                    "title" : "content",
+                    "type" : "region"
+                  } ],
+                  "definition" : "dxp_content_layout:expandableSection",
+                  "id" : "34dc0db5-cafc-4274-8b8d-b9b97dea10a5",
+                  "type" : "component"
+                }, {
+                  "attributes" : {
                     "searchResults" : "{!Search.Results}"
                   },
                   "definition" : "commerce_builder:searchFilters",

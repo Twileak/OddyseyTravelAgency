@@ -9,6 +9,8 @@
         <members>FacebookRegistrationHandlerTests</members>
         <members>AllReviewsController</members>
         <members>AllReviewsControllerTests</members>
+        <members>productComparerController</members>
+        <members>ProductComparerControllerTest</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -164,6 +166,22 @@
         <members>Edit_Button</members>
         <members>Map_Title</members>
         <members>Product_Deletion</members>
+        <members>Additional_Information</members>
+        <members>Average_Rating</members>
+        <members>Continent</members>
+        <members>Date</members>
+        <members>Free_Spots</members>
+        <members>Get_Product_Info</members>
+        <members>No_Reviews</members>
+        <members>Number_of_Votes</members>
+        <members>Price</members>
+        <members>Product_Reviews</members>
+        <members>Review_Created</members>
+        <members>Review_Issue</members>
+        <members>Select_Product</members>
+        <members>Share</members>
+        <members>Select_Product_1</members>
+        <members>Select_Product_2</members>
         <name>CustomLabel</name>
     </types>
     <types>
@@ -189,6 +207,7 @@
         <members>wholeReview</members>
         <members>allReviews</members>
         <members>ratingStars</members>
+        <members>productComparer</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>
