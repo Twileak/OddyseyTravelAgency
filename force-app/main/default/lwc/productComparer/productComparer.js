@@ -90,7 +90,6 @@ export default class ProductComparer extends LightningElement {
         }
 
     async handleButtonClick() {
-    console.log(PRICEBOOK);
         try {
             const product1Details = await getProductDetails(this.selectedProduct1);
             const product1Price = await getProductPrice(this.selectedProduct1, PRICEBOOK);
