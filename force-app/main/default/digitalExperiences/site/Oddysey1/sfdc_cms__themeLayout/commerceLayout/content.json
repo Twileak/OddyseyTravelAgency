@@ -155,6 +155,7 @@
           } ],
           "definition" : "commerce_builder:layoutHeader",
           "id" : "fcba5063-0960-416e-aeb0-a3cbc876fd45",
+          "scopedBrandingSetId" : "Odyssey_Palette",
           "type" : "component"
         } ],
         "id" : "652aaa4b-ad97-49f2-a07f-e2eb8c03bdcd",

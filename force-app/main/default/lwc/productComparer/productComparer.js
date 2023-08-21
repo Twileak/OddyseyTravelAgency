@@ -5,7 +5,7 @@ import getProductPrice from '@salesforce/apex/productComparerController.getProdu
 import getReviewDetails from '@salesforce/apex/productComparerController.getReviewDetails';
 import Accommodation from '@salesforce/label/c.Accommodation';
 import All_Inclusive from '@salesforce/label/c.All_Inclusive';
-import Current_Members from '@salesforce/label/c.Current_Members';
+import Current_Members from '@salesforce/label/c.Current_members';
 import Duration from '@salesforce/label/c.Duration';
 import Name from '@salesforce/label/c.Name';
 import Summary from '@salesforce/label/c.Summary';
@@ -15,7 +15,7 @@ import Get_Product_Info from '@salesforce/label/c.Get_Product_Info';
 import Select_Product_1 from '@salesforce/label/c.Select_Product_1';
 import Select_Product_2 from '@salesforce/label/c.Select_Product_2';
 import Price from '@salesforce/label/c.Price';
-import Number_Of_Votes from '@salesforce/label/c.Number_Of_Votes';
+import Number_Of_Votes from '@salesforce/label/c.Number_of_Votes';
 import Average_Rating from '@salesforce/label/c.Average_Rating';
 import Free_Spots from '@salesforce/label/c.Free_Spots';
 import Date from '@salesforce/label/c.Date';

@@ -136,6 +136,7 @@
     </types>
     <types>
         <members>Product_Managment</members>
+        <members>Review__c</members>
         <name>CustomTab</name>
     </types>
     <types>
