@@ -9,6 +9,8 @@
         <members>FacebookRegistrationHandlerTests</members>
         <members>AllReviewsController</members>
         <members>AllReviewsControllerTests</members>
+        <members>DiscountManagerController</members>
+        <members>DiscountManagerControllerTest</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -189,6 +191,7 @@
         <members>wholeReview</members>
         <members>allReviews</members>
         <members>ratingStars</members>
+        <members>disountManager</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>

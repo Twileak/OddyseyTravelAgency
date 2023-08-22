@@ -1,0 +1,36 @@
+<template>
+    <lightning-card title="Create your promotion">
+        <lightning-accordion active-section-name="B">
+            <lightning-accordion-section name="product" label="Select product(s)">
+                <lightning-radio-group name="productRadioOptions"
+                                       label="Select products"
+                                       options={productOptions}
+                                       value={productValue}
+                                       onchange={handleProductSelectionChange}
+                                       type="radio">
+                </lightning-radio-group>
+                <template if:true={selectProduct}>
+                    Here is Product selection
+                </template>
+                <template if:true={selectCategory}>
+                    Here is Category selection
+                </template>
+            </lightning-accordion-section>
+            <lightning-accordion-section name="promotion" label="Promotion details">
+                <lightning-radio-group name="promotionRadioOptions"
+                                       label="Select promotion type"
+                                       options={promotionOptions}
+                                       value={promotionValue}
+                                       onchange={handlePromotionSelectionChange}
+                                       type="radio">
+                </lightning-radio-group>
+                <template if:true={oneTimePromotion}>
+                    Here is one time promotion
+                </template>
+                <template if:true={periodicPromotion}>
+                    Here is periodic promotion
+                </template>
+            </lightning-accordion-section>
+        </lightning-accordion>
+    </lightning-card>
+</template>
