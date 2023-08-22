@@ -10,10 +10,20 @@
                                        type="radio">
                 </lightning-radio-group>
                 <template if:true={selectProduct}>
-                    Here is Product selection
+                    <lightning-checkbox-group name="ProductCheckboxSelection"
+                                              label="Select desired products"
+                                              options={allProducts}
+                                              value={selectedProducts}
+                                              onchange={handleProductCheckboxChange}>
+                    </lightning-checkbox-group>
                 </template>
                 <template if:true={selectCategory}>
-                    Here is Category selection
+                    <lightning-checkbox-group name="CategoriesCheckboxSelection"
+                                              label="Select desired categories"
+                                              options={allCategories}
+                                              value={selectedCategories}
+                                              onchange={handleCategoryCheckboxChange}>
+                    </lightning-checkbox-group>
                 </template>
             </lightning-accordion-section>
             <lightning-accordion-section name="promotion" label="Promotion details">

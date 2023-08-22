@@ -11,6 +11,7 @@
         <members>AllReviewsControllerTests</members>
         <members>DiscountManagerController</members>
         <members>DiscountManagerControllerTest</members>
+        <members>DiscountManagerHandler</members>
         <name>ApexClass</name>
     </types>
     <types>
