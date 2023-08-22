@@ -23,7 +23,6 @@ import Free_Spots from '@salesforce/label/c.Free_Spots';
 import Date from '@salesforce/label/c.Date';
 import Continent from '@salesforce/label/c.Continent';
 import Additional_Information from '@salesforce/label/c.Additional_Information';
-const PRICEBOOK = '01s06000006AF0WAAW';
 
 export default class ProductComparer extends LightningElement {
     @track selectedProduct1 = {productId: ''};
@@ -97,10 +96,10 @@ export default class ProductComparer extends LightningElement {
     async handleButtonClick() {
         try {
             const product1Details = await getProductDetails(this.selectedProduct1);
-            const product1Price = await getProductPrice(this.selectedProduct1, PRICEBOOK);
+            const product1Price = await getProductPrice(this.selectedProduct1);
             const product1Reviews = await getReviewDetails(this.selectedProduct1);
             const product2Details = await getProductDetails(this.selectedProduct2);
-            const product2Price = await getProductPrice(this.selectedProduct2, PRICEBOOK);
+            const product2Price = await getProductPrice(this.selectedProduct2);
             const product2Reviews = await getReviewDetails(this.selectedProduct2);
 
             this.product1 = product1Details;
