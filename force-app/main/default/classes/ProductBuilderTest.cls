@@ -1,47 +1,33 @@
-/**
- * Created by dawid.zamojda on 22.08.2023.
- */
-
 @isTest
-public class ProductBuilderTest {
+private class ProductBuilderTest {
     @isTest
-    public static void testProductBuilder() {
-        String testName = 'Test Product';
-        String testSummary = 'Test summary';
-        String testAccommodation = 'Hotel';
-        String testCities = 'City1, City2';
-        String testContinent = 'North America';
-        Integer testCurrentMembers = 50;
-        Date testStartDate = Date.newInstance(2023, 8, 1);
-        Date testEndDate = Date.newInstance(2023, 8, 15);
-        Boolean testIsAllInclusive = true;
-        Integer testMemberLimit = 100;
-        String testTransportation = 'Flight';
-
+    static void testProductBuilder() {
         Product2 product = new ProductBuilder()
-                .setName(testName)
-                .setSummary(testSummary)
-                .setAccommodation(testAccommodation)
-                .setCities(testCities)
-                .setContinent(testContinent)
-                .setCurrentMembers(testCurrentMembers)
-                .setStartDate(testStartDate)
-                .setEndDate(testEndDate)
-                .setIsAllInclusive(testIsAllInclusive)
-                .setMemberLimit(testMemberLimit)
-                .setTransportation(testTransportation)
+                .setAccommodation('Resort')
+                .setCities('New York,Los Angeles')
+                .setContinent('North America')
+                .setCurrentMembers(5)
+                .setStartDate(Date.newInstance(2023, 9, 1))
+                .setEndDate(Date.newInstance(2023, 9, 10))
+                .setIsAllInclusive(true)
+                .setMemberLimit(20)
+                .setTransportation('Airplane')
+                .setName('Vacation Trip')
+                .setSummary('Amazing vacation')
+                .setDuration(10)
                 .build();
 
-        System.assertEquals(testName, product.Name);
-        System.assertEquals(testSummary, product.Summary__c);
-        System.assertEquals(testAccommodation, product.Accommodation__c);
-        System.assertEquals(testCities, product.Cities__c);
-        System.assertEquals(testContinent, product.Continent__c);
-        System.assertEquals(testCurrentMembers, product.Current_Members__c);
-        System.assertEquals(testStartDate, product.Start_Date__c);
-        System.assertEquals(testEndDate, product.End_Date__c);
-        System.assertEquals(testIsAllInclusive, product.Is_All_Inclusive__c);
-        System.assertEquals(testMemberLimit, product.Member_Limit__c);
-        System.assertEquals(testTransportation, product.Transportation__c);
+        System.assertEquals('Vacation Trip', product.Name);
+        System.assertEquals('Resort', product.Accommodation__c);
+        System.assertEquals('New York,Los Angeles', product.Cities__c);
+        System.assertEquals('North America', product.Continent__c);
+        System.assertEquals(5, product.Current_Members__c);
+        System.assertEquals(Date.newInstance(2023, 9, 1), product.Start_Date__c);
+        System.assertEquals(Date.newInstance(2023, 9, 10), product.End_Date__c);
+        System.assertEquals(true, product.Is_All_Inclusive__c);
+        System.assertEquals(20, product.Member_Limit__c);
+        System.assertEquals('Airplane', product.Transportation__c);
+        System.assertEquals('Amazing vacation', product.Summary__c);
+        System.assertEquals(10, product.Duration__c);
     }
 }

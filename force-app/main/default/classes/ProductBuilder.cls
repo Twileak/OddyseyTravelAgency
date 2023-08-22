@@ -14,8 +14,27 @@ public with sharing class ProductBuilder {
     private String transportation;
     private String name;
     private String summary;
+    private Integer duration;
 
-    public ProductBuilder() {}
+    public ProductBuilder() {
+        this.accommodation = 'Hotel';
+        this.cities = 'Bialystok,Warszawa';
+        this.continent = 'Europe';
+        this.currentMembers = 0;
+        this.startDate = Date.newInstance(2023, 8, 1);
+        this.endDate = Date.newInstance(2023, 8, 5);
+        this.isAllInclusive = false;
+        this.memberLimit = 10;
+        this.transportation = 'Bus';
+        this.name = 'Test trip';
+        this.summary = 'Test summary';
+        this.duration = 4;
+    }
+
+    public ProductBuilder setDuration(Integer duration){
+        this.duration = duration;
+        return this;
+    }
     public ProductBuilder setTransportation(String transportation) {
         this.transportation = transportation;
         return this;
@@ -61,19 +80,19 @@ public with sharing class ProductBuilder {
         return this;
     }
     public Product2 build() {
-        Product2 product = new Product2();
-        product.Name = name;
-        product.Accommodation__c = accommodation;
-        product.Cities__c = cities;
-        product.Continent__c = continent;
-        product.Current_Members__c = currentMembers;
-        product.Start_Date__c = startDate;
-        product.End_Date__c = endDate;
-        product.Is_All_Inclusive__c = isAllInclusive;
-        product.Member_Limit__c = memberLimit;
-        product.Transportation__c = transportation;
-        product.Summary__c = summary;
-
-        return product;
+        return new Product2(
+                Name = this.name,
+                Accommodation__c = this.accommodation,
+                Cities__c = this.cities,
+                Continent__c = this.continent,
+                Current_Members__c = this.currentMembers,
+                Start_Date__c = this.startDate,
+                End_Date__c = this.endDate,
+                Is_All_Inclusive__c = this.isAllInclusive,
+                Member_Limit__c = this.memberLimit,
+                Transportation__c = this.transportation,
+                Summary__c = this.summary,
+                Duration__c = this.duration
+        );
     }
 }
