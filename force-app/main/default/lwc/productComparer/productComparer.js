@@ -1,4 +1,6 @@
 import { LightningElement, track } from 'lwc';
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
+import errorTitle from '@salesforce/label/c.Something_Wrong';
 import getProductNames from '@salesforce/apex/productComparerController.getProductNames';
 import getProductDetails from '@salesforce/apex/productComparerController.getProductDetails';
 import getProductPrice from '@salesforce/apex/productComparerController.getProductPrice';
@@ -36,6 +38,7 @@ export default class ProductComparer extends LightningElement {
     @track product1Reviews = '';
     @track product2Reviews = '';
     label = {
+        errorTitle,
         Accommodation,
         All_Inclusive,
         Current_Members,
@@ -72,7 +75,9 @@ export default class ProductComparer extends LightningElement {
                 this.productOptions1 = [...this.productOptions];
                 this.productOptions2 = [...this.productOptions];
             }
-        } catch (error) { }
+        } catch (error) {
+            this.displayToast(this.label.errorTitle, "error");
+        }
     }
 
     handleProduct1Change(event) {
@@ -104,6 +109,16 @@ export default class ProductComparer extends LightningElement {
             this.product2 = product2Details;
             this.product2Price = product2Price.UnitPrice;
             this.product2Reviews = product2Reviews;
-        } catch (error) { }
+        } catch (error) {
+            this.displayToast(this.label.errorTitle, "error");
+         }
+    }
+
+    displayToast(title, variant) {
+        const toast = new ShowToastEvent({
+            title: title,
+            variant: variant,
+        });
+        this.dispatchEvent(toast);
     }
 }

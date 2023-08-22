@@ -1,12 +1,9 @@
-@isTest
+@IsTest
 private class ProductComparerControllerTest {
-
-    @isTest
+    @IsTest
     static void testGetProductNames() {
-        List<Product2> products = new List<Product2>{
-                new Product2(Name = 'Product 1', Member_Limit__c = 10),
-                new Product2(Name = 'Product 2', Member_Limit__c = 10)
-        };
+        List<Product2> products = TestDataFactory.CreateProducts(2);
+
         insert products;
 
         Test.startTest();
@@ -15,14 +12,9 @@ private class ProductComparerControllerTest {
 
         System.assertEquals(products.size(), results.size());
     }
-
-    @isTest
+    @IsTest
     static void testGetProductDetails() {
-        Product2 testProduct = new Product2(
-                Name = 'Test Product',
-                Summary__c = 'Product summary',
-                Member_Limit__c =10
-                );
+        Product2 testProduct = TestDataFactory.CreateProducts(1)[0];
         insert testProduct;
 
         Test.startTest();
@@ -32,13 +24,12 @@ private class ProductComparerControllerTest {
         System.assertEquals(testProduct.Name, result.Name);
         System.assertEquals(testProduct.Summary__c, result.Summary__c);
     }
-
-    @isTest
+    @IsTest
     static void testGetReviewDetails() {
-        Product2 testProduct = new Product2(Name = 'Test Product', Member_Limit__c=10);
+        Product2 testProduct = TestDataFactory.CreateProducts(1)[0];
         insert testProduct;
 
-        Review__c testReview = new Review__c(Product__c = testProduct.Id, Rating__c = 4, Author__c = 'Dawid Żamojda');
+        Review__c testReview = TestDataFactory.CreateReviews(1, testProduct.Id)[0];
         insert testReview;
 
         Test.startTest();
@@ -46,6 +37,6 @@ private class ProductComparerControllerTest {
         Test.stopTest();
 
         System.assertEquals(1, resultMap.get('Votes'));
-        System.assertEquals(4.00, resultMap.get('Average'));
+        System.assertEquals(3.00, resultMap.get('Average'));
     }
 }

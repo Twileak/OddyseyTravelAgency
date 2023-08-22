@@ -11,6 +11,12 @@
         <members>AllReviewsControllerTests</members>
         <members>productComparerController</members>
         <members>ProductComparerControllerTest</members>
+        <members>ProductComparerHandler</members>
+        <members>TestDataFactory</members>
+        <members>ProductBuilder</members>
+        <members>ReviewBuilder</members>
+        <members>ProductBuilderTest</members>
+        <members>ReviewBuilderTest</members>
         <name>ApexClass</name>
     </types>
     <types>
