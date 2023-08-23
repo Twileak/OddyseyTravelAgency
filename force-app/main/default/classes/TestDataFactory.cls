@@ -3,7 +3,7 @@ public with sharing class TestDataFactory {
     private static ProductBuilder createProduct(){
        return new ProductBuilder();
     }
-    public static List<Product2> CreateProducts(Integer count) {
+    public static List<Product2> createProducts(Integer count) {
         List<Product2> products = new List<Product2>();
 
         for(Integer i=0; i<count; i++) {
@@ -23,7 +23,7 @@ public with sharing class TestDataFactory {
         return new ReviewBuilder();
     }
 
-    public static List<Review__c> CreateReviews(Integer count, String productId) {
+    public static List<Review__c> createReviews(Integer count, String productId) {
         List<Review__c> reviews = new List<Review__c>();
 
         for(Integer i=0; i<count; i++) {

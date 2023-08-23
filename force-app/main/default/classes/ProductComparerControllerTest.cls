@@ -2,7 +2,7 @@
 private class ProductComparerControllerTest {
     @IsTest
     static void testGetProductNames() {
-        List<Product2> products = TestDataFactory.CreateProducts(2);
+        List<Product2> products = TestDataFactory.createProducts(2);
 
         insert products;
 
@@ -14,7 +14,7 @@ private class ProductComparerControllerTest {
     }
     @IsTest
     static void testGetProductDetails() {
-        Product2 testProduct = TestDataFactory.CreateProducts(1)[0];
+        Product2 testProduct = TestDataFactory.createProducts(1)[0];
         insert testProduct;
 
         Test.startTest();
@@ -26,10 +26,10 @@ private class ProductComparerControllerTest {
     }
     @IsTest
     static void testGetReviewDetails() {
-        Product2 testProduct = TestDataFactory.CreateProducts(1)[0];
+        Product2 testProduct = TestDataFactory.createProducts(1)[0];
         insert testProduct;
 
-        Review__c testReview = TestDataFactory.CreateReviews(1, testProduct.Id)[0];
+        Review__c testReview = TestDataFactory.createReviews(1, testProduct.Id)[0];
         insert testReview;
 
         Test.startTest();
