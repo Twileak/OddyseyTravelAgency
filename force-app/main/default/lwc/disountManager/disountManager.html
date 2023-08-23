@@ -1,6 +1,6 @@
 <template>
     <lightning-card title="Create your promotion">
-        <lightning-accordion active-section-name="B">
+        <lightning-accordion active-section-name="B" allow-multiple-sections-open="true">
             <lightning-accordion-section name="product" label="Select product(s)">
                 <lightning-radio-group name="productRadioOptions"
                                        label="Select products"
@@ -35,10 +35,86 @@
                                        type="radio">
                 </lightning-radio-group>
                 <template if:true={oneTimePromotion}>
-                    Here is one time promotion
+                    <div class="container">
+                        <div class="start-date">
+                            <lightning-input type="date"
+                                             label="From:"
+                                             value={oneTimePromotionStartDate}>
+                            </lightning-input>
+                        </div>
+                        <div class="end-date">
+                            <lightning-input type="date"
+                                             label="To:"
+                                             value={oneTimePromotionEndDate}>
+                            </lightning-input>
+                        </div>
+                        <div class="empty"></div>
+                    </div>
                 </template>
                 <template if:true={periodicPromotion}>
-                    Here is periodic promotion
+                    <lightning-radio-group name="periodicPromotionOptions"
+                                           label="Select type of periodic promotion"
+                                           options={periodicPromotionOptions}
+                                           value={periodicPromotionType}
+                                           onchange={handlePeriodicPromotionTypeChange}
+                                           type="radio">
+                    </lightning-radio-group>
+                    <template if:true={periodicMonthlyPromotion}>
+                        <div class="container">
+                            <div class="start-date">
+                                <lightning-input type="date"
+                                                 label="From:"
+                                                 value={periodicPromotionStartDate}>
+                                </lightning-input>
+                            </div>
+                            <div class="end-date">
+                                <lightning-input type="date"
+                                                 label="To:"
+                                                 value={periodicPromotionEndDate}>
+                                </lightning-input>
+                            </div>
+                            <div class="empty"></div>
+                        </div>
+                    </template>
+                    <template if:true={periodicWeeklyPromotion}>
+                        <lightning-checkbox-group name="WeekdayCheckboxSelection"
+                                                  label="Select weekdays for promotion"
+                                                  options={weekdayOptions}
+                                                  value={selectedWeekdays}
+                                                  onchange={handleWeekdaysCheckboxChange}>
+                        </lightning-checkbox-group>
+                    </template>
+                </template>
+            </lightning-accordion-section>
+            <lightning-accordion-section name="promotionValue" label="Promotion value">
+                <lightning-radio-group name="promotionValueTypeOptions"
+                                       label="Select value type of promotion"
+                                       options={promotionValueTypeOptions}
+                                       value={promotionValueType}
+                                       onchange={handlePromotionValueTypeChange}
+                                       type="radio">
+                </lightning-radio-group>
+                <template if:true={absolutePromotionType}>
+                    <div class="promotion-container">
+                        <div class="promotion-value-input">
+                            <lightning-input type="number"
+                                             label="Absolute promotion"
+                                             value={absolutePromotionValue}>
+                            </lightning-input>
+                        </div>
+                    </div>
+                </template>
+                <template if:true={percentagePromotionType}>
+                    <div class="promotion-container">
+                        <div class="promotion-value-input">
+                            <lightning-input type="number"
+                                             label="Percent promotion"
+                                             value={percentagePromotionValue}
+                                             max="100"
+                                             max-length="3">
+                            </lightning-input>
+                        </div>
+                    </div>
                 </template>
             </lightning-accordion-section>
         </lightning-accordion>

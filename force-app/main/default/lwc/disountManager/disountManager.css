@@ -1,3 +1,26 @@
-/**
- * Created by dawid.zamojda on 22.08.2023.
- */
+.container {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "start-date end-date empty empty";
+}
+
+.start-date { grid-area: start-date; }
+
+.end-date { grid-area: end-date; }
+
+.empty { grid-area: empty; }
+
+.promotion-container {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "promotion-value-input . . .";
+}
+
+.promotion-value-input { grid-area: promotion-value-input; }
+
