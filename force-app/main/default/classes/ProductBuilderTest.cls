@@ -1,7 +1,7 @@
-@isTest
+@IsTest
 private class ProductBuilderTest {
-    @isTest
-    static void testProductBuilder() {
+    @IsTest
+    static void testProductBuilderBuild() {
         Product2 product = new ProductBuilder()
                 .setAccommodation('Resort')
                 .setCities('New York,Los Angeles')
@@ -29,5 +29,25 @@ private class ProductBuilderTest {
         System.assertEquals('Airplane', product.Transportation__c);
         System.assertEquals('Amazing vacation', product.Summary__c);
         System.assertEquals(10, product.Duration__c);
+    }
+
+    @IsTest
+    static void testProductBuilderBuildAndSave() {
+        Product2 product = new ProductBuilder()
+                .setAccommodation('Resort')
+                .setCities('New York,Los Angeles')
+                .setContinent('North America')
+                .setCurrentMembers(5)
+                .setStartDate(Date.newInstance(2023, 9, 1))
+                .setEndDate(Date.newInstance(2023, 9, 10))
+                .setIsAllInclusive(true)
+                .setMemberLimit(20)
+                .setTransportation('Airplane')
+                .setName('Vacation Trip')
+                .setSummary('Amazing vacation')
+                .setDuration(10)
+                .buildAndSave();
+
+        System.assertNotEquals(null, product.Id);
     }
 }

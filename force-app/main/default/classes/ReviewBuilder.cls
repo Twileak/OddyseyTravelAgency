@@ -3,45 +3,39 @@
  */
 
 public with sharing class ReviewBuilder {
-    private String author;
-    private String comment;
-    private Date createdAt;
-    private Integer rating;
-    private String product;
+    private Review__c review;
     public ReviewBuilder() {
-        this.author = 'Test Author';
-        this.comment = 'Test Comment';
-        this.createdAt = Date.NewInstance(2023, 8, 22);
-        this.rating = 3;
-        this.product = '';
+        review = new Review__c(
+                Author__c = 'Test Author',
+                Rating__c = 3
+        );
     }
     public ReviewBuilder setAuthor(String author) {
-        this.author = author;
+        review.Author__c = author;
         return this;
     }
     public ReviewBuilder setRating(Integer rating) {
-        this.rating = rating;
+        review.Rating__c = rating;
         return this;
     }
     public ReviewBuilder setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
+        review.Created_At__c = createdAt;
         return this;
     }
     public ReviewBuilder setComment(String comment) {
-        this.comment = comment;
+        review.Comment__c = comment;
         return this;
     }
     public ReviewBuilder setProduct(String product) {
-        this.product = product;
+        review.Product__c = product;
         return this;
     }
     public Review__c build() {
-        return new Review__c(
-                Author__c = this.author,
-                Rating__c = this.rating,
-                Created_At__c = this.createdAt,
-                Comment__c = this.comment,
-                Product__c = this.product
-        );
+        return review;
+    }
+
+    public Review__c buildAndSave() {
+        insert review;
+        return review;
     }
 }
