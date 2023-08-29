@@ -1,0 +1,16 @@
+<template>
+    <template if:true={isMapDataAvailable}>
+        <lightning-card title={label.titleLabel}>
+            <lightning-map
+                    zoom-level=4
+                    map-markers={mapMarkers}
+                    markers-title={label.citiesLabel}
+                    onmarkerselect={handleMarkerSelect}
+                    selected-marker-value={selectedMarkerValue}
+                    center = {center}
+                    options = {mapOptions}
+            >
+            </lightning-map>
+        </lightning-card>
+    </template>
+</template>

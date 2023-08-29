@@ -3,7 +3,7 @@
   <component name="FacetManager">
     <facet type="IlluminatedCloud" name="Illuminated Cloud">
       <configuration>
-        <option name="connectionName" value="OdysseyTravelAgency" />
+        <option name="connectionName" value="NewTravelAgency" />
         <option name="connectionType" value="OAUTH" />
         <option name="defaultSourceRootUrl" value="file://$MODULE_DIR$/force-app/main/default" />
         <option name="moduleContents">
@@ -21,9 +21,10 @@
       <sourceFolder url="file://$MODULE_DIR$/force-app/main/default" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/config" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/manifest" type="java-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/.sf" />
       <excludeFolder url="file://$MODULE_DIR$/.sfdx" />
     </content>
-    <orderEntry type="jdk" jdkName="IlluminatedCloud (TemporaryOdyssey/OdysseyTravelAgency)" jdkType="IlluminatedCloud" />
+    <orderEntry type="jdk" jdkName="IlluminatedCloud (OddyseyTravelAgency/NewTravelAgency)" jdkType="IlluminatedCloud" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

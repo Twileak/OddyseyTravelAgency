@@ -1,0 +1,71 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Compare",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "sectionConfig" : "{\"UUID\":\"d1345bb3-84b6-40f9-9db7-56ca245f2a36\",\"columns\":[{\"UUID\":\"ce03fdc4-b1eb-4eb2-8ff9-576146d72c38\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "backgroundColor" : "",
+                "paddingHorizontal" : "none",
+                "paddingVertical" : "x-large",
+                "text" : "Compare trips",
+                "textAlign" : "center",
+                "textDecoration" : "{}",
+                "textDisplayInfo" : "{\"textStyle\":\"heading-xlarge\",\"headingTag\":\"h1\"}"
+              },
+              "definition" : "dxp_base:textBlock",
+              "id" : "cb64f91d-d386-4604-b5cd-eb28271f7578",
+              "type" : "component"
+            }, {
+              "attributes" : { },
+              "definition" : "c:productComparer",
+              "id" : "38fbe53a-c92d-43e1-907f-3047bd63d21c",
+              "type" : "component"
+            } ],
+            "id" : "ce03fdc4-b1eb-4eb2-8ff9-576146d72c38",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "d1345bb3-84b6-40f9-9db7-56ca245f2a36",
+          "type" : "component"
+        } ],
+        "id" : "28378cad-1878-4fef-b8c2-403b5194d951",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "pageTitle" : "Compare",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "97cdd616-3e24-43bf-8761-0bb7f5b0bd2c",
+          "type" : "component"
+        } ],
+        "id" : "e76700b3-b2c0-4cfa-822f-b6bd5aa087ea",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "c943d645-4c5b-4a7f-919f-78bebe9d772f",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-compare"
+  }
+}

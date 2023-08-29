@@ -33,35 +33,36 @@
     <networkMemberGroups>
         <permissionSet>Odyssey</permissionSet>
         <profile>admin</profile>
-        <profile>customer portal manager standard</profile>
-        <profile>customer community user</profile>
-        <profile>customer community plus login user</profile>
-        <profile>customer community plus user</profile>
-        <profile>customer portal manager custom</profile>
-        <profile>customer community login user</profile>
-        <profile>highvolumeportal</profile>
-        <profile>platformportal</profile>
-        <profile>high volume customer portal user</profile>
+        <profile>gold partner user</profile>
+        <profile>standard</profile>
         <profile>external apps login user</profile>
-        <profile>authenticated website</profile>
+        <profile>chatter free user</profile>
+        <profile>analytics cloud integration user</profile>
+        <profile>analytics cloud security user</profile>
+        <profile>minimum access - salesforce</profile>
+        <profile>salesforce api only system integrations</profile>
+        <profile>standardaul</profile>
+        <profile>customer community login user</profile>
+        <profile>cross org data proxy user</profile>
+        <profile>platformportal</profile>
+        <profile>work.com only user</profile>
+        <profile>customer portal manager custom</profile>
+        <profile>identity user</profile>
+        <profile>customer community plus user</profile>
+        <profile>customer portal manager standard</profile>
+        <profile>silver partner user</profile>
+        <profile>highvolumeportal</profile>
+        <profile>force.com - app subscription user</profile>
+        <profile>customer community plus login user</profile>
+        <profile>partner app subscription user</profile>
+        <profile>customer community user</profile>
         <profile>external identity user</profile>
+        <profile>partner community user</profile>
         <profile>partner community login user</profile>
         <profile>force.com - free user</profile>
+        <profile>authenticated website</profile>
         <profile>chatter moderator user</profile>
-        <profile>partner community user</profile>
-        <profile>partner app subscription user</profile>
-        <profile>force.com - app subscription user</profile>
-        <profile>gold partner user</profile>
-        <profile>silver partner user</profile>
-        <profile>identity user</profile>
-        <profile>work.com only user</profile>
-        <profile>cross org data proxy user</profile>
-        <profile>standardaul</profile>
-        <profile>salesforce api only system integrations</profile>
-        <profile>minimum access - salesforce</profile>
-        <profile>analytics cloud security user</profile>
-        <profile>analytics cloud integration user</profile>
-        <profile>chatter free user</profile>
+        <profile>high volume customer portal user</profile>
         <profile>solutionmanager</profile>
         <profile>read only</profile>
         <profile>custom: sales profile</profile>
@@ -69,7 +70,7 @@
         <profile>custom: support profile</profile>
         <profile>marketingprofile</profile>
         <profile>contractmanager</profile>
-        <profile>standard</profile>
+        <profile>commerce business user profile</profile>
     </networkMemberGroups>
     <networkPageOverrides>
         <changePasswordPageOverrideSetting>Standard</changePasswordPageOverrideSetting>
