@@ -4,16 +4,21 @@
     <option name="allowRunningInParallel" value="false" />
     <option name="apexLogLevel" value="DEBUG" />
     <option name="calloutsLogLevel" value="INFO" />
-    <option name="connectionName" value="odyssey-develop" />
+    <option name="connectionName" value="OdysseyTravelAgency" />
     <option name="connectionType" value="OAUTH" />
     <option name="contextConfiguration" value="false" />
     <option name="databaseLogLevel" value="INFO" />
+    <option name="directoryPath" />
     <option name="logLevelsInitialized" value="true" />
     <option name="moduleToTestClassNames">
       <map />
     </option>
     <option name="nbaLogLevel" value="INFO" />
     <option name="profilingLogLevel" value="INFO" />
+    <option name="projectPathOnTarget" />
+    <option name="selectedOptions">
+      <list />
+    </option>
     <option name="systemLogLevel" value="DEBUG" />
     <option name="testClassToTestMethodNames">
       <map />
