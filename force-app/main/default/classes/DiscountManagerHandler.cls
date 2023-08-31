@@ -44,7 +44,7 @@ public with sharing class DiscountManagerHandler {
         return (Decimal)cheapestProduct[0].get('lowestPrice');
     }
 
-    public static void createPromotionJob(String stringPromotion) {
+    public static PromotionWrapper createPromotionJob(String stringPromotion) {
         PromotionWrapper promotion = (PromotionWrapper) JSON.deserialize(stringPromotion, PromotionWrapper.class);
         String jobNameStart = '';
         String cronExpressionStart = '';
@@ -77,6 +77,8 @@ public with sharing class DiscountManagerHandler {
 
         System.schedule(jobNameStart, cronExpressionStart, jobToScheduleStart);
         System.schedule(jobNameEnd, cronExpressionEnd, jobToScheduleEnd);
+
+        return promotion;
     }
 
     public class DiscountManagerScheduler implements Schedulable{

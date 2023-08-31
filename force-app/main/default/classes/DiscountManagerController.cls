@@ -29,7 +29,7 @@ public with sharing class DiscountManagerController {
     }
 
     @AuraEnabled(Cacheable=true)
-    public static void createPromotionJob(String stringPromotion) {
-        DiscountManagerHandler.createPromotionJob(stringPromotion);
+    public static PromotionWrapper createPromotionJob(String stringPromotion) {
+        return DiscountManagerHandler.createPromotionJob(stringPromotion);
     }
 }

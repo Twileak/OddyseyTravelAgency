@@ -83,4 +83,52 @@ private class DiscountManagerControllerTest {
 
         System.assertEquals(10.0, lowestPrice);
     }
+    @IsTest
+    static void testOneTimePromotion() {
+        String jsonPromotion = '{"isPeriodic": false, "isWeekly": false, "isAbsolute": true, "promotionValue": 10, "listOfProducts": [], "startDate": "2023-09-01", "endDate": "2023-09-15"}';
+        Test.startTest();
+        PromotionWrapper prom = DiscountManagerController.createPromotionJob(jsonPromotion);
+        Test.stopTest();
+
+        System.assertEquals(false, prom.isWeekly);
+        System.assertEquals(false, prom.isPeriodic);
+        System.assertEquals(true, prom.isAbsolute);
+        System.assertEquals(10, prom.promotionValue);
+        System.assertEquals(0, prom.listOfProducts.size());
+        System.assertEquals(Date.newInstance(2023,09,15), prom.endDate);
+        System.assertEquals(Date.newInstance(2023,09,01), prom.startDate);
+    }
+
+    @IsTest
+    static void testWeeklyPromotion() {
+        String jsonPromotion = '{"isPeriodic": true, "isWeekly": true, "isAbsolute": true, "promotionValue": 15, "listOfProducts": [], "weekdays": ["MON", "FRI"], "startDate": "2023-09-01", "endDate": "2023-09-30"}';
+        Test.startTest();
+        PromotionWrapper prom = DiscountManagerController.createPromotionJob(jsonPromotion);
+        Test.stopTest();
+
+        System.assertEquals(true, prom.isWeekly);
+        System.assertEquals(true, prom.isPeriodic);
+        System.assertEquals(true, prom.isAbsolute);
+        System.assertEquals(15, prom.promotionValue);
+        System.assertEquals(0, prom.listOfProducts.size());
+        System.assertEquals(Date.newInstance(2023,09,30), prom.endDate);
+        System.assertEquals(Date.newInstance(2023,09,01), prom.startDate);
+        System.assertEquals(new List<String>{'MON', 'FRI'}, prom.weekdays);
+    }
+
+    @IsTest
+    static void testMonthlyPromotion() {
+        String jsonPromotion = '{"isPeriodic": true, "isWeekly": false, "isAbsolute": false, "promotionValue": 20, "listOfProducts": [], "startDate": "2023-09-01", "endDate": "2023-12-31"}';
+        Test.startTest();
+        PromotionWrapper prom = DiscountManagerController.createPromotionJob(jsonPromotion);
+        Test.stopTest();
+
+        System.assertEquals(false, prom.isWeekly);
+        System.assertEquals(true, prom.isPeriodic);
+        System.assertEquals(false, prom.isAbsolute);
+        System.assertEquals(20, prom.promotionValue);
+        System.assertEquals(0, prom.listOfProducts.size());
+        System.assertEquals(Date.newInstance(2023,12,31), prom.endDate);
+        System.assertEquals(Date.newInstance(2023,09,01), prom.startDate);
+    }
 }
