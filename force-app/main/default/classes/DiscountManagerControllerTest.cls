@@ -40,9 +40,12 @@ private class DiscountManagerControllerTest {
         List<Product2> products = TestDataFactory.createProducts(2);
         insert products;
 
+        ProductCatalog pc = new ProductCatalog(Name='Test Catalog');
+        insert pc;
+
         List<ProductCategory> categories = new List<ProductCategory>{
-                new ProductCategory(Name = 'Category1', CatalogId = '0ZS0600000005PbGAI'),
-                new ProductCategory(Name = 'Category2', CatalogId = '0ZS0600000005PbGAI')
+                new ProductCategory(Name = 'Category1', CatalogId = pc.Id),
+                new ProductCategory(Name = 'Category2', CatalogId = pc.Id)
         };
         insert categories;
 
