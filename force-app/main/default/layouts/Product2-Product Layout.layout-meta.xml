@@ -67,6 +67,10 @@
                 <behavior>Readonly</behavior>
                 <field>Trip_Start_End__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Spots_Left__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
