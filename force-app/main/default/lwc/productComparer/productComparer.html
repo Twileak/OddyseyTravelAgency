@@ -1,0 +1,179 @@
+<template>
+    <lightning-card>
+        <div class="container">
+            <div class="search-bar">
+                <div class="slds-p-around_medium">
+                    <lightning-layout>
+                        <lightning-layout-item size="6">
+                            <lightning-combobox label={label.Select_Product_1} value={selectedProduct1} options={productOptions1} onchange={handleProduct1Change}></lightning-combobox>
+                        </lightning-layout-item>
+                        <lightning-layout-item size="6">
+                            <lightning-combobox label={label.Select_Product_2} value={selectedProduct2} options={productOptions2} onchange={handleProduct2Change}></lightning-combobox>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <div class="slds-m-top_medium">
+                        <lightning-button label={label.Get_Product_Info} onclick={handleButtonClick} class="slds-align_absolute-center" disabled={isButtonDisabled}></lightning-button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-one slds-p-around_medium">
+                <div class="main-info-one">
+                    <template if:true={product1}>
+                        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_bordered_medium" style="width: 700px;">
+                            <thead>
+                            <tr>
+                                <th colspan="2"><strong>{product1.Name}</strong></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="info-column">{label.Price}:</td>
+                                <td>${product1Price}</td>
+                            </tr>
+                            <tr>
+                                <td>{label.Number_Of_Votes}:</td>
+                                <td>{product1Reviews.Votes}</td>
+                            </tr>
+                            <tr>
+                                <td>{label.Average_Rating}:</td>
+                                <td>{product1Reviews.Average} / 5</td>
+                            </tr>
+                            <tr>
+                                <td>{label.Free_Spots}:</td>
+                                <td>{product1.Spots_Left__c}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </template>
+                </div>
+                <div class="additional-info-one">
+                    <template if:true={product1}>
+                        <table class="slds-table slds-table_cell-buffer slds-table_bordered" style="width: 700px;">
+                            <thead>
+                            <tr>
+                                <th colspan="2">{label.Additional_Information}</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="info-column">{label.Date}:</td>
+                                <td>{product1.Trip_Start_End__c}</td>
+                            </tr>
+                            <tr>
+                                <td>{label.Continent}:</td>
+                                <td>{product1.Continent__c}</td>
+                            </tr>
+                            <tr>
+                                <td>{label.Cities}:</td>
+                                <td>{product1.Cities__c}</td>
+                            </tr>
+                            <tr>
+                                <td>{label.Duration}:</td>
+                                <td>{product1.Duration__c} days</td>
+                            </tr>
+                            <tr>
+                                <td>{label.All_Inclusive}:</td>
+                                <td>
+                                    <template if:true={product1.Is_All_Inclusive__c}>
+                                        <lightning-icon icon-name="utility:check" alternative-text="Yes" size="x-small"></lightning-icon>
+                                    </template>
+                                    <template if:false={product1.Is_All_Inclusive__c}>
+                                        <lightning-icon icon-name="utility:close" alternative-text="No" size="x-small"></lightning-icon>
+                                    </template>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{label.Transportation}:</td>
+                                <td>{product1.Transportation__c}</td>
+                            </tr>
+                            <tr>
+                                <td>{label.Accommodation}:</td>
+                                <td>{product1.Accommodation__c}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </template>
+                </div>
+            </div>
+            <div class="product-two slds-p-around_medium">
+                <div class="main-info-two">
+                    <template if:true={product2}>
+                        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_bordered_medium" style="width: 700px;">
+                            <thead>
+                            <tr>
+                                <th colspan="2"><strong>{product2.Name}</strong></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="info-column">{label.Price}:</td>
+                                <td>${product2Price}</td>
+                            </tr>
+                            <tr>
+                                <td>{label.Number_Of_Votes}:</td>
+                                <td>{product2Reviews.Votes}</td>
+                            </tr>
+                            <tr>
+                                <td>{label.Average_Rating}:</td>
+                                <td>{product2Reviews.Average} / 5</td>
+                            </tr>
+                            <tr>
+                                <td>{label.Free_Spots}:</td>
+                                <td>{product2.Spots_Left__c}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </template>
+                </div>
+                <div class="additional-info-two">
+                    <template if:true={product2}>
+                        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_bordered_medium" style="width: 700px;">
+                            <thead>
+                            <tr>
+                                <th colspan="2">{label.Additional_Information}</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="info-column">{label.Date}:</td>
+                                <td>{product2.Trip_Start_End__c}</td>
+                            </tr>
+                            <tr>
+                                <td>{label.Continent}:</td>
+                                <td>{product2.Continent__c}</td>
+                            </tr>
+                            <tr>
+                                <td>{label.Cities}:</td>
+                                <td>{product2.Cities__c}</td>
+                            </tr>
+                            <tr>
+                                <td>{label.Duration}:</td>
+                                <td>{product2.Duration__c} days</td>
+                            </tr>
+                            <tr>
+                                <td>{label.All_Inclusive}:</td>
+                                <td>
+                                    <template if:true={product2.Is_All_Inclusive__c}>
+                                        <lightning-icon icon-name="utility:check" alternative-text="Yes" size="x-small"></lightning-icon>
+                                    </template>
+                                    <template if:false={product2.Is_All_Inclusive__c}>
+                                        <lightning-icon icon-name="utility:close" alternative-text="No" size="x-small"></lightning-icon>
+                                    </template>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{label.Transportation}:</td>
+                                <td>{product2.Transportation__c}</td>
+                            </tr>
+                            <tr>
+                                <td>{label.Accommodation}:</td>
+                                <td>{product2.Accommodation__c}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>
