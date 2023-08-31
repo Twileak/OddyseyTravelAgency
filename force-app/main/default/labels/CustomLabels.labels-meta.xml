@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
     <labels>
+        <fullName>Absolute</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Absolute</shortDescription>
+        <value>Absolute</value>
+    </labels>
+    <labels>
+        <fullName>Absolute_promotion</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Absolute promotion</shortDescription>
+        <value>Absolute promotion</value>
+    </labels>
+    <labels>
         <fullName>Accommodation</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -8,11 +22,25 @@
         <value>Accommodation</value>
     </labels>
     <labels>
+        <fullName>Additional_Information</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Additional Information</shortDescription>
+        <value>Additional information</value>
+    </labels>
+    <labels>
         <fullName>All_Inclusive</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>All Inclusive</shortDescription>
         <value>All Inclusive</value>
+    </labels>
+    <labels>
+        <fullName>Average_Rating</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Average Rating</shortDescription>
+        <value>Average rating</value>
     </labels>
     <labels>
         <fullName>Cancel</fullName>
@@ -29,6 +57,20 @@
         <value>Cancel</value>
     </labels>
     <labels>
+        <fullName>Category</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Category</shortDescription>
+        <value>Category</value>
+    </labels>
+    <labels>
+        <fullName>Chosen_products</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Chosen products:</shortDescription>
+        <value>Chosen products:</value>
+    </labels>
+    <labels>
         <fullName>Cities</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -43,6 +85,13 @@
         <value>Confirm</value>
     </labels>
     <labels>
+        <fullName>Continent</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Continent</shortDescription>
+        <value>Continent</value>
+    </labels>
+    <labels>
         <fullName>Create_New</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -50,11 +99,32 @@
         <value>Create new product</value>
     </labels>
     <labels>
+        <fullName>Create_promotion</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Create promotion</shortDescription>
+        <value>Create promotion</value>
+    </labels>
+    <labels>
+        <fullName>Create_your_promotion</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Create your promotion</shortDescription>
+        <value>Create your promotion</value>
+    </labels>
+    <labels>
         <fullName>Current_members</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Current members</shortDescription>
         <value>Current members</value>
+    </labels>
+    <labels>
+        <fullName>Date</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Date</shortDescription>
+        <value>Date</value>
     </labels>
     <labels>
         <fullName>Delete_Assurance</fullName>
@@ -113,11 +183,39 @@
         <value>Existing products</value>
     </labels>
     <labels>
+        <fullName>Free_Spots</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Free Spots</shortDescription>
+        <value>Free spots</value>
+    </labels>
+    <labels>
+        <fullName>Friday</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Friday</shortDescription>
+        <value>Friday</value>
+    </labels>
+    <labels>
+        <fullName>From</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>From</shortDescription>
+        <value>From:</value>
+    </labels>
+    <labels>
         <fullName>Full_description</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Full description</shortDescription>
         <value>Full description</value>
+    </labels>
+    <labels>
+        <fullName>Get_Product_Info</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Get Product Info</shortDescription>
+        <value>Get products&apos; information</value>
     </labels>
     <labels>
         <fullName>Map_Title</fullName>
@@ -134,6 +232,20 @@
         <value>Member limit</value>
     </labels>
     <labels>
+        <fullName>Monday</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Monday</shortDescription>
+        <value>Monday</value>
+    </labels>
+    <labels>
+        <fullName>Monthly</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Monthly</shortDescription>
+        <value>Monthly</value>
+    </labels>
+    <labels>
         <fullName>Name</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -148,6 +260,55 @@
         <value>No reviews available</value>
     </labels>
     <labels>
+        <fullName>Number_of_Votes</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Number of Votes</shortDescription>
+        <value>Number of Votes</value>
+    </labels>
+    <labels>
+        <fullName>One_time_promotion</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>One time promotion</shortDescription>
+        <value>One time promotion</value>
+    </labels>
+    <labels>
+        <fullName>Percent</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Percent</shortDescription>
+        <value>Percent</value>
+    </labels>
+    <labels>
+        <fullName>Percent_promotion</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Percent promotion</shortDescription>
+        <value>Percent promotion</value>
+    </labels>
+    <labels>
+        <fullName>Periodic_promotion</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Periodic promotion</shortDescription>
+        <value>Periodic promotion</value>
+    </labels>
+    <labels>
+        <fullName>Price</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Price</shortDescription>
+        <value>Price</value>
+    </labels>
+    <labels>
+        <fullName>Product</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Product</shortDescription>
+        <value>Product</value>
+    </labels>
+    <labels>
         <fullName>Product_Deletion</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -160,6 +321,20 @@
         <protected>true</protected>
         <shortDescription>Product Reviews</shortDescription>
         <value>Product Reviews</value>
+    </labels>
+    <labels>
+        <fullName>Promotion_details</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Promotion details</shortDescription>
+        <value>Promotion details</value>
+    </labels>
+    <labels>
+        <fullName>Promotion_value</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Promotion value</shortDescription>
+        <value>Promotion value</value>
     </labels>
     <labels>
         <fullName>Record_deleted</fullName>
@@ -181,6 +356,83 @@
         <protected>true</protected>
         <shortDescription>Review Issue</shortDescription>
         <value>There was an issue!</value>
+    </labels>
+    <labels>
+        <fullName>Saturday</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Saturday</shortDescription>
+        <value>Saturday</value>
+    </labels>
+    <labels>
+        <fullName>Select_Product_1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Select Product 1</shortDescription>
+        <value>Select Product 1</value>
+    </labels>
+    <labels>
+        <fullName>Select_Product_2</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Select Product 2</shortDescription>
+        <value>Select Product 1</value>
+    </labels>
+    <labels>
+        <fullName>Select_desired_categories</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Select desired categories</shortDescription>
+        <value>Select desired categories</value>
+    </labels>
+    <labels>
+        <fullName>Select_desired_products</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Select desired products</shortDescription>
+        <value>Select desired products</value>
+    </labels>
+    <labels>
+        <fullName>Select_product_s</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Select product(s)</shortDescription>
+        <value>Select product(s)</value>
+    </labels>
+    <labels>
+        <fullName>Select_products_by</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Select products by</shortDescription>
+        <value>Select products by</value>
+    </labels>
+    <labels>
+        <fullName>Select_promotion_type</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Select promotion type</shortDescription>
+        <value>Select promotion type</value>
+    </labels>
+    <labels>
+        <fullName>Select_type_of_periodic_promotion</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Select type of periodic promotion</shortDescription>
+        <value>Select type of periodic promotion</value>
+    </labels>
+    <labels>
+        <fullName>Select_value_type_of_promotion</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Select value type of promotion</shortDescription>
+        <value>Select value type of promotion</value>
+    </labels>
+    <labels>
+        <fullName>Select_weekdays_for_promotion</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Select weekdays for promotion</shortDescription>
+        <value>Select weekdays for promotion</value>
     </labels>
     <labels>
         <fullName>Share</fullName>
@@ -218,10 +470,59 @@
         <value>Summary</value>
     </labels>
     <labels>
+        <fullName>Sunday</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Sunday</shortDescription>
+        <value>Sunday</value>
+    </labels>
+    <labels>
+        <fullName>Thursday</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Thursday</shortDescription>
+        <value>Thursday</value>
+    </labels>
+    <labels>
+        <fullName>To</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>To</shortDescription>
+        <value>To:</value>
+    </labels>
+    <labels>
+        <fullName>Too_high_number</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Too high number</shortDescription>
+        <value>Too high number!</value>
+    </labels>
+    <labels>
         <fullName>Transportation</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Transportation</shortDescription>
         <value>Transportation</value>
+    </labels>
+    <labels>
+        <fullName>Tuesday</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Tuesday</shortDescription>
+        <value>Tuesday</value>
+    </labels>
+    <labels>
+        <fullName>Wednesday</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Wednesday</shortDescription>
+        <value>Wednesday</value>
+    </labels>
+    <labels>
+        <fullName>Weekly</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Weekly</shortDescription>
+        <value>Weekly</value>
     </labels>
 </CustomLabels>

@@ -12,6 +12,12 @@
         <members>DiscountManagerController</members>
         <members>DiscountManagerControllerTest</members>
         <members>DiscountManagerHandler</members>
+        <members>PromotionWrapper</members>
+        <members>ProductBuilder</members>
+        <members>ProductBuilderTest</members>
+        <members>ReviewBuilder</members>
+        <members>ReviewBuilderTest</members>
+        <members>TestDataFactory</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -137,6 +143,7 @@
     </types>
     <types>
         <members>Product_Managment</members>
+        <members>Review__c</members>
         <name>CustomTab</name>
     </types>
     <types>

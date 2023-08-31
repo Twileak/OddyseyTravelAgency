@@ -1,26 +1,53 @@
-.container {  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "start-date end-date empty empty";
-}
+ .promotion-card {
+        padding: 16px;
+    }
 
-.start-date { grid-area: start-date; }
+    .accordion-section {
+        padding: 16px 0;
+    }
 
-.end-date { grid-area: end-date; }
+    .checkbox-group {
+        padding-top: 16px;
+    }
 
-.empty { grid-area: empty; }
+    .chosen-products {
+        padding-top: 10px;
+    }
 
-.promotion-container {  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "promotion-value-input . . .";
-}
+    .product-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding-top: 8px;
+    }
 
-.promotion-value-input { grid-area: promotion-value-input; }
+    .badge {
+        background-color: #0070d2;
+        color: white;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+    }
 
+    .promotion-dates-container {
+        display: flex;
+        gap: 16px;
+        padding-top: 16px;
+    }
+
+    .promotion-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 16px;
+    }
+
+    .promotion-value-input {
+        flex-grow: 1;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        padding-top: 16px;
+    }

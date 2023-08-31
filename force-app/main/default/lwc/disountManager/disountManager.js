@@ -1,15 +1,21 @@
 import { LightningElement, track, wire } from 'lwc';
+import * as Labels from './labels.js';
 import getProducts from '@salesforce/apex/DiscountManagerController.getProducts';
 import getCategories from '@salesforce/apex/DiscountManagerController.getCategories';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import errorTitle from '@salesforce/label/c.Something_Wrong';
+import getLowestPrice from '@salesforce/apex/DiscountManagerController.getLowestPrice';
+import getSelectedProductsByCategory from '@salesforce/apex/DiscountManagerController.getSelectedProductsByCategory';
+import createPromotion from '@salesforce/apex/DiscountManagerController.createPromotionJob';
 
 export default class DisountManager extends LightningElement {
+    activeSections = ['product', 'promotion', 'promotionValue'];
     allProducts = [];
     allCategories = [];
     selectedWeekdays = [];
     selectedProducts = [];
     selectedCategories = [];
+    productsInSelectedCategory = [];
     @track productValue = '';
     @track promotionValue = '';
     @track promotionValueType = '';
@@ -22,60 +28,74 @@ export default class DisountManager extends LightningElement {
     @track periodicMonthlyPromotion = false;
     @track percentagePromotionType = false;
     @track absolutePromotionType = false;
+    @track isButtonDisabled = true;
     @track absolutePromotionValue = 0;
-    @track percentagePromotionValue = 0;
-    @track oneTimePromotionStartDate = '';
-    @track oneTimePromotionEndDate = '';
-    @track periodicPromotionStartDate = '';
-    @track periodicPromotionEndDate = '';
+    @track percentagePromotionValue;
+    @track oneTimePromotionStartDate = null;
+    @track oneTimePromotionEndDate = null;
+    @track periodicPromotionStartDate = null;
+    @track periodicPromotionEndDate = null;
+    @track highestAbsoluteDiscount = 0;
 
-    label = {
-        errorTitle
+    get labels() {
+        return Labels.labels;
     }
 
     get productOptions() {
         return [
-            {label: 'Product', value: 'product'},
-            {label: 'Category', value: 'category'}
+            {label: this.labels.Product, value: 'product'},
+            {label: this.labels.Category, value: 'category'}
         ];
     }
 
     get promotionValueTypeOptions() {
             return [
-                {label: 'Percent', value: 'percent'},
-                {label: 'Absolute', value: 'absolute'}
+                {label: this.labels.Percent, value: 'percent'},
+                {label: this.labels.Absolute, value: 'absolute'}
             ];
         }
 
     get periodicPromotionOptions() {
             return [
-                {label: 'Weekly', value: 'weekly'},
-                {label: 'Monthly', value: 'monthly'}
+                {label: this.labels.Weekly, value: 'weekly'},
+                {label: this.labels.Monthly, value: 'monthly'}
             ];
         }
 
     get weekdayOptions() {
         return [
-            {label: 'Monday', value: 'monday'},
-            {label: 'Tuesday', value: 'tuesday'},
-            {label: 'Wednesday', value: 'wednesday'},
-            {label: 'Thursday', value: 'thursday'},
-            {label: 'Friday', value: 'friday'},
-            {label: 'Saturday', value: 'saturday'},
-            {label: 'Sunday', value: 'sunday'},
+            {label: this.labels.Monday, value: 'MON'},
+            {label: this.labels.Tuesday, value: 'TUE'},
+            {label: this.labels.Wednesday, value: 'WED'},
+            {label: this.labels.Thursday, value: 'THU'},
+            {label: this.labels.Friday, value: 'FRI'},
+            {label: this.labels.Saturday, value: 'SAT'},
+            {label: this.labels.Sunday, value: 'SUN'},
         ]
     }
 
     get promotionOptions() {
         return [
-            {label: 'One time promotion', value: 'oneTime'},
-            {label: 'Periodic promotion', value: 'periodic'}
+            {label: this.labels.One_time_promotion, value: 'oneTime'},
+            {label: this.labels.Periodic_promotion, value: 'periodic'}
         ]
     }
 
     connectedCallback() {
         this.loadProducts();
         this.loadCategories();
+        this.loadLowestPrice();
+    }
+
+    async loadLowestPrice() {
+        try {
+            const result = await getLowestPrice();
+            if(result) {
+                this.highestAbsoluteDiscount = result;
+            }
+        } catch(error) {
+            this.displayToast(this.labels.errorTitle, JSON.stringify(error), "error");
+        }
     }
 
     async loadProducts() {
@@ -85,7 +105,7 @@ export default class DisountManager extends LightningElement {
                 this.allProducts = result.map(product => ({label: product.Name, value: product.Id}));
             }
         } catch(error) {
-            this.displayToast(this.label.errorTitle, "error");
+            this.displayToast(this.labels.errorTitle, JSON.stringify(error), "error");
         }
     }
 
@@ -96,18 +116,30 @@ export default class DisountManager extends LightningElement {
                 this.allCategories = result.map(category => ({label: category.Name, value: category.Id}));
             }
         } catch(error) {
-            this.displayToast(this.label.errorTitle, "error");
+            this.displayToast(this.labels.errorTitle, JSON.stringify(error), "error");
+        }
+    }
+
+    async loadProductsInSelectedCategories(listOfCategories) {
+        try {
+            const result = await getSelectedProductsByCategory({ categoryIds: listOfCategories });
+            if(result) {
+                this.productsInSelectedCategory = result.map(product => ({label: product.Name, value:product.Id}));
+            }
+        } catch(error) {
+            this.displayToast(this.labels.errorTitle, JSON.stringify(error), "error");
         }
     }
 
     handleProductCheckboxChange(event) {
         this.selectedProducts = event.detail.value;
-        console.log(this.selectedProducts);
+        this.handleEnabledSubmitButton();
     }
 
     handleCategoryCheckboxChange(event) {
         this.selectedCategories = event.detail.value;
-        console.log(this.selectedCategories);
+        this.loadProductsInSelectedCategories(this.selectedCategories);
+        this.handleEnabledSubmitButton();
     }
 
     handleProductSelectionChange(event) {
@@ -115,7 +147,6 @@ export default class DisountManager extends LightningElement {
 
         this.selectProduct = this.productValue === 'product';
         this.selectCategory = this.productValue === 'category';
-        console.log(this.productValue);
     }
 
     handlePromotionSelectionChange(event) {
@@ -123,7 +154,6 @@ export default class DisountManager extends LightningElement {
 
         this.oneTimePromotion = this.promotionValue === 'oneTime';
         this.periodicPromotion = this.promotionValue === 'periodic';
-        console.log(this.promotionValue);
     }
 
     handlePeriodicPromotionTypeChange(event) {
@@ -131,27 +161,80 @@ export default class DisountManager extends LightningElement {
 
         this.periodicWeeklyPromotion = this.periodicPromotionType === 'weekly';
         this.periodicMonthlyPromotion = this.periodicPromotionType === 'monthly';
-        console.log(this.periodicPromotionType);
     }
 
     handleWeekdaysCheckboxChange(event) {
         this.selectedWeekdays = event.detail.value;
-        console.log(this.selectedWeekdays);
+        this.handleEnabledSubmitButton();
     }
 
     handlePromotionValueTypeChange(event) {
         this.promotionValueType = event.detail.value;
-        console.log(this.promotionValueType);
 
-        this.absolutePromotionType = this.promotionValueType === 'percent';
-        this.percentagePromotionType = this.promotionValueType === 'absolute';
+        this.absolutePromotionType = this.promotionValueType === 'absolute';
+        this.percentagePromotionType = this.promotionValueType === 'percent';
     }
 
-    displayToast(title, variant) {
+    handleAbsoluteValueChange(event) {
+        this.absolutePromotionValue = event.detail.value;
+        this.handleEnabledSubmitButton();
+    }
+
+    handlePercentageValueChange(event) {
+        this.percentagePromotionValue = event.detail.value;
+        this.handleEnabledSubmitButton();
+    }
+
+    handleOneTimeStartDateChange(event) {
+        this.oneTimePromotionStartDate = event.detail.value;
+        this.handleEnabledSubmitButton();
+    }
+
+    handleOneTimeEndDateChange(event) {
+        this.oneTimePromotionEndDate = event.detail.value;
+        this.handleEnabledSubmitButton();
+    }
+
+    handlePeriodicStartDateChange(event) {
+        this.periodicPromotionStartDate = event.detail.value;
+        this.handleEnabledSubmitButton();
+    }
+
+    handlePeriodicEndDateChange(event) {
+        this.periodicPromotionEndDate = event.detail.value;
+        this.handleEnabledSubmitButton();
+    }
+
+    displayToast(title, message, variant) {
         const toast = new ShowToastEvent({
             title: title,
+            message: message,
             variant: variant,
         });
         this.dispatchEvent(toast);
+    }
+
+    handleCreatePromotion() {
+        const promotion = {
+            listOfProducts: this.selectProduct ? this.selectedProducts : this.productsInSelectedCategory.map(prod => prod.value),
+            isPeriodic: this.periodicPromotion,
+            isWeekly: this.periodicWeeklyPromotion,
+            weekdays: this.selectedWeekdays,
+            startDate: this.periodicMonthlyPromotion ? this.periodicPromotionStartDate : this.oneTimePromotionStartDate,
+            endDate: this.periodicMonthlyPromotion ? this.periodicPromotionEndDate : this.oneTimePromotionEndDate,
+            isAbsolute: this.absolutePromotionType,
+            promotionValue: this.absolutePromotionType ? this.absolutePromotionValue : this.percentagePromotionValue/100
+        }
+
+        const stringPromotion = JSON.stringify(promotion);
+        createPromotion({stringPromotion: stringPromotion});
+    }
+
+    handleEnabledSubmitButton() {
+        const areProductsSelected = this.selectedProducts ||  this.productsInSelectedCategory;
+        const isDateSelected = ((this.oneTimePromotionStartDate || this.periodicPromotionStartDate) && (this.oneTimePromotionEndDate || this.periodicPromotionEndDate)) || (this.selectedWeekdays);
+        const isDiscountSelected = this.absolutePromotionValue || this.percentagePromotionValue;
+
+        this.isButtonDisabled = !(areProductsSelected && isDateSelected && isDiscountSelected);
     }
 }

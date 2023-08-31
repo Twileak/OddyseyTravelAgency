@@ -14,8 +14,8 @@
             "children" : [ {
               "attributes" : {
                 "alignment" : "center",
-                "imageInfo" : "",
-                "logoWidth" : 250
+                "imageInfo" : "{\"imageInfoV1\":{\"url\":\"/sfsites/c/cms/delivery/media/MCXJFHJYTPZREYBCZ6CCFQPTT6V4?lastModifiedDate=Mon Jul 24 13:27:25 GMT 2023\",\"altText\":\"\",\"contentKey\":\"MCXJFHJYTPZREYBCZ6CCFQPTT6V4\",\"contentType\":null}}",
+                "logoWidth" : 151
               },
               "definition" : "dxp_content_layout:siteLogo",
               "id" : "c0e4fdfd-b789-4b84-9d70-5def8ca04c9e",
@@ -28,7 +28,7 @@
                 "passwordLabel" : "Password",
                 "selfRegisterLabel" : "Not a member?",
                 "selfRegisterUrl" : "/SelfRegister",
-                "startUrl" : "",
+                "startUrl" : "/odysey/",
                 "usernameLabel" : "Username"
               },
               "definition" : "community_login:loginForm",

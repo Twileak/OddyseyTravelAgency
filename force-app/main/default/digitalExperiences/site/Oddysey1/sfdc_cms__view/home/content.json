@@ -136,6 +136,20 @@
                 "displayName" : true,
                 "displayPrice" : true,
                 "displayQuantitySelectorAndCallToActionButton" : false,
+                "dxpStyle" : {
+                  "margin" : {
+                    "bottom" : "30px",
+                    "left" : "0px",
+                    "right" : "0px",
+                    "top" : "50px"
+                  },
+                  "padding" : {
+                    "bottom" : "0px",
+                    "left" : "0px",
+                    "right" : "0px",
+                    "top" : "0px"
+                  }
+                },
                 "headerText" : "Most popular",
                 "manualCategoryId" : "0ZG0600000006AjGAI",
                 "manualProductId" : "01t0600000DMye7AAD",
@@ -160,6 +174,14 @@
                 "displayName" : true,
                 "displayPrice" : true,
                 "displayQuantitySelectorAndCallToActionButton" : false,
+                "dxpStyle" : {
+                  "margin" : {
+                    "bottom" : "50px",
+                    "left" : "0px",
+                    "right" : "0px",
+                    "top" : "50px"
+                  }
+                },
                 "headerText" : "Recommended for you",
                 "manualCategoryId" : "0ZG0600000006AiGAI",
                 "manualProductId" : "01t0600000DMydvAAD",
