@@ -26,6 +26,7 @@
         <members>ReviewBuilder</members>
         <members>ProductBuilderTest</members>
         <members>ReviewBuilderTest</members>
+        <members>PromotionWrapperTests</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -223,7 +224,6 @@
         <members>allReviews</members>
         <members>ratingStars</members>
         <members>disountManager</members>
-
         <members>productComparer</members>
         <name>LightningComponentBundle</name>
     </types>
