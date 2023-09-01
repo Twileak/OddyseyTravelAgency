@@ -6,9 +6,16 @@
         <members>B2BPricing</members>
         <members>B2BShipping</members>
         <members>B2BTax</members>
-        <members>QueryUtils</members>
-        <members>StripeAdapter</members>
-        <members>StripeValidationException</members>
+        <members>SalesforceAdapter</members>
+        <members>SalesforceValidationException</members>
+        <members>ProductBuilder</members>
+        <members>ProductBuilderTest</members>
+        <members>ProductComparerControllerTest</members>
+        <members>ProductComparerHandler</members>
+        <members>ReviewBuilder</members>
+        <members>ReviewBuilderTest</members>
+        <members>TestDataFactory</members>
+        <members>productComparerController</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -132,7 +139,16 @@
     </types>
     <types>
         <members>cardPaymentMethod</members>
+        <members>productComparer</members>
         <name>LightningComponentBundle</name>
+    </types>
+    <types>
+        <members>Review__c</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Review__c.Null_Comment</members>
+        <name>ValidationRule</name>
     </types>
     <!--    <types>-->
     <!--        <members>Oddysey1</members>-->
