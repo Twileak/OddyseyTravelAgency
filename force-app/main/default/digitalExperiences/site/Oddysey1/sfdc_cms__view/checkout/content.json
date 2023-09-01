@@ -13,7 +13,14 @@
           "children" : [ {
             "children" : [ {
               "attributes" : {
-                "stepsConfig" : "[{\"checkoutStepKey\":\"ShippingAddress\",\"checkoutStepName\":\"Shipping Address\",\"proceedButtonLabel\":\"Next\",\"isExpanded\":true,\"seedComponents\":[{\"fqn\":\"commerce_unified_checkout:guestContact\",\"attributes\":{}},{\"fqn\":\"commerce_unified_checkout:shipping\",\"attributes\":{}}]},{\"checkoutStepKey\":\"ShippingMethod\",\"checkoutStepName\":\"Shipping Method\",\"proceedButtonLabel\":\"Next\",\"isExpanded\":true,\"seedComponents\":[{\"fqn\":\"commerce_unified_checkout:shippingMethod\",\"attributes\":{}}]},{\"checkoutStepKey\":\"Payment\",\"checkoutStepName\":\"Payment\",\"proceedButtonLabel\":\"Place Order\",\"isExpanded\":true,\"seedComponents\":[{\"fqn\":\"commerce_unified_checkout:paymentWithBilling\",\"attributes\":{}}]}]"
+                "stepsConfig" : "[]"
+              },
+              "definition" : "commerce_unified_checkout:checkout",
+              "id" : "1993879f-dd14-4a4f-aa00-e583fb3a42a1",
+              "type" : "component"
+            }, {
+              "attributes" : {
+                "stepsConfig" : "[{\"checkoutStepKey\":\"ShippingAddress\",\"checkoutStepName\":\"Shipping Address\",\"proceedButtonLabel\":\"Next\",\"isExpanded\":true,\"seedComponents\":[{\"fqn\":\"commerce_unified_checkout:guestContact\",\"attributes\":{}},{\"fqn\":\"commerce_unified_checkout:shipping\",\"attributes\":{}}]},{\"checkoutStepKey\":\"Shipping Method\",\"checkoutStepName\":\"Shipping Method\",\"proceedButtonLabel\":\"Next\",\"isExpanded\":true,\"seedComponents\":[]},{\"checkoutStepKey\":\"Payment\",\"checkoutStepName\":\"Payment\",\"proceedButtonLabel\":\"Next\",\"isExpanded\":true,\"seedComponents\":[]}]"
               },
               "children" : [ {
                 "children" : [ {
@@ -21,7 +28,7 @@
                     "emailLabel" : "Email"
                   },
                   "definition" : "commerce_unified_checkout:guestContact",
-                  "id" : "b3983a0f-92bf-4e01-b3ae-29e4976013ee",
+                  "id" : "ff588537-dbfe-493f-9499-6f0f9391511a",
                   "type" : "component"
                 }, {
                   "attributes" : {
@@ -35,13 +42,13 @@
                     "shippingAddressLimit" : "6",
                     "shippingAddressLimitIncrease" : "6",
                     "showMoreButtonLabel" : "Show More",
-                    "summaryModeEnabled" : true
+                    "summaryModeEnabled" : false
                   },
                   "definition" : "commerce_unified_checkout:shipping",
-                  "id" : "e99b6452-2eb2-41f7-99b4-a671a9b9fb74",
+                  "id" : "1f5b62de-a106-436c-b676-3e7b0105354e",
                   "type" : "component"
                 } ],
-                "id" : "8c7c8f59-6bee-420a-b5f1-e6448fbe7989",
+                "id" : "98ff8e2c-ff88-4384-af80-50cc35224c57",
                 "name" : "ShippingAddress",
                 "title" : "Shipping Address",
                 "type" : "region"
@@ -49,11 +56,11 @@
                 "children" : [ {
                   "attributes" : { },
                   "definition" : "commerce_unified_checkout:shippingMethod",
-                  "id" : "39c92dfc-bcef-4672-9299-ed58ed88f1cd",
+                  "id" : "1f8e18b9-7111-403b-91d6-5e0299ab9460",
                   "type" : "component"
                 } ],
-                "id" : "83e40bde-ed92-4cf0-b521-97164257b2dd",
-                "name" : "ShippingMethod",
+                "id" : "2ff7ad17-fba8-4dff-a1bf-66d15906dc0d",
+                "name" : "Shipping Method",
                 "title" : "Shipping Method",
                 "type" : "region"
               }, {
@@ -67,16 +74,16 @@
                     "showBillingAddressHeading" : true
                   },
                   "definition" : "commerce_unified_checkout:paymentWithBilling",
-                  "id" : "22827dea-3053-4f0c-8ad7-5ee9fb597f0f",
+                  "id" : "ab1b3643-2605-4241-a989-10b91129ee4b",
                   "type" : "component"
                 } ],
-                "id" : "dde78b28-8883-49c6-a9d0-2a9190d28aa2",
+                "id" : "b355699c-c0f7-4e47-a37c-4d1581c9bb94",
                 "name" : "Payment",
                 "title" : "Payment",
                 "type" : "region"
               } ],
               "definition" : "commerce_unified_checkout:checkout",
-              "id" : "1993879f-dd14-4a4f-aa00-e583fb3a42a1",
+              "id" : "d30a8e44-b0ac-4314-9f5a-54bae464abbb",
               "type" : "component"
             } ],
             "id" : "1c9b1bca-bce0-4d03-adcf-a21ae0ebbdfc",

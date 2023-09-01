@@ -1,0 +1,143 @@
+<template>
+    <lightning-card title={labels.Create_your_promotion} class="promotion-card">
+        <lightning-accordion active-section-name={activeSections} allow-multiple-sections-open="true">
+            <lightning-accordion-section name="product" label={labels.Select_product_s} class="accordion-section">
+                <lightning-radio-group name="productRadioOptions"
+                                       label={labels.Select_products_by}
+                                       options={productOptions}
+                                       value={productValue}
+                                       onchange={handleProductSelectionChange}
+                                       type="radio">
+                </lightning-radio-group>
+                <template if:true={selectProduct}>
+                    <lightning-checkbox-group name="ProductCheckboxSelection"
+                                              label={labels.Select_desired_products}
+                                              options={allProducts}
+                                              value={selectedProducts}
+                                              onchange={handleProductCheckboxChange} class="checkbox-group">
+                    </lightning-checkbox-group>
+                </template>
+                <template if:true={selectCategory}>
+                    <lightning-checkbox-group name="CategoriesCheckboxSelection"
+                                              label={labels.Select_desired_categories}
+                                              options={allCategories}
+                                              value={selectedCategories}
+                                              onchange={handleCategoryCheckboxChange} class="checkbox-group">
+                    </lightning-checkbox-group>
+                    <template if:true={productsInSelectedCategory}>
+                        <p class="chosen-products">{labels.Chosen_products}</p>
+                        <div class="product-badges">
+                            <template for:each={productsInSelectedCategory} for:item="product">
+                                <lightning-badge key={product.value} label={product.label} class="badge"></lightning-badge>
+                            </template>
+                        </div>
+                    </template>
+                </template>
+            </lightning-accordion-section>
+            <lightning-accordion-section name="promotion" label={labels.Promotion_details} class="accordion-section">
+                <lightning-radio-group name="promotionRadioOptions"
+                                       label={labels.Select_promotion_type}
+                                       options={promotionOptions}
+                                       value={promotionValue}
+                                       onchange={handlePromotionSelectionChange}
+                                       type="radio">
+                </lightning-radio-group>
+                <template if:true={oneTimePromotion}>
+                    <div class="promotion-dates-container">
+                        <div class="start-date">
+                            <lightning-input type="date"
+                                             label={labels.From}
+                                             value={oneTimePromotionStartDate}
+                                             onchange={handleOneTimeStartDateChange}>
+                            </lightning-input>
+                        </div>
+                        <div class="end-date">
+                            <lightning-input type="date"
+                                             label={labels.To}
+                                             value={oneTimePromotionEndDate}
+                                             onchange={handleOneTimeEndDateChange}>
+                            </lightning-input>
+                        </div>
+                    </div>
+                </template>
+                <template if:true={periodicPromotion}>
+                    <lightning-radio-group name="periodicPromotionOptions"
+                                           label={labels.Select_type_of_periodic_promotion}
+                                           options={periodicPromotionOptions}
+                                           value={periodicPromotionType}
+                                           onchange={handlePeriodicPromotionTypeChange}
+                                           type="radio">
+                    </lightning-radio-group>
+                    <template if:true={periodicMonthlyPromotion}>
+                        <div class="promotion-dates-container">
+                            <div class="start-date">
+                                <lightning-input type="date"
+                                                 label={labels.From}
+                                                 value={periodicPromotionStartDate}
+                                                 onchange={handlePeriodicStartDateChange}>
+                                </lightning-input>
+                            </div>
+                            <div class="end-date">
+                                <lightning-input type="date"
+                                                 label={labels.To}
+                                                 value={periodicPromotionEndDate}
+                                                 onchange={handlePeriodicEndDateChange}>
+                                </lightning-input>
+                            </div>
+                        </div>
+                    </template>
+                    <template if:true={periodicWeeklyPromotion}>
+                        <lightning-checkbox-group name="WeekdayCheckboxSelection"
+                                                  label={labels.Select_weekdays_for_promotion}
+                                                  options={weekdayOptions}
+                                                  value={selectedWeekdays}
+                                                  onchange={handleWeekdaysCheckboxChange} class="checkbox-group">
+                        </lightning-checkbox-group>
+                    </template>
+                </template>
+            </lightning-accordion-section>
+            <lightning-accordion-section name="promotionValue" label={labels.Promotion_value} class="accordion-section">
+                <lightning-radio-group name="promotionValueTypeOptions"
+                                       label={labels.Select_value_type_of_promotion}
+                                       options={promotionValueTypeOptions}
+                                       value={promotionValueType}
+                                       onchange={handlePromotionValueTypeChange}
+                                       type="radio">
+                </lightning-radio-group>
+                <template if:true={absolutePromotionType}>
+                    <div class="slds-grid slds-gutters promotion-container">
+                        <div class="slds-col slds-size_1-of-4 promotion-value-input">
+                            <lightning-input type="number"
+                                             label={labels.Absolute_promotion}
+                                             value={absolutePromotionValue}
+                                             message-when-range-overflow={labels.Too_high_number}
+                                             max={highestAbsoluteDiscount}
+                                             onchange={handleAbsoluteValueChange}>
+                            </lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_3-of-4"></div>
+                    </div>
+                </template>
+                <template if:true={percentagePromotionType}>
+                    <div class="slds-grid slds-gutters promotion-container">
+                        <div class="slds-col slds-size_1-of-4 promotion-value-input">
+                            <lightning-input type="number"
+                                             label={labels.Percent_promotion}
+                                             placeholder="%"
+                                             value={percentagePromotionValue}
+                                             message-when-range-overflow={labels.Too_high_number}
+                                             max="100"
+                                             max-length="3"
+                                             onchange={handlePercentageValueChange}>
+                            </lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_3-of-4"></div>
+                    </div>
+                </template>
+                <div class="button-container">
+                    <lightning-button variant="brand" label={labels.Create_promotion} onclick={handleCreatePromotion} disabled={isButtonDisabled}></lightning-button>
+                </div>
+            </lightning-accordion-section>
+        </lightning-accordion>
+    </lightning-card>
+</template>

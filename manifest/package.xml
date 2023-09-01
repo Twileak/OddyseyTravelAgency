@@ -9,6 +9,15 @@
         <members>FacebookRegistrationHandlerTests</members>
         <members>AllReviewsController</members>
         <members>AllReviewsControllerTests</members>
+        <members>DiscountManagerController</members>
+        <members>DiscountManagerControllerTest</members>
+        <members>DiscountManagerHandler</members>
+        <members>PromotionWrapper</members>
+        <members>ProductBuilder</members>
+        <members>ProductBuilderTest</members>
+        <members>ReviewBuilder</members>
+        <members>ReviewBuilderTest</members>
+        <members>TestDataFactory</members>
         <members>productComparerController</members>
         <members>ProductComparerControllerTest</members>
         <members>ProductComparerHandler</members>
@@ -17,6 +26,7 @@
         <members>ReviewBuilder</members>
         <members>ProductBuilderTest</members>
         <members>ReviewBuilderTest</members>
+        <members>PromotionWrapperTests</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -213,6 +223,7 @@
         <members>wholeReview</members>
         <members>allReviews</members>
         <members>ratingStars</members>
+        <members>disountManager</members>
         <members>productComparer</members>
         <name>LightningComponentBundle</name>
     </types>
