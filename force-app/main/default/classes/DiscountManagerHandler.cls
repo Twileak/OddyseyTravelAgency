@@ -75,7 +75,7 @@ public with sharing class DiscountManagerHandler {
             cronExpressionEnd = '0 0 0 ' + promotion.endDate.day() + ' 1/1 ? *';
         }
 
-        if(!Test.isRunningTest()){
+        if(!Test.isRunningTest()) {
             System.schedule(jobNameStart, cronExpressionStart, jobToScheduleStart);
             System.schedule(jobNameEnd, cronExpressionEnd, jobToScheduleEnd);
         }
