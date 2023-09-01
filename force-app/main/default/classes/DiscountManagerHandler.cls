@@ -98,7 +98,12 @@ public with sharing class DiscountManagerHandler {
             this.listOfIds = listOfIds;
         }
         public void execute(SchedulableContext SC) {
-            Map<Id, PricebookEntry> newPricesMap = new Map<Id, PricebookEntry>([SELECT Id, UnitPrice FROM PricebookEntry WHERE Product2Id IN :this.listOfIds AND Pricebook2Id = '01s06000006AF0WAAW']);
+            Map<Id, PricebookEntry> newPricesMap = new Map<Id, PricebookEntry>([SELECT Id, UnitPrice
+                                                                                FROM PricebookEntry
+                                                                                WHERE Product2Id IN :this.listOfIds AND
+                                                                                Pricebook2Id IN (SELECT Id
+                                                                                                FROM Pricebook2
+                                                                                                WHERE Name LIKE '%Odyssey%')]);
 
             if(this.isAbsolute){
                 for (Id entryId : newPricesMap.keySet()) {
@@ -127,8 +132,18 @@ public with sharing class DiscountManagerHandler {
             this.listOfIds = listOfIds;
         }
         public void execute(SchedulableContext SC) {
-            Map<Id, PricebookEntry> standardPricesMap = new Map<Id, PricebookEntry>([SELECT Id, UnitPrice FROM PricebookEntry WHERE Product2Id IN :this.listOfIds AND Pricebook2Id = '01s060000069v1VAAQ']);
-            Map<Id, PricebookEntry> newPricesMap = new Map<Id, PricebookEntry>([SELECT Id, UnitPrice FROM PricebookEntry WHERE Product2Id IN :this.listOfIds AND Pricebook2Id = '01s06000006AF0WAAW']);
+            Map<Id, PricebookEntry> standardPricesMap = new Map<Id, PricebookEntry>([SELECT Id, UnitPrice
+                                                                                    FROM PricebookEntry
+                                                                                    WHERE Product2Id IN :this.listOfIds AND
+                                                                                    Pricebook2Id IN (SELECT Id
+                                                                                                    FROM Pricebook2
+                                                                                                    WHERE IsActive = TRUE)]);
+            Map<Id, PricebookEntry> newPricesMap = new Map<Id, PricebookEntry>([SELECT Id, UnitPrice
+                                                                                FROM PricebookEntry
+                                                                                WHERE Product2Id IN :this.listOfIds AND
+                                                                                Pricebook2Id IN (SELECT Id
+                                                                                                FROM Pricebook2
+                                                                                                WHERE Name LIKE '%Odyssey%')]);
 
             for (Id entryId : newPricesMap.keySet()) {
                 PricebookEntry entry = newPricesMap.get(entryId);
