@@ -1,8 +1,8 @@
 global class SalesforceAdapter implements CommercePayments.PaymentGatewayAdapter {
 
-    private static final CommercePayments.SalesforceResultCodeInfo SUCCESS_SALESFORCE_RESULT_CODE_INFO =
+    public static final CommercePayments.SalesforceResultCodeInfo SUCCESS_SALESFORCE_RESULT_CODE_INFO =
             new CommercePayments.SalesforceResultCodeInfo(CommercePayments.SalesforceResultCode.Success);
-    private static final CommercePayments.SalesforceResultCodeInfo DECLINE_SALESFORCE_RESULT_CODE_INFO =
+    public static final CommercePayments.SalesforceResultCodeInfo DECLINE_SALESFORCE_RESULT_CODE_INFO =
             new CommercePayments.SalesforceResultCodeInfo(CommercePayments.SalesforceResultCode.Decline);
 
     global SalesforceAdapter() {
@@ -88,7 +88,6 @@ global class SalesforceAdapter implements CommercePayments.PaymentGatewayAdapter
             throw new SalesforceValidationException('Required Field Missing : Amount');
         }
 
-        System.debug('Response - success');
         captureResponse.setGatewayDate(System.now());
         captureResponse.setGatewayResultCode('00');
         captureResponse.setGatewayResultCodeDescription('Transaction Normal');
@@ -109,7 +108,6 @@ global class SalesforceAdapter implements CommercePayments.PaymentGatewayAdapter
             throw new SalesforceValidationException('Required Field Missing : Amount');
         }
 
-        System.debug('Response - success');
         saleResponse.setGatewayDate(System.now());
         saleResponse.setGatewayResultCode('00');
         saleResponse.setGatewayResultCodeDescription('Transaction Normal');

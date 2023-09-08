@@ -44,7 +44,11 @@ public with sharing class ProductComparerHandler {
         return [
                 SELECT UnitPrice
                 FROM PricebookEntry
-                WHERE Product2Id = :productId AND Pricebook2Id = '01s06000006AF0WAAW'
+                WHERE Product2Id = :productId AND
+                CurrencyIsoCode = 'USD' AND
+                Pricebook2Id IN  (SELECT Id
+                                FROM Pricebook2
+                                WHERE Name LIKE '%Odyssey%')
         ];
     }
 }

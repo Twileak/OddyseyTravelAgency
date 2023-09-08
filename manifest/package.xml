@@ -16,6 +16,16 @@
         <members>ReviewBuilderTest</members>
         <members>TestDataFactory</members>
         <members>productComparerController</members>
+        <members>B2BInventoryTest</members>
+        <members>B2BShippingTest</members>
+        <members>B2BPricingTest</members>
+        <members>B2BTaxTest</members>
+        <members>RefundButtonController</members>
+        <members>DiscountManagerController</members>
+        <members>DiscountManagerControllerTest</members>
+        <members>DiscountManagerHandler</members>
+        <members>PromotionWrapper</members>
+        <members>PromotionWrapperTests</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -138,8 +148,8 @@
         <name>CommunityThemeDefinition</name>
     </types>
     <types>
-        <members>cardPaymentMethod</members>
         <members>productComparer</members>
+        <members>refundButton</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>
@@ -149,6 +159,13 @@
     <types>
         <members>Review__c.Null_Comment</members>
         <name>ValidationRule</name>
+    </types>
+    <types>
+        <members>GetInventoryResource</members>
+        <members>GetDeliveryRatesResource</members>
+        <members>GetSalesPriceResource</members>
+        <members>GetTaxesResource</members>
+        <name>StaticResource</name>
     </types>
     <!--    <types>-->
     <!--        <members>Oddysey1</members>-->

@@ -1,0 +1,53 @@
+.promotion-card {
+        padding: 16px;
+    }
+
+    .accordion-section {
+        padding: 16px 0;
+    }
+
+    .checkbox-group {
+        padding-top: 16px;
+    }
+
+    .chosen-products {
+        padding-top: 10px;
+    }
+
+    .product-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding-top: 8px;
+    }
+
+    .badge {
+        background-color: #0070d2;
+        color: white;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+    }
+
+    .promotion-dates-container {
+        display: flex;
+        gap: 16px;
+        padding-top: 16px;
+    }
+
+    .promotion-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 16px;
+    }
+
+    .promotion-value-input {
+        flex-grow: 1;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        padding-top: 16px;
+    }
