@@ -7,6 +7,7 @@ private class AllReviewsControllerTests {
         insert testProduct;
 
         List<Review__c> testReviews = TestDataFactory.createReviews(2, testProduct.Id);
+        System.debug(testReviews);
 
         insert testReviews;
 
