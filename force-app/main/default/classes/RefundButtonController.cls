@@ -7,6 +7,7 @@ public with sharing class RefundButtonController {
                 FROM OrderSummary
                 WHERE Id = :orderId
                 LIMIT 1];
+
         return order.Status;
     }
     @AuraEnabled
@@ -16,6 +17,7 @@ public with sharing class RefundButtonController {
                 FROM OrderSummary
                 WHERE Id = :orderId
                 LIMIT 1];
+
         if (orderToUpdate != null) {
             orderToUpdate.Status = 'Reviewed for refund';
             update orderToUpdate;
