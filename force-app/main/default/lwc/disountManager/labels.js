@@ -32,7 +32,10 @@ import Saturday from '@salesforce/label/c.Saturday';
 import Sunday from '@salesforce/label/c.Sunday';
 import One_time_promotion from '@salesforce/label/c.One_time_promotion';
 import Periodic_promotion from '@salesforce/label/c.Periodic_promotion';
+<<<<<<< HEAD
 import Success from '@salesforce/label/c.Success';
+=======
+>>>>>>> fe04e96c6accb120d3ac93e917dfc210e7ecabec
 
 
 export const labels = {
@@ -69,6 +72,10 @@ export const labels = {
     Saturday,
     Sunday,
     One_time_promotion,
+<<<<<<< HEAD
     Periodic_promotion,
     Success
+=======
+    Periodic_promotion
+>>>>>>> fe04e96c6accb120d3ac93e917dfc210e7ecabec
 }

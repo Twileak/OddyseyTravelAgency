@@ -26,7 +26,7 @@ public with sharing class ProductComparerHandler {
                 WHERE Product__c = :productId
         ];
 
-        if (!results.isEmpty()) {
+        if (!(results.size() == 0)) {
             AggregateResult result = results[0];
 
             Integer votes = (Integer) result.get('Votes');

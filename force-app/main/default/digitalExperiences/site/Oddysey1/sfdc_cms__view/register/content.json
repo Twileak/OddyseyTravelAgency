@@ -13,23 +13,26 @@
           "children" : [ {
             "children" : [ {
               "attributes" : {
-                "alignment" : "left",
-                "imageInfo" : "",
-                "logoWidth" : 250
+                "alignment" : "center",
+                "imageInfo" : "{\"imageInfoV1\":{\"url\":\"/sfsites/c/cms/delivery/media/MCXJFHJYTPZREYBCZ6CCFQPTT6V4?lastModifiedDate=Mon Jul 24 13:27:25 GMT 2023\",\"altText\":\"\",\"contentKey\":\"MCXJFHJYTPZREYBCZ6CCFQPTT6V4\",\"contentType\":null}}",
+                "logoWidth" : 150
               },
               "definition" : "dxp_content_layout:siteLogo",
               "id" : "2179c5c4-0dc9-486c-9a12-77de4906ecba",
               "type" : "component"
             }, {
               "attributes" : {
+                "accountId" : "0010600002BpNU4AAN",
                 "cancelLinkLabel" : "Already have an account?",
                 "confirmPasswordLabel" : "Confirm Password",
                 "emailLabel" : "Email",
+                "extraFieldsFieldSet" : "",
                 "firstnameLabel" : "First Name",
                 "includePasswordField" : true,
                 "lastnameLabel" : "Last Name",
                 "passwordLabel" : "Create Password",
                 "regConfirmUrl" : "./CheckPasswordResetEmail",
+                "startUrl" : "/odysey",
                 "submitButtonLabel" : "Sign Up"
               },
               "definition" : "commerce_builder:selfRegister",

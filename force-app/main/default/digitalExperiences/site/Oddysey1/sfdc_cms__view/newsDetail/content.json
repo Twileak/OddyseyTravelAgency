@@ -8,19 +8,19 @@
           "attributes" : {
             "backgroundImageConfig" : "",
             "backgroundImageOverlay" : "rgba(0,0,0,0)",
-            "sectionConfig" : "{\"UUID\":\"55c6b084-5824-4d3a-ac5a-c3f2c2de0335\",\"columns\":[{\"UUID\":\"30b5de23-2f25-483f-916e-c39d9f0ee822\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+            "sectionConfig" : "{\"UUID\":\"97fbed3f-b98f-413d-bc23-e9f8bb415d89\",\"columns\":[{\"UUID\":\"36b1e7bc-008f-4966-bac4-72ede6201eda\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
           },
           "children" : [ {
-            "id" : "30b5de23-2f25-483f-916e-c39d9f0ee822",
+            "id" : "36b1e7bc-008f-4966-bac4-72ede6201eda",
             "name" : "col1",
             "title" : "Column 1",
             "type" : "region"
           } ],
           "definition" : "community_layout:section",
-          "id" : "55c6b084-5824-4d3a-ac5a-c3f2c2de0335",
+          "id" : "97fbed3f-b98f-413d-bc23-e9f8bb415d89",
           "type" : "component"
         } ],
-        "id" : "18a837a2-1364-4652-9340-8382282911c8",
+        "id" : "675d197a-10e5-4bac-906d-79c11bd8f5bd",
         "name" : "content",
         "title" : "Content",
         "type" : "region"
@@ -33,16 +33,16 @@
             "recordId" : "{!recordId}"
           },
           "definition" : "community_builder:seoAssistant",
-          "id" : "3e0d620a-e128-447a-9884-3c8a13f54666",
+          "id" : "4c647268-8630-49a3-ab9a-c2d4169f5491",
           "type" : "component"
         } ],
-        "id" : "7037732c-d669-4ae5-b53e-c8a06faede5b",
+        "id" : "76e90509-0aa2-4e61-86e6-dcd5bab760ac",
         "name" : "sfdcHiddenRegion",
         "title" : "sfdcHiddenRegion",
         "type" : "region"
       } ],
       "definition" : "community_layout:sldsFlexibleLayout",
-      "id" : "f7bb02b5-9ee7-41e5-8878-0d4313e0c5d9",
+      "id" : "62bf8d12-0f58-4671-bd09-7b73ff0f01d6",
       "type" : "component"
     },
     "dataProviders" : [ ],

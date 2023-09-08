@@ -4,7 +4,7 @@ public with sharing class AllReviewsController {
         return [
                 SELECT Id, Author__c, Comment__c, Rating__c, Created_At__c
                 FROM Review__c
-                WHERE Product__c = :productId AND Approval_Status__c = 'Approved'
+                WHERE Product__c = :productId
                 ORDER BY Created_At__c DESC
         ];
     }

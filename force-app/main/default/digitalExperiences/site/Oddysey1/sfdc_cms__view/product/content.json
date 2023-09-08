@@ -8,13 +8,27 @@
           "attributes" : {
             "backgroundImageConfig" : "",
             "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "dxpStyle" : {
+              "margin" : {
+                "bottom" : "1.5rem",
+                "left" : "1.5rem",
+                "right" : "1.5rem",
+                "top" : "1.5rem"
+              },
+              "padding" : {
+                "bottom" : "0px",
+                "left" : "0px",
+                "right" : "0px",
+                "top" : "0px"
+              }
+            },
             "sectionConfig" : "{\"UUID\":\"e341fb68-3e1c-4823-9914-f46ec4f3edea\",\"columns\":[{\"UUID\":\"b19e043b-9728-4fef-86c6-ac6eaeb968b3\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":null},{\"UUID\":\"a9c4daec-5f29-444e-89fc-e4a4f082ba56\",\"columnName\":\"Column 2\",\"columnKey\":\"col2\",\"columnWidth\":\"6\",\"seedComponents\":null}]}"
           },
           "children" : [ {
             "children" : [ {
               "attributes" : {
-                "identifierName" : "",
-                "product" : "{!Product.Details}",
+                "identifierName" : "{!Product.Name}",
+                "product" : "{!Product}",
                 "productDetailSummaryFieldMapping" : "[]"
               },
               "children" : [ {
@@ -51,9 +65,15 @@
             }, {
               "attributes" : {
                 "carouselPageSize" : 1,
-                "carouselPosition" : "above",
+                "carouselPosition" : "after",
                 "dxpStyle" : {
                   "margin" : {
+                    "bottom" : "0px",
+                    "left" : "0px",
+                    "right" : "0px",
+                    "top" : "0px"
+                  },
+                  "padding" : {
                     "bottom" : "0px",
                     "left" : "0px",
                     "right" : "0px",
@@ -170,6 +190,20 @@
               "type" : "component"
             }, {
               "attributes" : {
+                "dxpStyle" : {
+                  "margin" : {
+                    "bottom" : "0px",
+                    "left" : "0px",
+                    "right" : "0px",
+                    "top" : "0px"
+                  },
+                  "padding" : {
+                    "bottom" : "0px",
+                    "left" : "0px",
+                    "right" : "0px",
+                    "top" : "0px"
+                  }
+                },
                 "recordId" : "{!recordId}"
               },
               "definition" : "c:productMap",
@@ -191,13 +225,23 @@
             "sectionConfig" : "{\"UUID\":\"4d608e71-1392-4ff2-9e8c-9ec2eb610c5e\",\"columns\":[{\"UUID\":\"839603d3-47f5-431a-ba6b-675f4d06370d\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"0a390397-3503-4bc3-b5dc-e2eb59f802ca\",\"columnName\":\"Column 2\",\"columnKey\":\"3d21e\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
           },
           "children" : [ {
+            "children" : [ {
+              "attributes" : {
+                "recordId" : "{!recordId}"
+              },
+              "definition" : "c:allReviews",
+              "id" : "cf358aa1-8b55-4466-bc78-c6909160105e",
+              "type" : "component"
+            } ],
             "id" : "839603d3-47f5-431a-ba6b-675f4d06370d",
             "name" : "col1",
             "title" : "Column 1",
             "type" : "region"
           }, {
             "children" : [ {
-              "attributes" : { },
+              "attributes" : {
+                "recordId" : "{!recordId}"
+              },
               "definition" : "c:wholeReview",
               "id" : "2d55399b-71e9-4820-8d53-3c3d5b595f41",
               "type" : "component"
@@ -209,70 +253,6 @@
           } ],
           "definition" : "community_layout:section",
           "id" : "4d608e71-1392-4ff2-9e8c-9ec2eb610c5e",
-          "type" : "component"
-        }, {
-          "attributes" : {
-            "backgroundImageConfig" : "",
-            "backgroundImageOverlay" : "rgba(0,0,0,0)",
-            "sectionConfig" : "{\"UUID\":\"0c98c40c-1c31-45c0-9bb1-86d88cd7737b\",\"columns\":[{\"UUID\":\"975fcbaa-60d9-49dc-b5e2-55026a95b2d6\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}"
-          },
-          "children" : [ {
-            "children" : [ {
-              "attributes" : {
-                "callToActionButtonLabel" : "Add to Cart",
-                "displayName" : true,
-                "displayPrice" : true,
-                "displayQuantitySelectorAndCallToActionButton" : false,
-                "headerText" : "Similar Products",
-                "manualCategoryId" : "",
-                "manualProductId" : "",
-                "maxProductsVisible" : "4",
-                "minProductsVisible" : "2",
-                "priceToDisplay" : "strikethrough",
-                "quantitySelectorLabel" : "qty",
-                "selectedAnchorType" : "productRecord",
-                "selectedRecNameCategoryManual" : "most-viewed-by-category",
-                "selectedRecNameCategoryRecord" : "most-viewed-by-category",
-                "selectedRecNameNoContext" : "recently-viewed",
-                "selectedRecNameProductCart" : "similar-products",
-                "selectedRecNameProductManual" : "similar-products",
-                "selectedRecNameProductRecord" : "similar-products"
-              },
-              "definition" : "b2c_lite_commerce:einsteinProductRecommendations",
-              "id" : "1e35d00b-22b1-40b5-8808-b7e33394abd2",
-              "type" : "component"
-            }, {
-              "attributes" : {
-                "callToActionButtonLabel" : "Add to Cart",
-                "displayName" : true,
-                "displayPrice" : true,
-                "displayQuantitySelectorAndCallToActionButton" : false,
-                "headerText" : "Complementary Products",
-                "manualCategoryId" : "",
-                "manualProductId" : "",
-                "maxProductsVisible" : "4",
-                "minProductsVisible" : "2",
-                "priceToDisplay" : "strikethrough",
-                "quantitySelectorLabel" : "qty",
-                "selectedAnchorType" : "productRecord",
-                "selectedRecNameCategoryManual" : "most-viewed-by-category",
-                "selectedRecNameCategoryRecord" : "most-viewed-by-category",
-                "selectedRecNameNoContext" : "recently-viewed",
-                "selectedRecNameProductCart" : "similar-products",
-                "selectedRecNameProductManual" : "similar-products",
-                "selectedRecNameProductRecord" : "complementary-products"
-              },
-              "definition" : "b2c_lite_commerce:einsteinProductRecommendations",
-              "id" : "10db1882-f1c6-4630-b525-99e6e4cc0601",
-              "type" : "component"
-            } ],
-            "id" : "975fcbaa-60d9-49dc-b5e2-55026a95b2d6",
-            "name" : "col1",
-            "title" : "Column 1",
-            "type" : "region"
-          } ],
-          "definition" : "community_layout:section",
-          "id" : "0c98c40c-1c31-45c0-9bb1-86d88cd7737b",
           "type" : "component"
         } ],
         "id" : "e2f96f5b-219a-4369-83b7-f9a6265f4a41",

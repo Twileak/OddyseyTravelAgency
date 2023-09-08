@@ -10,6 +10,23 @@
         <members>SalesforceValidationException</members>
         <members>ProductBuilder</members>
         <members>ProductBuilderTest</members>
+        <members>ProductManagementTests</members>
+        <members>GoogleRegHandler</members>
+        <members>GmailRegistrationHandlerTests</members>
+        <members>FacebookRegHandler</members>
+        <members>FacebookRegistrationHandlerTests</members>
+        <members>AllReviewsController</members>
+        <members>AllReviewsControllerTests</members>
+        <members>DiscountManagerController</members>
+        <members>DiscountManagerControllerTest</members>
+        <members>DiscountManagerHandler</members>
+        <members>PromotionWrapper</members>
+        <members>ProductBuilder</members>
+        <members>ProductBuilderTest</members>
+        <members>ReviewBuilder</members>
+        <members>ReviewBuilderTest</members>
+        <members>TestDataFactory</members>
+        <members>productComparerController</members>
         <members>ProductComparerControllerTest</members>
         <members>ProductComparerHandler</members>
         <members>ReviewBuilder</members>
@@ -159,6 +176,76 @@
     <types>
         <members>Review__c.Null_Comment</members>
         <name>ValidationRule</name>
+        <members>Accommodation</members>
+        <members>All_Inclusive</members>
+        <members>Cancel</members>
+        <members>Cities</members>
+        <members>Create_New</members>
+        <members>Current_members</members>
+        <members>Duration</members>
+        <members>Edit_Product</members>
+        <members>End_Date</members>
+        <members>Error_On_Delete</members>
+        <members>Existing</members>
+        <members>Full_description</members>
+        <members>Member_limit</members>
+        <members>Name</members>
+        <members>Record_deleted</members>
+        <members>Something_Wrong</members>
+        <members>Start_Date</members>
+        <members>Success</members>
+        <members>Summary</members>
+        <members>Transportation</members>
+        <members>Cancel_Button</members>
+        <members>Confirm_Button</members>
+        <members>Delete_Assurance</members>
+        <members>Delete_Button</members>
+        <members>Edit_Button</members>
+        <members>Map_Title</members>
+        <members>Product_Deletion</members>
+        <members>Additional_Information</members>
+        <members>Average_Rating</members>
+        <members>Continent</members>
+        <members>Date</members>
+        <members>Free_Spots</members>
+        <members>Get_Product_Info</members>
+        <members>No_Reviews</members>
+        <members>Number_of_Votes</members>
+        <members>Price</members>
+        <members>Product_Reviews</members>
+        <members>Review_Created</members>
+        <members>Review_Issue</members>
+        <members>Share</members>
+        <members>Select_Product_1</members>
+        <members>Select_Product_2</members>
+        <name>CustomLabel</name>
+    </types>
+    <types>
+        <members>CustomLabels</members>
+        <name>CustomLabels</name>
+    </types>
+    <types>
+        <members>site/Oddysey1</members>
+        <name>DigitalExperienceBundle</name>
+    </types>
+    <types>
+        <members>Oddysey1</members>
+        <name>DigitalExperienceConfig</name>
+    </types>
+    <types>
+        <members>Communities</members>
+        <name>Settings</name>
+    </types>
+    <types>
+        <members>productMap</members>
+        <members>starRating</members>
+        <members>commentField</members>
+        <members>wholeReview</members>
+        <members>allReviews</members>
+        <members>ratingStars</members>
+        <members>disountManager</members>
+        <members>productComparer</members>
+        <name>LightningComponentBundle</name>
     </types>
     <types>
         <members>GetInventoryResource</members>
