@@ -1,18 +1,18 @@
 <template>
     <template if:false={isRefundDisabled}>
-    <lightning-button label="Refund" variant="brand" onclick={showConfirmationModal} class="center-button"></lightning-button>
+    <lightning-button label={label.Refund} variant="brand" onclick={showConfirmationModal} class="center-button"></lightning-button>
     <template if:true={showModal}>
         <div class="slds-modal slds-fade-in-open">
             <div class="slds-modal__container">
                 <header class="slds-modal__header">
-                    <h2 class="slds-text-heading_medium">Confirm Refund</h2>
+                    <h2 class="slds-text-heading_medium">{label.Confirm_refund}</h2>
                 </header>
                 <div class="slds-modal__content slds-p-around_medium">
-                    Are you sure you want to refund this order?
+                    {label.Are_you_sure_refund}
                 </div>
                 <footer class="slds-modal__footer">
-                    <button class="slds-button slds-button_neutral" onclick={closeModal}>Cancel</button>
-                    <button class="slds-button slds-button_destructive" onclick={refundOrder}>Yes</button>
+                    <button class="slds-button slds-button_neutral" onclick={closeModal}>{label.Cancel}</button>
+                    <button class="slds-button slds-button_destructive" onclick={refundOrder}>{label.Yes}</button>
                 </footer>
             </div>
         </div>

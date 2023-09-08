@@ -36,6 +36,13 @@
         <value>All Inclusive</value>
     </labels>
     <labels>
+        <fullName>Are_you_sure_refund</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Are you sure refund?</shortDescription>
+        <value>Are you sure you want to refund this order?</value>
+    </labels>
+    <labels>
         <fullName>Average_Rating</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -83,6 +90,13 @@
         <protected>true</protected>
         <shortDescription>Confirm Button</shortDescription>
         <value>Confirm</value>
+    </labels>
+    <labels>
+        <fullName>Confirm_Refund</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Confirm Refund</shortDescription>
+        <value>Confirm Refund</value>
     </labels>
     <labels>
         <fullName>Continent</fullName>
@@ -344,6 +358,13 @@
         <value>Record deleted</value>
     </labels>
     <labels>
+        <fullName>Refund</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Refund</shortDescription>
+        <value>Refund</value>
+    </labels>
+    <labels>
         <fullName>Review_Created</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -524,5 +545,12 @@
         <protected>true</protected>
         <shortDescription>Weekly</shortDescription>
         <value>Weekly</value>
+    </labels>
+    <labels>
+        <fullName>Yes</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Yes</shortDescription>
+        <value>Yes</value>
     </labels>
 </CustomLabels>

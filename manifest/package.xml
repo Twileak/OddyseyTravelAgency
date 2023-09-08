@@ -34,6 +34,7 @@
         <members>DiscountManagerHandler</members>
         <members>PromotionWrapper</members>
         <members>PromotionWrapperTests</members>
+        <members>RefundButtonHandler</members>
         <name>ApexClass</name>
     </types>
     <types>
