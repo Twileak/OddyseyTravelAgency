@@ -75,7 +75,7 @@ private class DiscountManagerControllerTest {
                 Pricebook2Id = standardPricebook.Id,
                 Product2Id = products[0].Id,
                 UnitPrice = 10,
-                CurrencyIsoCode = 'PLN'
+                CurrencyIsoCode = 'USD'
         );
         insert entry;
 
