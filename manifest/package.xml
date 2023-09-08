@@ -29,10 +29,6 @@
         <members>ReviewBuilderTest</members>
         <members>TestDataFactory</members>
         <members>productComparerController</members>
-        <members>B2BInventoryTest</members>
-        <members>B2BShippingTest</members>
-        <members>B2BPricingTest</members>
-        <members>B2BTaxTest</members>
         <members>RefundButtonController</members>
         <members>DiscountManagerController</members>
         <members>DiscountManagerControllerTest</members>
