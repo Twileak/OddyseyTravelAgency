@@ -86,7 +86,6 @@
         <members>Account</members>
         <members>Case</members>
         <members>Contact</members>
-        <members>Lead</members>
         <members>Opportunity</members>
         <members>Order</members>
         <members>PersonAccount</members>
@@ -97,7 +96,6 @@
         <members>ProductCatalog</members>
         <members>ProductMedia</members>
         <members>Quote</members>
-        <members>Site</members>
         <members>User</members>
         <name>CustomObject</name>
     </types>
@@ -123,10 +121,6 @@
     <types>
         <members>Oddysey</members>
         <name>Network</name>
-    </types>
-    <types>
-        <members>cbOddysey</members>
-        <name>NetworkBranding</name>
     </types>
     <types>
         <members>Experience_Profile_Manager</members>
@@ -174,7 +168,6 @@
         <name>CustomTab</name>
     </types>
     <types>
-        <members>Review__c.Null_Comment</members>
         <members>Accommodation</members>
         <members>All_Inclusive</members>
         <members>Cancel</members>
