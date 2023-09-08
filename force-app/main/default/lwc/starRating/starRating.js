@@ -7,6 +7,7 @@ export default class StarRating extends LightningElement {
     @api record;
     @api author;
     satisfactionRating = 0;
+    buttonDisabled = true;
 
     label = {
                     SUCCESS_TITLE,
@@ -15,6 +16,7 @@ export default class StarRating extends LightningElement {
 
     rating(event) {
         this.satisfactionRating = event.target.value;
+        this.buttonDisabled = false;
     }
 
     get currentTimestamp(){

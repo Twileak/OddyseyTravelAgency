@@ -65,46 +65,6 @@
           "definition" : "community_layout:section",
           "id" : "731da3a9-96b9-4a21-8fc3-6d23bbb3960f",
           "type" : "component"
-        }, {
-          "attributes" : {
-            "backgroundImageConfig" : "",
-            "backgroundImageOverlay" : "rgba(0,0,0,0)",
-            "sectionConfig" : "{\"UUID\":\"76246fda-4f3b-4ace-8e9e-c8ae512227df\",\"columns\":[{\"UUID\":\"62c0db1a-d06d-40d0-837a-04e3d06dee9a\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}"
-          },
-          "children" : [ {
-            "children" : [ {
-              "attributes" : {
-                "callToActionButtonLabel" : "Add to Cart",
-                "displayName" : true,
-                "displayPrice" : true,
-                "displayQuantitySelectorAndCallToActionButton" : false,
-                "headerText" : "Recently Viewed",
-                "manualCategoryId" : "",
-                "manualProductId" : "",
-                "maxProductsVisible" : "4",
-                "minProductsVisible" : "2",
-                "priceToDisplay" : "strikethrough",
-                "quantitySelectorLabel" : "qty",
-                "selectedAnchorType" : "noContext",
-                "selectedRecNameCategoryManual" : "most-viewed-by-category",
-                "selectedRecNameCategoryRecord" : "most-viewed-by-category",
-                "selectedRecNameNoContext" : "recently-viewed",
-                "selectedRecNameProductCart" : "similar-products",
-                "selectedRecNameProductManual" : "similar-products",
-                "selectedRecNameProductRecord" : "similar-products"
-              },
-              "definition" : "b2c_lite_commerce:einsteinProductRecommendations",
-              "id" : "d671f5c5-52db-4dae-ab53-a6e328185488",
-              "type" : "component"
-            } ],
-            "id" : "62c0db1a-d06d-40d0-837a-04e3d06dee9a",
-            "name" : "col1",
-            "title" : "Column 1",
-            "type" : "region"
-          } ],
-          "definition" : "community_layout:section",
-          "id" : "76246fda-4f3b-4ace-8e9e-c8ae512227df",
-          "type" : "component"
         } ],
         "id" : "cf64abf1-2bb9-435c-9ce7-c88ef2adcfa3",
         "name" : "content",

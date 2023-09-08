@@ -39,4 +39,17 @@ private class ProductComparerControllerTest {
         System.assertEquals(1, resultMap.get('Votes'));
         System.assertEquals(3.00, resultMap.get('Average'));
     }
+
+    @IsTest
+    static void testGetReviewDetailsWhenNoReviews() {
+        Product2 testProduct = TestDataFactory.createProducts(1)[0];
+        insert testProduct;
+
+        Test.startTest();
+        Map<String, Object> resultMap = productComparerController.getReviewDetails(testProduct.Id);
+        Test.stopTest();
+
+        System.assertEquals(0, resultMap.get('Votes'));
+        System.assertEquals(0.00, resultMap.get('Average'));
+    }
 }

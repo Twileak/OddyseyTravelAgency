@@ -13,9 +13,9 @@
           "children" : [ {
             "children" : [ {
               "attributes" : {
-                "alignment" : "left",
-                "imageInfo" : "",
-                "logoWidth" : 250
+                "alignment" : "center",
+                "imageInfo" : "{\"imageInfoV1\":{\"url\":\"/sfsites/c/cms/delivery/media/MCXJFHJYTPZREYBCZ6CCFQPTT6V4?lastModifiedDate=Mon Jul 24 13:27:25 GMT 2023\",\"altText\":\"\",\"contentKey\":\"MCXJFHJYTPZREYBCZ6CCFQPTT6V4\",\"contentType\":null}}",
+                "logoWidth" : 150
               },
               "definition" : "dxp_content_layout:siteLogo",
               "id" : "646f35ab-8559-46c4-86f5-219999b87093",

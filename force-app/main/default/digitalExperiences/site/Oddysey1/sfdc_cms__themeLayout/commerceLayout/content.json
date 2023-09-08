@@ -62,7 +62,7 @@
                   }
                 },
                 "imageInfo" : "{\"imageInfoV1\":{\"url\":\"/sfsites/c/cms/delivery/media/MCN4GPGJPMSBFRVOJISUFTR4DO24?lastModifiedDate=Fri Jul 28 08:31:39 GMT 2023\",\"altText\":\"\",\"contentKey\":\"MCN4GPGJPMSBFRVOJISUFTR4DO24\",\"contentType\":null}}",
-                "logoWidth" : 110
+                "logoWidth" : 128
               },
               "definition" : "dxp_content_layout:siteLogo",
               "id" : "bd2ae231-2b0f-4e96-877b-cdcf28f32a6d",
@@ -91,7 +91,7 @@
           }, {
             "children" : [ {
               "attributes" : {
-                "borderRadius" : 0,
+                "borderRadius" : 5,
                 "placeholderText" : "Enter keyword",
                 "showSearchButton" : true,
                 "showSearchSuggestionsSetup" : true
