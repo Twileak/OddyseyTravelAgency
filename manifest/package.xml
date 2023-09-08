@@ -242,7 +242,6 @@
         <members>wholeReview</members>
         <members>allReviews</members>
         <members>ratingStars</members>
-        <members>disountManager</members>
         <members>productComparer</members>
         <members>refundButton</members>
         <name>LightningComponentBundle</name>
