@@ -175,7 +175,6 @@
     </types>
     <types>
         <members>Review__c.Null_Comment</members>
-        <name>ValidationRule</name>
         <members>Accommodation</members>
         <members>All_Inclusive</members>
         <members>Cancel</members>
@@ -245,6 +244,8 @@
         <members>ratingStars</members>
         <members>disountManager</members>
         <members>productComparer</members>
+        <members>cardPaymentMethod</members>
+        <members>refundButton</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>
