@@ -2,7 +2,6 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <members>ProductManagementController</members>
-        <members>SalesforceAdapter</members>
         <members>SalesforceValidationException</members>
         <members>ProductBuilder</members>
         <members>ProductBuilderTest</members>
