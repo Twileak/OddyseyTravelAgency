@@ -30,6 +30,7 @@
         <members>CurrencyPickerController</members>
         <members>CurrencyPickerControllerTest</members>
         <members>CurrencyPickerHandler</members>
+        <members>StoreCurrencyUpdateTest</members>
         <name>ApexClass</name>
     </types>
     <types>
