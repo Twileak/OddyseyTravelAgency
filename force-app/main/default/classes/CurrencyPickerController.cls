@@ -2,11 +2,7 @@ public without sharing class CurrencyPickerController {
 
     @AuraEnabled(Cacheable=true)
     public static String selectCurrentCurrency() {
-        try {
-            return CurrencyPickerHandler.selectCurrentCurrency();
-        } catch (Exception e){
-            throw new AuraHandledException('An error occurred while getting currency: ' + e.getMessage());
-        }
+        return CurrencyPickerHandler.selectCurrentCurrency();
     }
 
     @AuraEnabled
