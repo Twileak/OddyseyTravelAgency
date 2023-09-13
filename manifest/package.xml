@@ -27,6 +27,9 @@
         <members>ProductBuilderTest</members>
         <members>ReviewBuilderTest</members>
         <members>PromotionWrapperTests</members>
+        <members>CurrencyPickerController</members>
+        <members>CurrencyPickerControllerTest</members>
+        <members>CurrencyPickerHandler</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -225,11 +228,16 @@
         <members>ratingStars</members>
         <members>disountManager</members>
         <members>productComparer</members>
+        <members>currencyPicker</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>
         <members>*</members>
         <name>StaticResource</name>
     </types>
-    <version>57.0</version>
+    <types>
+        <members>StoreCurrencyUpdate</members>
+        <name>ApexTrigger</name>
+    </types>
+    <version>58.0</version>
 </Package>
