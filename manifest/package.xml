@@ -35,6 +35,9 @@
         <members>PromotionWrapper</members>
         <members>PromotionWrapperTests</members>
         <members>RefundButtonHandler</members>
+        <members>CurrencyPickerController</members>
+        <members>CurrencyPickerControllerTest</members>
+        <members>CurrencyPickerHandler</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -89,6 +92,7 @@
         <members>ProductMedia</members>
         <members>Quote</members>
         <members>User</members>
+        <members>Edit_Default_Currency__e</members>
         <name>CustomObject</name>
     </types>
     <types>
@@ -229,6 +233,7 @@
         <members>ratingStars</members>
         <members>productComparer</members>
         <members>refundButton</members>
+        <members>currencyPicker</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>
@@ -237,6 +242,10 @@
         <members>GetSalesPriceResource</members>
         <members>GetTaxesResource</members>
         <name>StaticResource</name>
+    </types>
+    <types>
+        <members>StoreCurrencyUpdate</members>
+        <name>ApexTrigger</name>
     </types>
     <!--    <types>-->
     <!--        <members>Oddysey1</members>-->

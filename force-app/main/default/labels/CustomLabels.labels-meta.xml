@@ -288,6 +288,13 @@
         <value>One time promotion</value>
     </labels>
     <labels>
+        <fullName>PLN</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>PLN</shortDescription>
+        <value>PLN</value>
+    </labels>
+    <labels>
         <fullName>Percent</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -531,6 +538,13 @@
         <protected>true</protected>
         <shortDescription>Tuesday</shortDescription>
         <value>Tuesday</value>
+    </labels>
+    <labels>
+        <fullName>USD</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>USD</shortDescription>
+        <value>USD</value>
     </labels>
     <labels>
         <fullName>Wednesday</fullName>
