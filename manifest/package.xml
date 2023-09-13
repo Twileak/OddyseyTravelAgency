@@ -74,7 +74,6 @@
         <members>Case</members>
         <members>Contact</members>
         <members>Opportunity</members>
-        <members>Order</members>
         <members>PersonAccount</members>
         <members>Place__c</members>
         <members>Pricebook2</members>
@@ -85,6 +84,7 @@
         <members>Quote</members>
         <members>User</members>
         <members>Review__c</members>
+        <members>Edit_Default_Currency__e</members>
         <name>CustomObject</name>
     </types>
     <types>
@@ -238,6 +238,24 @@
     <types>
         <members>StoreCurrencyUpdate</members>
         <name>ApexTrigger</name>
+    </types>
+    <types>
+        <name>BusinessProcess</name>
+    </types>
+    <types>
+        <name>FieldSet</name>
+    </types>
+    <types>
+        <name>ListView</name>
+    </types>
+    <types>
+        <name>RecordType</name>
+    </types>
+    <types>
+        <name>ValidationRule</name>
+    </types>
+    <types>
+        <name>WebLink</name>
     </types>
     <version>58.0</version>
 </Package>
