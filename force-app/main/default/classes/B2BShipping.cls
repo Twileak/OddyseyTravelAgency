@@ -1,4 +1,7 @@
+
 global with sharing class B2BShipping implements Sfdc_Checkout.CartShippingCharges {
+    private static String httpHost = 'https://example.com';
+    private static Boolean useHTTPService = false;
     global Sfdc_Checkout.IntegrationStatus startCartProcessAsync(Sfdc_Checkout.IntegrationInfo jobInfo, Id cartId) {
         Sfdc_Checkout.IntegrationStatus integStatus = new Sfdc_Checkout.IntegrationStatus();
         try {
@@ -6,7 +9,13 @@ global with sharing class B2BShipping implements Sfdc_Checkout.CartShippingCharg
 
             Integer numberOfUniqueItems = [SELECT COUNT() FROM CartItem WHERE CartId = :cartId WITH SECURITY_ENFORCED];
 
-            ShippingOptionsAndRatesFromExternalService[] shippingOptionsAndRatesFromExternalService = getShippingOptionsAndRatesFromExternalService(numberOfUniqueItems);
+
+            ShippingOptionsAndRatesFromExternalService[] shippingOptionsAndRatesFromExternalService = null;
+            if(useHTTPService) {
+                shippingOptionsAndRatesFromExternalService = getShippingOptionsAndRatesFromExternalService(numberOfUniqueItems);
+            } else {
+                shippingOptionsAndRatesFromExternalService = getShippingOptionsAndRatesFromMockedService(numberOfUniqueItems);
+            }
 
             delete [SELECT Id FROM CartDeliveryGroupMethod WHERE CartDeliveryGroupId = :cartDeliveryGroupId WITH SECURITY_ENFORCED];
 
@@ -22,7 +31,6 @@ global with sharing class B2BShipping implements Sfdc_Checkout.CartShippingCharg
             }
 
             integStatus.status = Sfdc_Checkout.IntegrationStatus.Status.SUCCESS;
-
         } catch (DmlException de) {
             Integer numErrors = de.getNumDml();
             String errorMessage = 'There were ' + numErrors + ' errors when trying to insert the charge in the CartItem: ';
@@ -48,18 +56,44 @@ global with sharing class B2BShipping implements Sfdc_Checkout.CartShippingCharg
         }
         return integStatus;
     }
+    private ShippingOptionsAndRatesFromExternalService[] getShippingOptionsAndRatesFromMockedService (Integer numberOfUniqueItems) {
+        ShippingOptionsAndRatesFromExternalService[] shippingOptions = new List<ShippingOptionsAndRatesFromExternalService>();
+        String responseBody = getShippingOptionsResponse();
+        List<Object> results = (List<Object>) JSON.deserializeUntyped(responseBody);
+        for (Object result: results) {
+            Map<String, Object> subresult = (Map<String, Object>) result;
+            Map<String, Object> providerAndRate = (Map<String, Object>) subresult.get('rate');
+            shippingOptions.add( new ShippingOptionsAndRatesFromExternalService(
+                    (String) providerAndRate.get('name'),
+                    (String) providerAndRate.get('serviceCode'),
+                    (Decimal) providerAndRate.get('shipmentCost') * numberOfUniqueItems,
+                    (Decimal) providerAndRate.get('otherCost'),
+                    (String) providerAndRate.get('serviceName')
+            ));
+        }
+        return shippingOptions;
+    }
+
+    private String getShippingOptionsResponse() {
+        String name1 = 'Delivery Method 1';
+        String name2 = 'Delivery Method 2';
+        String serviceName1 = 'Test Carrier 1';
+        String serviceName2 = 'Test Carrier 2';
+        return '[{"status":"calculated","rate":{"name":"'+name1+'","serviceName":"'+serviceName1+'","serviceCode":"SNC9600","shipmentCost":11.99,"otherCost":5.99}},{"status":"calculated","rate":{"name":"'+name2+'","serviceName":"'+serviceName2+'","serviceCode":"SNC9600","shipmentCost":15.99,"otherCost":6.99}}]';
+    }
 
     private ShippingOptionsAndRatesFromExternalService[] getShippingOptionsAndRatesFromExternalService (Integer numberOfUniqueItems) {
-        final Integer SuccessfulHttpRequest = 200;
+        final Integer successfulHttpRequest = 200;
 
         ShippingOptionsAndRatesFromExternalService[] shippingOptions = new List<ShippingOptionsAndRatesFromExternalService>();
 
         Http http = new Http();
         HttpRequest request = new HttpRequest();
-        request.setEndpoint('https://b2b-commerce-test.herokuapp.com/calculate-shipping-rates-winter-21');
+        request.setEndpoint(httpHost + '/calculate-shipping-rates-winter-21');
         request.setMethod('GET');
         HttpResponse response = http.send(request);
-        if (response.getStatusCode() == SuccessfulHttpRequest) {
+
+        if (response.getStatusCode() == successfulHttpRequest) {
             List<Object> results = (List<Object>) JSON.deserializeUntyped(response.getBody());
             for (Object result: results) {
                 Map<String, Object> subresult = (Map<String, Object>) result;
@@ -73,12 +107,14 @@ global with sharing class B2BShipping implements Sfdc_Checkout.CartShippingCharg
                 ));
             }
             return shippingOptions;
-        }
-        else {
+        } else if(response.getStatusCode() == 404) {
+            throw new CalloutException ('404. You must create a sample application or add your own service which returns a valid response');
+        } else {
             throw new CalloutException ('There was a problem with the request. Error: ' + response.getStatusCode());
         }
     }
-    class ShippingOptionsAndRatesFromExternalService {
+
+    Class ShippingOptionsAndRatesFromExternalService {
         private String name;
         private String provider;
         private Decimal rate;
@@ -113,6 +149,7 @@ global with sharing class B2BShipping implements Sfdc_Checkout.CartShippingCharg
             return name;
         }
     }
+
     private void populateCartDeliveryGroupMethodWithShippingOptions(ShippingOptionsAndRatesFromExternalService shippingOption,
             Id cartDeliveryGroupId,
             Id deliveryMethodId,

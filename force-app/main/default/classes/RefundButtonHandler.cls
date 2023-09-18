@@ -22,7 +22,7 @@ public with sharing class RefundButtonHandler {
         ];
 
         if (orderToUpdate != null) {
-            orderToUpdate.Status = 'Reviewed for refund';
+            orderToUpdate.Status = System.Label.Reviewed_for_refund;
             update orderToUpdate;
         }
     }
