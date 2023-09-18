@@ -4,8 +4,15 @@ trigger StoreCurrencyUpdate on Edit_Default_Currency__e (after insert) {
 
     Map<Id, String> storeIdToNewCurrencyMap = new Map<Id, String>();
 
+    WebStore store = [
+            SELECT Name, SupportedCurrencies
+            FROM WebStore
+            WHERE Name = 'Oddysey'];
+
+    List<String> supportedCurrencies = store.SupportedCurrencies.split(';');
+
     for (Edit_Default_Currency__e event : Trigger.new) {
-        if (event.NewCurrency__c == 'PLN' || event.NewCurrency__c == 'USD') {
+        if (supportedCurrencies.contains(event.NewCurrency__c)) {
             storeIds.add(event.Store_Id__c);
             storeIdToNewCurrencyMap.put(event.Store_Id__c, event.NewCurrency__c);
         }
