@@ -228,6 +228,7 @@ export default class DisountManager extends LightningElement {
 
         const stringPromotion = JSON.stringify(promotion);
         createPromotion({stringPromotion: stringPromotion});
+        this.displayToast(this.labels.errorTitle, labels.Success, "success");
     }
 
     handleEnabledSubmitButton() {

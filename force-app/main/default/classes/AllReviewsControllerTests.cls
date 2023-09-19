@@ -7,11 +7,9 @@ private class AllReviewsControllerTests {
         insert testProduct;
 
         List<Review__c> testReviews = TestDataFactory.createReviews(2, testProduct.Id);
-
         insert testReviews;
 
         List<Review__c> reviews = AllReviewsController.getReviews(testProduct.Id);
-        System.debug(reviews);
 
         System.assertEquals(2, reviews.size(), 'Incorrect number of reviews');
         System.assertEquals('Test Author0', reviews[0].Author__c, 'Incorrect author for review 1');
@@ -34,7 +32,6 @@ private class AllReviewsControllerTests {
         insert testReviews;
 
         List<Review__c> reviews = AllReviewsController.getReviews(testProduct2.Id);
-        System.debug(reviews);
 
         System.assertEquals(0, reviews.size(), 'Incorrect number of reviews');
     }

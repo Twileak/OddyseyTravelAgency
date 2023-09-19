@@ -7,7 +7,8 @@ public with sharing class ReviewBuilder {
     public ReviewBuilder() {
         review = new Review__c(
                 Author__c = 'Test Author',
-                Rating__c = 3
+                Rating__c = 3,
+                Approval_Status__c = 'Approved'
         );
     }
     public ReviewBuilder setAuthor(String author) {
