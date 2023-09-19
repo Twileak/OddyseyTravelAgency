@@ -5,12 +5,17 @@ public without sharing class CurrencyPickerController {
         return CurrencyPickerHandler.selectCurrentCurrency();
     }
 
+    @AuraEnabled(Cacheable=true)
+    public static String getSupportedCurrencies(){
+        return CurrencyPickerHandler.getSupportedCurrencies();
+    }
+
     @AuraEnabled
     public static void updateCurrency(String cur) {
         try {
             CurrencyPickerHandler.updateCurrency(cur);
         } catch (Exception e) {
-            throw new AuraHandledException('An error occurred while updating the currency: ' + e.getMessage());
+            throw new AuraHandledException(System.Label.Error_on_currency_update + e.getMessage());
         }
     }
 }

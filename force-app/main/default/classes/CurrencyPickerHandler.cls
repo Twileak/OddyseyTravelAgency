@@ -9,8 +9,19 @@ public without sharing class CurrencyPickerHandler {
                 SELECT Id, CurrencyIsoCode, SupportedCurrencies, Name
                 FROM WebStore
                 WHERE Name = 'Oddysey'
-                LIMIT 1];
+                LIMIT 1
+        ];
         return store.CurrencyIsoCode;
+    }
+
+    public static String getSupportedCurrencies(){
+        WebStore store = [
+                SELECT SupportedCurrencies
+                FROM WebStore
+                WHERE Name = 'Oddysey'
+                LIMIT 1
+        ];
+        return store.SupportedCurrencies;
     }
 
     public static void updateCurrency(String cur) {
@@ -18,14 +29,15 @@ public without sharing class CurrencyPickerHandler {
                 SELECT Id,Name
                 FROM WebStore
                 WHERE Name = 'Oddysey'
-                LIMIT 1];
+                LIMIT 1
+        ];
         try{
             Edit_Default_Currency__e event = new Edit_Default_Currency__e();
             event.NewCurrency__c = cur;
             event.Store_Id__c = store.Id;
             EventBus.publish(event);
         }catch(Exception e){
-            throw new AuraHandledException('An error occurred while updating the currency: ' + e.getMessage());
+            throw new AuraHandledException(System.Label.Error_on_currency_update + e.getMessage());
         }
     }
 }

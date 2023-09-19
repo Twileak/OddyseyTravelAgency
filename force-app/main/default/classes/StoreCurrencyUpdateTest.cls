@@ -1,56 +1,54 @@
 @IsTest
 public class StoreCurrencyUpdateTest{
     @IsTest
-    static void testTriggerPLN() {
-        WebStore testWebStore = new WebStore(Name = 'Test WebStore', CurrencyIsoCode = 'USD');
+    static void testTriggerWhenStoreIsChangedToUSD() {
+        WebStore testWebStore = new WebStore(Name = 'Oddysey', CurrencyIsoCode = 'PLN', SupportedCurrencies ='USD;PLN');
         insert testWebStore;
 
+        Test.startTest();
+        Edit_Default_Currency__e testEvent = new Edit_Default_Currency__e();
+        testEvent.Store_Id__c = testWebStore.Id;
+        testEvent.NewCurrency__c = 'USD';
+        EventBus.publish(testEvent);
+        Test.stopTest();
+
+        WebStore updatedWebStore = [SELECT CurrencyIsoCode FROM WebStore WHERE Id = :testWebStore.Id LIMIT 1];
+        System.assertEquals('USD', updatedWebStore.CurrencyIsoCode);
+    }
+
+    @IsTest
+    static void testTriggerWhenStoreIsChangedToPLN() {
+        WebStore testWebStore = new WebStore(Name = 'Oddysey', CurrencyIsoCode = 'USD', SupportedCurrencies = 'PLN;USD');
+        insert testWebStore;
+
+
+
+        Test.startTest();
         Edit_Default_Currency__e testEvent = new Edit_Default_Currency__e(
                 Store_Id__c = testWebStore.Id,
                 NewCurrency__c = 'PLN'
         );
-
-        Test.startTest();
         EventBus.publish(testEvent);
-        WebStore updatedWebStore = [SELECT CurrencyIsoCode FROM WebStore WHERE Id = :testWebStore.Id LIMIT 1];
         Test.stopTest();
 
-        System.assertEquals('USD', updatedWebStore.CurrencyIsoCode);
+        WebStore updatedWebStore = [SELECT CurrencyIsoCode FROM WebStore WHERE Id = :testWebStore.Id LIMIT 1];
+        System.assertEquals('PLN', updatedWebStore.CurrencyIsoCode);
     }
 
     @IsTest
-    static void testTriggerUSD() {
-        WebStore testWebStore = new WebStore(Name = 'Test WebStore', CurrencyIsoCode = 'USD');
+    static void testTriggerWhenThereIsChangedToOtherCurrency() {
+        WebStore testWebStore = new WebStore(Name = 'Test WebStore', CurrencyIsoCode = 'USD', SupportedCurrencies = 'PLN;USD');
         insert testWebStore;
-
-        Edit_Default_Currency__e testEvent = new Edit_Default_Currency__e(
-                Store_Id__c = testWebStore.Id,
-                NewCurrency__c = 'USD'
-        );
 
         Test.startTest();
-        EventBus.publish(testEvent);
-        WebStore updatedWebStore = [SELECT CurrencyIsoCode FROM WebStore WHERE Id = :testWebStore.Id LIMIT 1];
-        Test.stopTest();
-
-        System.assertEquals('USD', updatedWebStore.CurrencyIsoCode);
-    }
-
-    @IsTest
-    static void testTriggerOtherCurrency() {
-        WebStore testWebStore = new WebStore(Name = 'Test WebStore', CurrencyIsoCode = 'USD');
-        insert testWebStore;
-
         Edit_Default_Currency__e testEvent = new Edit_Default_Currency__e(
                 Store_Id__c = testWebStore.Id,
                 NewCurrency__c = 'GBP'
         );
-
-        Test.startTest();
         EventBus.publish(testEvent);
-        WebStore updatedWebStore = [SELECT CurrencyIsoCode FROM WebStore WHERE Id = :testWebStore.Id LIMIT 1];
         Test.stopTest();
 
+        WebStore updatedWebStore = [SELECT CurrencyIsoCode FROM WebStore WHERE Id = :testWebStore.Id LIMIT 1];
         System.assertEquals('USD', updatedWebStore.CurrencyIsoCode);
     }
 }

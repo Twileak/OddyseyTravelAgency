@@ -190,6 +190,13 @@
         <value>Error during deleting record</value>
     </labels>
     <labels>
+        <fullName>Error_on_currency_update</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error on currency update</shortDescription>
+        <value>An error occurred while updating the currency:</value>
+    </labels>
+    <labels>
         <fullName>Existing</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -384,6 +391,13 @@
         <protected>true</protected>
         <shortDescription>Review Issue</shortDescription>
         <value>There was an issue!</value>
+    </labels>
+    <labels>
+        <fullName>Reviewed_for_refund</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Reviewed for refund</shortDescription>
+        <value>Reviewed for refund</value>
     </labels>
     <labels>
         <fullName>Saturday</fullName>
