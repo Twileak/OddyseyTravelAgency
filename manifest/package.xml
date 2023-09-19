@@ -138,7 +138,6 @@
         <members>Product2.Start_Date__c</members>
         <members>Product2.Summary__c</members>
         <members>Product2.Transportation__c</members>
-        <members>Order.OrderManagementReferenceIdentifier</members>
         <name>CustomField</name>
     </types>
     <types>
