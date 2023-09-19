@@ -101,11 +101,18 @@ public with sharing class DiscountManagerHandler {
             this.listOfIds = listOfIds;
         }
         public void execute(SchedulableContext SC) {
+            String defaultCurrency = [
+                    SELECT CurrencyIsoCode
+                    FROM WebStore
+                    WHERE Name = 'Oddysey'
+                    LIMIT 1
+            ].CurrencyIsoCode;
+
             Map<Id, PricebookEntry> newPricesMap = new Map<Id, PricebookEntry>([
                     SELECT Id, UnitPrice
                     FROM PricebookEntry
                     WHERE Product2Id IN :this.listOfIds AND
-                    CurrencyIsoCode = 'USD' AND
+                    CurrencyIsoCode = :defaultCurrency AND
                     Pricebook2Id IN (SELECT Id
                                     FROM Pricebook2
                                     WHERE Name LIKE '%Odyssey%')
@@ -138,11 +145,18 @@ public with sharing class DiscountManagerHandler {
             this.listOfIds = listOfIds;
         }
         public void execute(SchedulableContext SC) {
+            String defaultCurrency = [
+                    SELECT CurrencyIsoCode
+                    FROM WebStore
+                    WHERE Name = 'Oddysey'
+                    LIMIT 1
+            ].CurrencyIsoCode;
+
             Map<Id, PricebookEntry> standardPricesMap = new Map<Id, PricebookEntry>([
                     SELECT Id, UnitPrice
                     FROM PricebookEntry
                     WHERE Product2Id IN :this.listOfIds AND
-                    CurrencyIsoCode = 'USD' AND
+                    CurrencyIsoCode = :defaultCurrency AND
                     Pricebook2Id IN (SELECT Id
                                     FROM Pricebook2
                                     WHERE IsActive = TRUE)
@@ -151,7 +165,7 @@ public with sharing class DiscountManagerHandler {
                     SELECT Id, UnitPrice
                     FROM PricebookEntry
                     WHERE Product2Id IN :this.listOfIds AND
-                    CurrencyIsoCode = 'USD' AND
+                    CurrencyIsoCode = :defaultCurrency AND
                     Pricebook2Id IN (SELECT Id
                                     FROM Pricebook2
                                     WHERE Name LIKE '%Odyssey%')
