@@ -1,4 +1,4 @@
-import { LightningElement, api } from "lwc";
+import { LightningElement, api, track } from "lwc";
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import SUCCESS_TITLE from '@salesforce/label/c.Review_Created';
 import ERROR_TITLE from '@salesforce/label/c.Review_Issue';
@@ -8,6 +8,7 @@ export default class StarRating extends LightningElement {
     @api author;
     satisfactionRating = 0;
     buttonDisabled = true;
+    @track comment;
 
     label = {
                     SUCCESS_TITLE,
@@ -23,15 +24,21 @@ export default class StarRating extends LightningElement {
         return new Date().toISOString();
     }
 
-    handleSubmit(event) {
+    handleSubmit(event) {;
         event.preventDefault();
         const fields = event.detail.fields;
+        fields.Comment__c = this.comment;
         this.template.querySelector('lightning-record-edit-form').submit(fields);
     }
 
     handleSuccess() {
         this.displayToast(this.label.SUCCESS_TITLE, "success");
         this.handleReset();
+
+        const event = new CustomEvent('reviewcreated', {
+                    detail: { reviewCreated: true }
+                });
+        this.dispatchEvent(event);
     }
 
     handleReset() {
@@ -52,5 +59,9 @@ export default class StarRating extends LightningElement {
                     variant: variant,
                 });
                 this.dispatchEvent(toast);
+    }
+
+    changeComment(){
+        this.comment = event.detail.value;
     }
 }

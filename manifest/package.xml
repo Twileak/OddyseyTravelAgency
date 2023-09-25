@@ -27,6 +27,15 @@
         <members>ProductBuilderTest</members>
         <members>ReviewBuilderTest</members>
         <members>PromotionWrapperTests</members>
+        <members>CurrencyPickerController</members>
+        <members>CurrencyPickerControllerTest</members>
+        <members>CurrencyPickerHandler</members>
+        <members>StoreCurrencyUpdateTest</members>
+        <members>ITriggerHandler</members>
+        <members>TriggerDispatcher</members>
+        <members>PlatformEventTriggerHandler</members>
+        <members>CheckRecursive</members>
+        <members>CommentsController</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -71,7 +80,6 @@
         <members>Case</members>
         <members>Contact</members>
         <members>Opportunity</members>
-        <members>Order</members>
         <members>PersonAccount</members>
         <members>Place__c</members>
         <members>Pricebook2</members>
@@ -82,6 +90,7 @@
         <members>Quote</members>
         <members>User</members>
         <members>Review__c</members>
+        <members>Edit_Default_Currency__e</members>
         <name>CustomObject</name>
     </types>
     <types>
@@ -225,11 +234,35 @@
         <members>ratingStars</members>
         <members>disountManager</members>
         <members>productComparer</members>
+        <members>currencyPicker</members>
+        <members>myComment</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>
         <members>*</members>
         <name>StaticResource</name>
     </types>
-    <version>57.0</version>
+    <types>
+        <members>StoreCurrencyUpdate</members>
+        <name>ApexTrigger</name>
+    </types>
+    <types>
+        <name>BusinessProcess</name>
+    </types>
+    <types>
+        <name>FieldSet</name>
+    </types>
+    <types>
+        <name>ListView</name>
+    </types>
+    <types>
+        <name>RecordType</name>
+    </types>
+    <types>
+        <name>ValidationRule</name>
+    </types>
+    <types>
+        <name>WebLink</name>
+    </types>
+    <version>58.0</version>
 </Package>

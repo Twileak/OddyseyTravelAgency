@@ -36,6 +36,13 @@
         <value>All Inclusive</value>
     </labels>
     <labels>
+        <fullName>Are_you_sure_refund</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Are you sure refund?</shortDescription>
+        <value>Are you sure you want to refund this order?</value>
+    </labels>
+    <labels>
         <fullName>Average_Rating</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -83,6 +90,13 @@
         <protected>true</protected>
         <shortDescription>Confirm Button</shortDescription>
         <value>Confirm</value>
+    </labels>
+    <labels>
+        <fullName>Confirm_Refund</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Confirm Refund</shortDescription>
+        <value>Confirm Refund</value>
     </labels>
     <labels>
         <fullName>Continent</fullName>
@@ -174,6 +188,13 @@
         <protected>true</protected>
         <shortDescription>Error On Delete</shortDescription>
         <value>Error during deleting record</value>
+    </labels>
+    <labels>
+        <fullName>Error_on_currency_update</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error on currency update</shortDescription>
+        <value>An error occurred while updating the currency:</value>
     </labels>
     <labels>
         <fullName>Existing</fullName>
@@ -274,6 +295,13 @@
         <value>One time promotion</value>
     </labels>
     <labels>
+        <fullName>PLN</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>PLN</shortDescription>
+        <value>PLN</value>
+    </labels>
+    <labels>
         <fullName>Percent</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -344,6 +372,13 @@
         <value>Record deleted</value>
     </labels>
     <labels>
+        <fullName>Refund</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Refund</shortDescription>
+        <value>Refund</value>
+    </labels>
+    <labels>
         <fullName>Review_Created</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -356,6 +391,13 @@
         <protected>true</protected>
         <shortDescription>Review Issue</shortDescription>
         <value>There was an issue!</value>
+    </labels>
+    <labels>
+        <fullName>Reviewed_for_refund</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Reviewed for refund</shortDescription>
+        <value>Reviewed for refund</value>
     </labels>
     <labels>
         <fullName>Saturday</fullName>
@@ -376,7 +418,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>Select Product 2</shortDescription>
-        <value>Select Product 1</value>
+        <value>Select Product 2</value>
     </labels>
     <labels>
         <fullName>Select_desired_categories</fullName>
@@ -512,6 +554,13 @@
         <value>Tuesday</value>
     </labels>
     <labels>
+        <fullName>USD</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>USD</shortDescription>
+        <value>USD</value>
+    </labels>
+    <labels>
         <fullName>Wednesday</fullName>
         <language>en_US</language>
         <protected>true</protected>
@@ -524,5 +573,12 @@
         <protected>true</protected>
         <shortDescription>Weekly</shortDescription>
         <value>Weekly</value>
+    </labels>
+    <labels>
+        <fullName>Yes</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Yes</shortDescription>
+        <value>Yes</value>
     </labels>
 </CustomLabels>
