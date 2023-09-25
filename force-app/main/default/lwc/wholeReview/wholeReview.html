@@ -1,4 +1,5 @@
 <template>
+    <template if:false={reviewCreated}>
     <template if:true={myReview}>
         <template if:false={showEdit}>
             <lightning-card title="You've already posted a review:" class="my-review-container">
@@ -63,9 +64,18 @@
     <lightning-card title={label.TITLE_LABEL}>
         <div class="slds-m-top_small slds-m-bottom_x-small">
             <div >
-                <c-star-rating record={recordId} author={authorName}></c-star-rating>
+                <c-star-rating record={recordId} author={authorName} onreviewcreated={handleReviewCreated}></c-star-rating>
             </div>
         </div>
     </lightning-card>
     </template>
+    </template>
+    <lightning-card if:true={reviewCreated}>
+        <div class="card-title">
+            Thank you!
+        </div>
+        <div style="text-align: center;">
+            Your Review has been sent for approval
+        </div>
+    </lightning-card>
 </template>

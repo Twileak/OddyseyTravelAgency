@@ -15,6 +15,7 @@ export default class WholeReview extends LightningElement {
     @track myReview;
     buttonDisabled = true;
     @track showEdit = false;
+    @track reviewCreated = false;
 
     label = {
                 TITLE_LABEL
@@ -53,6 +54,11 @@ export default class WholeReview extends LightningElement {
         this.dispatchEvent(toast);
     }
 
+    handleReviewCreated(){
+    console.log('review created');
+            this.reviewCreated = true;
+        }
+
     rating(event) {
         this.satisfactionRating = event.target.value;
         this.buttonDisabled = false;
@@ -72,6 +78,7 @@ export default class WholeReview extends LightningElement {
     handleSuccess() {
         this.displayToast(this.label.SUCCESS_TITLE, "success");
         this.handleReset();
+        this.handleReviewCreated();
     }
 
     handleReset() {

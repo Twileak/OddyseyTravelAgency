@@ -34,6 +34,11 @@ export default class StarRating extends LightningElement {
     handleSuccess() {
         this.displayToast(this.label.SUCCESS_TITLE, "success");
         this.handleReset();
+
+        const event = new CustomEvent('reviewcreated', {
+                    detail: { reviewCreated: true }
+                });
+        this.dispatchEvent(event);
     }
 
     handleReset() {
