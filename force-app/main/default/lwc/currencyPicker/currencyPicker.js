@@ -48,7 +48,9 @@ export default class CurrencyUpdateLWC extends LightningElement {
         } catch(error){
             this.displayToast(this.label.errorTitle, JSON.stringify(error), "error");
         }
-        location.reload();
+        setTimeout(() => {
+            location.reload();
+        }, 500);
     }
 
     displayToast(title, message, variant) {

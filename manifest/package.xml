@@ -35,6 +35,7 @@
         <members>TriggerDispatcher</members>
         <members>PlatformEventTriggerHandler</members>
         <members>CheckRecursive</members>
+        <members>CommentsController</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -234,6 +235,7 @@
         <members>disountManager</members>
         <members>productComparer</members>
         <members>currencyPicker</members>
+        <members>myComment</members>
         <name>LightningComponentBundle</name>
     </types>
     <types>

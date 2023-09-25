@@ -7,7 +7,7 @@
             <div class="slds-m-around_medium">
                 <template for:each={reviews} for:item="review">
                     <div key={review.Id} class="slds-m-bottom_medium review-container">
-                        <p class="author">{review.Author__c}, {review.Created_At__c}</p>
+                        <p class="author">{review.Author__c}</p>
                         <div class="slds-m-top_medium slds-m-bottom_medium rating-container">
                             <c-rating-stars rating={review.Rating__c}></c-rating-stars>
                         </div>

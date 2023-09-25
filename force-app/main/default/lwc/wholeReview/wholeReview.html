@@ -1,4 +1,65 @@
 <template>
+    <template if:true={myReview}>
+        <template if:false={showEdit}>
+            <lightning-card title="You've already posted a review:" class="my-review-container">
+                <div class="slds-m-around_medium" style="margin-left: 12px; margin-right: 12px;">
+                    <div class="slds-m-bottom_medium review-container">
+                        <p class="author">{myReview.Author__c}</p>
+                        <div class="slds-m-top_medium slds-m-bottom_medium rating-container">
+                            <c-rating-stars rating={myReview.Rating__c}></c-rating-stars>
+                        </div>
+                        <lightning-formatted-rich-text class="comment" value={myReview.Comment__c}></lightning-formatted-rich-text>
+                    </div>
+                    <div class="buttons-container" >
+                        <lightning-button label="Edit" variant="brand" onclick={handleShowEdit}></lightning-button>
+                        <lightning-button label="Delete" variant="destructive"></lightning-button>
+                    </div>
+                </div>
+            </lightning-card>
+        </template>
+        <template if:true={showEdit}>
+            <lightning-card title="Edit your comment: ">
+                <div class="slds-m-top_small slds-m-bottom_x-small">
+                    <div class="slds-m-top_medium slds-m-bottom_x-large">
+                        <div class="slds-p-around_small lgc-bg">
+                            <lightning-tile type="media" >
+                                <div class="rate">
+                                    <input type="radio" id="star5" name="Satisfaction" value="5" onchange={rating} />
+                                    <label for="star5" title="text">5 stars</label>
+                                    <input type="radio" id="star4" name="Satisfaction" value="4" onchange={rating} />
+                                    <label for="star4" title="text">4 stars</label>
+                                    <input type="radio" id="star3" name="Satisfaction" value="3" onchange={rating} />
+                                    <label for="star3" title="text">3 stars</label>
+                                    <input type="radio" id="star2" name="Satisfaction" value="2" onchange={rating} />
+                                    <label for="star2" title="text">2 stars</label>
+                                    <input type="radio" id="star1" name="Satisfaction" value="1" onchange={rating} />
+                                    <label for="star1" title="text">1 star</label>
+                                </div>
+                            </lightning-tile>
+                        </div>
+                    </div>
+                    <div class="slds-m-top_medium slds-m-bottom_x-large">
+                        <div class="slds-p-around_medium lgc-bg">
+                            <lightning-record-edit-form record-id={myReview.Id} object-api-name="Review__c" onsuccess={handleSuccess} onsubmit={handleSubmit}>
+                                <lightning-input-rich-text id="commentField" value={myReview.Comment__c} variant="label-hidden" style="padding-left: 15px; padding-right: 15px;" onchange={changeComment}></lightning-input-rich-text>
+                                <div class="slds-align_absolute-center">
+                                    <lightning-button type="submit" label="Submit" variant="brand" disabled={buttonDisabled} style="padding-top: 10px;"></lightning-button>
+                                </div>
+                                <div class="slds-hidden" style="max-height: 0px;">
+                                    <lightning-input-field field-name="Comment__c"></lightning-input-field>
+                                    <lightning-input-field field-name="Product__c" value={record}></lightning-input-field>
+                                    <lightning-input-field field-name="Author__c" value={author}></lightning-input-field>
+                                    <lightning-input-field field-name="Created_At__c" value={currentTimestamp}></lightning-input-field>
+                                    <lightning-input-field field-name="Rating__c" value={satisfactionRating}></lightning-input-field>
+                                </div>
+                            </lightning-record-edit-form>
+                        </div>
+                    </div>
+                </div>
+            </lightning-card>
+        </template>
+    </template>
+    <template if:false={myReview}>
     <lightning-card title={label.TITLE_LABEL}>
         <div class="slds-m-top_small slds-m-bottom_x-small">
             <div >
@@ -6,4 +67,5 @@
             </div>
         </div>
     </lightning-card>
+    </template>
 </template>

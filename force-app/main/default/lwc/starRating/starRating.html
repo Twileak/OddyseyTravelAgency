@@ -20,11 +20,12 @@
     <div class="slds-m-top_medium slds-m-bottom_x-large">
         <div class="slds-p-around_medium lgc-bg">
             <lightning-record-edit-form object-api-name="Review__c" onsuccess={handleSuccess} onsubmit={handleSubmit}>
-                <lightning-input-rich-text id="commentField" field-name="Comment__c" variant="label-hidden" style="padding-left: 15px; padding-right: 15px;"></lightning-input-rich-text>
+                <lightning-input-rich-text id="commentField" value={comment} variant="label-hidden" style="padding-left: 15px; padding-right: 15px;" onchange={changeComment}></lightning-input-rich-text>
                 <div class="slds-align_absolute-center">
-                    <lightning-button type="submit" label="Submit" variant="brand" disabled={buttonDisabled} style="padding-top: 5px;"></lightning-button>
+                    <lightning-button type="submit" label="Submit" variant="brand" disabled={buttonDisabled} style="padding-top: 10px;"></lightning-button>
                 </div>
                 <div class="slds-hidden" style="max-height: 0px;">
+                    <lightning-input-field field-name="Comment__c"></lightning-input-field>
                     <lightning-input-field field-name="Product__c" value={record}></lightning-input-field>
                     <lightning-input-field field-name="Author__c" value={author}></lightning-input-field>
                     <lightning-input-field field-name="Created_At__c" value={currentTimestamp}></lightning-input-field>
