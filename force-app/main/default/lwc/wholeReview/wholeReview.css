@@ -1,0 +1,113 @@
+.review-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.card-title {
+    text-align: center;
+    font-size: 24px; /* Adjust the font size as needed */
+    padding: 12px; /* Add padding for spacing if desired */
+}
+
+.label {
+    font-weight: bold;
+}
+
+.comment {
+    margin-top: 4px;
+    font-size: 16px; /* Adjust the font size for the comment */
+}
+
+.rating-container {
+    display: flex;
+    align-items: center; /* Vertical centering */
+    gap: 4px; /* Adjust the gap between rating stars and author */
+}
+
+.rating-container c-rating-stars {
+    font-size: 12px; /* Adjust the size of the stars */
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Adjust the value to control the padding between buttons */
+  padding-top: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+
+.rate:not(:checked)>input {
+    position: absolute;
+    visibility: hidden;
+}
+
+.rate:not(:checked)>label {
+    float: right;
+    width: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 30px;
+    color: #ccc;
+}
+
+.rate:not(:checked)>label:before {
+    content: '★ ';
+}
+
+.rate>input:checked~label {
+    color: #ffc700;
+}
+
+.rate:not(:checked)>label:hover,
+.rate:not(:checked)>label:hover~label {
+    color: #deb217;
+}
+
+.rate>input:checked+label:hover,
+.rate>input:checked+label:hover~label,
+.rate>input:checked~label:hover,
+.rate>input:checked~label:hover~label,
+.rate>label:hover~input:checked~label {
+    color: #c59b08;
+}
+
+.custom-modal {
+    position: fixed;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+}
+
+/* Add more padding to the modal content */
+.custom-modal .slds-modal__content {
+    padding: 20px;
+}
+
+/* Adjust the backdrop styles (optional) */
+.custom-backdrop {
+    /* You can customize the backdrop styles here, if needed */
+}
+
+.slds-modal__footer .slds-grid {
+    justify-content: center;
+}
+
+/* Add padding around the buttons */
+.custom-button {
+    margin: 10px 20px;
+    height: 30px;
+    width:80px;/* Adjust padding as needed */
+}

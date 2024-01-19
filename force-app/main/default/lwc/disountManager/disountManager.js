@@ -225,9 +225,41 @@ export default class DisountManager extends LightningElement {
             isAbsolute: this.absolutePromotionType,
             promotionValue: this.absolutePromotionType ? this.absolutePromotionValue : this.percentagePromotionValue/100
         }
-
+        console.log('Create Promotion');
         const stringPromotion = JSON.stringify(promotion);
         createPromotion({stringPromotion: stringPromotion});
+        this.displayToast('Congratulations!', 'Promotion was scheduled', 'Success');
+        this.handleReset();
+    }
+
+    handleReset() {
+        this.activeSections = ['product', 'promotion', 'promotionValue'];
+        this.allProducts = [];
+        this.allCategories = [];
+        this.selectedWeekdays = [];
+        this.selectedProducts = [];
+        this.selectedCategories = [];
+        this.productsInSelectedCategory = [];
+        this.productValue = '';
+        this.promotionValue = '';
+        this.promotionValueType = '';
+        this.selectProduct = false;
+        this.selectCategory = false;
+        this.oneTimePromotion = false;
+        this.periodicPromotion = false;
+        this.periodicPromotionType = '';
+        this.periodicWeeklyPromotion = false;
+        this.periodicMonthlyPromotion = false;
+        this.percentagePromotionType = false;
+        this.absolutePromotionType = false;
+        this.isButtonDisabled = true;
+        this.absolutePromotionValue = 0;
+        this.percentagePromotionValue;
+        this.oneTimePromotionStartDate = null;
+        this.oneTimePromotionEndDate = null;
+        this.periodicPromotionStartDate = null;
+        this.periodicPromotionEndDate = null;
+        this.highestAbsoluteDiscount = 0;
     }
 
     handleEnabledSubmitButton() {
