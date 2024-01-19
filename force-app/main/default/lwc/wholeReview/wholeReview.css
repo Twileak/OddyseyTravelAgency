@@ -5,6 +5,12 @@
     border-radius: 5px;
 }
 
+.card-title {
+    text-align: center;
+    font-size: 24px; /* Adjust the font size as needed */
+    padding: 12px; /* Add padding for spacing if desired */
+}
+
 .label {
     font-weight: bold;
 }
@@ -76,4 +82,32 @@
 .rate>input:checked~label:hover~label,
 .rate>label:hover~input:checked~label {
     color: #c59b08;
+}
+
+.custom-modal {
+    position: fixed;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+}
+
+/* Add more padding to the modal content */
+.custom-modal .slds-modal__content {
+    padding: 20px;
+}
+
+/* Adjust the backdrop styles (optional) */
+.custom-backdrop {
+    /* You can customize the backdrop styles here, if needed */
+}
+
+.slds-modal__footer .slds-grid {
+    justify-content: center;
+}
+
+/* Add padding around the buttons */
+.custom-button {
+    margin: 10px 20px;
+    height: 30px;
+    width:80px;/* Adjust padding as needed */
 }

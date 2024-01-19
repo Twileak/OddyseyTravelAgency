@@ -5,6 +5,7 @@ import UserNameFIELD from '@salesforce/schema/User.Name';
 import TITLE_LABEL from '@salesforce/label/c.Share';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import getComment from '@salesforce/apex/CommentsController.getComment';
+import deleteReview from '@salesforce/apex/CommentsController.deleteReview';
 import SUCCESS_TITLE from '@salesforce/label/c.Review_Created';
 import ERROR_TITLE from '@salesforce/label/c.Review_Issue';
 
@@ -16,6 +17,7 @@ export default class WholeReview extends LightningElement {
     buttonDisabled = true;
     @track showEdit = false;
     @track reviewCreated = false;
+    @track showModal = false;
 
     label = {
                 TITLE_LABEL
@@ -25,8 +27,6 @@ export default class WholeReview extends LightningElement {
     currentUserInfo({error, data}) {
         if (data) {
             this.authorName = data.fields.Name.value;
-            console.log('Author: ', this.authorName);
-            console.log('Product: ', this.recordId);
             this.getMyComment();
         } else if (error) {
             this.error = error;
@@ -36,7 +36,6 @@ export default class WholeReview extends LightningElement {
     async getMyComment() {
         try {
             this.myReview = await getComment({user: this.authorName, productId: this.recordId});
-            console.log('My review: ', JSON.stringify(this.myReview));
         } catch (error) {
             this.displayToast(this.label.errorTitle, "error");
         }
@@ -55,9 +54,8 @@ export default class WholeReview extends LightningElement {
     }
 
     handleReviewCreated(){
-    console.log('review created');
-            this.reviewCreated = true;
-        }
+        this.reviewCreated = true;
+    }
 
     rating(event) {
         this.satisfactionRating = event.target.value;
@@ -68,11 +66,20 @@ export default class WholeReview extends LightningElement {
         return new Date().toISOString();
     }
 
-    handleSubmit(event) {;
+    async handleSubmit(event) {;
         event.preventDefault();
         const fields = event.detail.fields;
         fields.Comment__c = this.comment;
+        fields.Approval_Status__c = 'Waiting';
         this.template.querySelector('lightning-record-edit-form').submit(fields);
+        console.log(this.myReview.Id)
+        try {
+        console.log('Author: ', this.authorName);
+            const deleted = await deleteReview({recordId: this.recordId, author: this.authorName});
+            console.log(deleted);
+        } catch(error){
+            this.displayToast(this.label.errorTitle, "error");
+        }
     }
 
     handleSuccess() {
@@ -95,5 +102,28 @@ export default class WholeReview extends LightningElement {
 
     changeComment(){
         this.comment = event.detail.value;
+    }
+
+    showConfirmationModal() {
+            this.showModal = true;
+        }
+
+    closeModal() {
+            this.showModal = false;
+        }
+
+    async deleteReview() {
+        try {
+            const deleted = await deleteReview({recordId: this.recordId, author: this.authorName});
+            console.log(deleted);
+        } catch(error){
+            this.displayToast(this.label.errorTitle, "error");
+        }
+        this.showModal = false;
+        location.reload();
+    }
+
+    cancelEdit() {
+        this.showEdit = false;
     }
 }

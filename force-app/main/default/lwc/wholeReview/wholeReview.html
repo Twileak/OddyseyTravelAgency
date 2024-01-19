@@ -1,6 +1,27 @@
 <template>
     <template if:false={reviewCreated}>
     <template if:true={myReview}>
+        <template if:true={showModal}>
+            <div class="slds-modal slds-fade-in-open custom-modal">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header" style="padding: 10px;">
+                        <h2 class="slds-text-heading_medium ">Confirm Deletion</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <div class="slds-text-align_center" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+                            Are you sure you want to delete your review?
+                        </div>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <div class="slds-grid slds-gutters slds-justify-center">
+                            <button class="slds-button slds-button_neutral custom-button" onclick={closeModal}>Cancel</button>
+                            <button class="slds-button slds-button_destructive custom-button" onclick={deleteReview}>Yes</button>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+            <div class="slds-backdrop slds-backdrop_open custom-backdrop"></div>
+        </template>
         <template if:false={showEdit}>
             <lightning-card title="You've already posted a review:" class="my-review-container">
                 <div class="slds-m-around_medium" style="margin-left: 12px; margin-right: 12px;">
@@ -13,7 +34,7 @@
                     </div>
                     <div class="buttons-container" >
                         <lightning-button label="Edit" variant="brand" onclick={handleShowEdit}></lightning-button>
-                        <lightning-button label="Delete" variant="destructive"></lightning-button>
+                        <lightning-button label="Delete" variant="destructive" onclick={showConfirmationModal}></lightning-button>
                     </div>
                 </div>
             </lightning-card>
@@ -41,15 +62,16 @@
                     </div>
                     <div class="slds-m-top_medium slds-m-bottom_x-large">
                         <div class="slds-p-around_medium lgc-bg">
-                            <lightning-record-edit-form record-id={myReview.Id} object-api-name="Review__c" onsuccess={handleSuccess} onsubmit={handleSubmit}>
+                            <lightning-record-edit-form object-api-name="Review__c" onsuccess={handleSuccess} onsubmit={handleSubmit}>
                                 <lightning-input-rich-text id="commentField" value={myReview.Comment__c} variant="label-hidden" style="padding-left: 15px; padding-right: 15px;" onchange={changeComment}></lightning-input-rich-text>
                                 <div class="slds-align_absolute-center">
-                                    <lightning-button type="submit" label="Submit" variant="brand" disabled={buttonDisabled} style="padding-top: 10px;"></lightning-button>
+                                    <lightning-button type="submit" label="Submit" variant="brand" disabled={buttonDisabled} style="padding-top: 10px; padding-right: 10px;"></lightning-button>
+                                    <lightning-button label="Cancel" onclick={cancelEdit} style="padding-top: 10px; padding-left: 10px;"></lightning-button>
                                 </div>
                                 <div class="slds-hidden" style="max-height: 0px;">
                                     <lightning-input-field field-name="Comment__c"></lightning-input-field>
-                                    <lightning-input-field field-name="Product__c" value={record}></lightning-input-field>
-                                    <lightning-input-field field-name="Author__c" value={author}></lightning-input-field>
+                                    <lightning-input-field field-name="Product__c" value={recordId}></lightning-input-field>
+                                    <lightning-input-field field-name="Author__c" value={authorName}></lightning-input-field>
                                     <lightning-input-field field-name="Created_At__c" value={currentTimestamp}></lightning-input-field>
                                     <lightning-input-field field-name="Rating__c" value={satisfactionRating}></lightning-input-field>
                                 </div>
